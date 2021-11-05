@@ -7,6 +7,9 @@ var currentPageLatestProjectPages = 1;
 // This is to keep track of current page in client feedback pages
 var currentPageClientFeedbackPages = 1;
 
+// This is to keep track of current width of the promo page
+var promoPageCurrentWidth = 0;
+
 // This is to keep track of current width of the latest project card
 var latestProjectCardCurrentWidth = 0;
 
@@ -16,6 +19,7 @@ var clientFeedbackCardCurrentWidth = 0;
 // Get the root CSS element
 var r = document.querySelector(":root");
 
+//******************** Promo pages *********************/
 // The function to navigate user in promo pages
 function gotoPagePromoPage(pageNumber) {
   // Update current page
@@ -24,9 +28,40 @@ function gotoPagePromoPage(pageNumber) {
   // Update cursor
   r.style.setProperty(
     "--promo-page-cursor",
-    `-${screen.width * (pageNumber - 1)}px`
+    `${promoPageCurrentWidth * (2 - currentPagePromoPages) * 2}px`
   );
+
+  console.log(promoPageCurrentWidth * (2 - currentPagePromoPages) * 2)
 }
+
+// The function to bring user to previous page in promo pages
+function goBackPagePromoPages() {
+  // Update current page
+  currentPagePromoPages = currentPagePromoPages - 1;
+
+  // Update cursor
+  r.style.setProperty(
+    "--promo-page-cursor",
+    `${promoPageCurrentWidth * (2 - currentPagePromoPages) * 2}px`
+  );
+
+  console.log(promoPageCurrentWidth * (2 - currentPagePromoPages) * 2)
+}
+
+// The function to bring user to next page in promo pages
+function goForwardPagePromoPages() {
+  // Update current page
+  currentPagePromoPages = currentPagePromoPages + 1;
+
+  // Update cursor
+  r.style.setProperty(
+    "--promo-page-cursor",
+    `${promoPageCurrentWidth * (2 - currentPagePromoPages) * 2}px`
+  );
+
+  console.log(promoPageCurrentWidth * (2 - currentPagePromoPages) * 2)
+}
+//******************** Promo pages *********************/
 
 //******************** Latest project pages *********************/
 // The function to bring user to previous page in latest project pages
@@ -72,10 +107,6 @@ function goBackPageClientFeedbackPages() {
       (currentPageClientFeedbackPages - 1)
     }px`
   );
-
-  console.log(
-    (clientFeedbackCardCurrentWidth + 20) * (currentPageClientFeedbackPages - 1)
-  );
 }
 
 // The function to bring user to next page in client feedback pages
@@ -113,9 +144,6 @@ function scrollHandler() {
 
 // The function to get width of screen
 function getScreenWidth() {
-  // Update page width for promo pages container
-  r.style.setProperty("--promo-page-width", `${window.innerWidth}px`);
-
   // Get the latest project card element
   var latestProjectCardElement = document.getElementsByClassName(
     "latest-project-card"
@@ -126,13 +154,23 @@ function getScreenWidth() {
     "client-feedback-cards__client-feedback-card"
   )[0];
 
-  console.log(clientFeedbackCardElement.clientWidth);
+  // Get the promo page element
+  var promoPageElement = document.getElementsByClassName(
+    "promo__scroll-area"
+  )[0];
 
-  // Update current width of the latest project card in JS
+  // Update current width of the latest project card in
   latestProjectCardCurrentWidth = latestProjectCardElement.clientWidth;
 
-  // Update current width of the client feedback card in JS
+  // Update current width of the client feedback card in
   clientFeedbackCardCurrentWidth = clientFeedbackCardElement.clientWidth;
+
+  // Update current width of the promo page
+  promoPageCurrentWidth = promoPageElement.clientWidth;
+
+  // Update page width for promo pages container
+  r.style.setProperty("--promo-page-width", `${promoPageCurrentWidth}px`);
+
 }
 
 // Add a listener for when the window resizes
@@ -198,10 +236,8 @@ function handleTouchMove(evt) {
   } else {
     if (yDiff > 0) {
       /* down swipe */
-      console.log("Swipe down");
     } else {
       /* up swipe */
-      console.log("Swipe up");
     }
   }
   /* reset values */
