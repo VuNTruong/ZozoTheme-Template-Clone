@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;500&display=swap");
 
-:root { 
+:root {
   --promo-page-width: 500px;
   --promo-page-cursor: 0px;
   --latest-project-page-cursor: 0px;
@@ -8,6 +8,12 @@
   --header-menu-display: block;
   --sticky-header-menu-display: none;
   --promo-icon-display: none;
+  --number-of-latest-project-cards-per-page: 4;
+  --number-of-feedback-cards-per-page: 3;
+  --right-hamburger-menu-margin: -370px;
+  --right-hamburger-menu-width: 370px;
+  --page-content-left-margin: 0px;
+  --page-content-right-margin: 0px
 }
 
 body {
@@ -36,6 +42,102 @@ h1 {
   font-weight: 600;
   font-size: 1em;
 }
+
+.mgi__page-content {
+  margin-left: var(--page-content-left-margin);
+  margin-right: var(--page-content-right-margin);
+}
+
+/******************* Right hamburger menu *******************/
+.mgi__right-hamburger-menu__area {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  right: var(--right-hamburger-menu-width);
+}
+
+.mgi__right-hamburger-menu {
+  width: var(--right-hamburger-menu-width);
+  right: 0px;
+  background-color: black;
+  height: 100%;
+  position: fixed;
+  z-index: 10;
+  overflow-y: scroll;
+  display: none;
+}
+
+.mgi__right-hamburger-menu__content {
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.mgi__right-hamburger-menu__content__icon {
+  height: 2em;
+  margin: 0.5em;
+}
+
+.mgi__right-hamburger-menu__content__icon--clickable {
+  cursor: pointer;
+}
+
+.mgi__right-hamburger-menu__content__title {
+  color: white;
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-top: 1.5em;
+}
+
+.mgi__right-hamburger-menu__content__text {
+  margin-top: 2em;
+  color: white;
+  font-weight: 500;
+}
+
+.mgi__right-hamburger-menu__content__post-item {
+  margin-top: 1em;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.mgi__right-hamburger-menu__content__post-item__left {
+  display: flex;
+  align-items: center;
+}
+
+.mgi__right-hamburger-menu__content__post-item__left__image {
+  width: 4.5em;
+  height: 4.5em;
+  border-radius: 100%;
+}
+
+.mgi__right-hamburger-menu__content__post-item__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 1em;
+}
+
+.mgi__right-hamburger-menu__content__post-item__right__post-title {
+  color: white;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.mgi__right-hamburger-menu__content__post-item__right__post-date-created {
+  color: white;
+  font-size: 1em;
+  font-weight: 200;
+  margin-top: -1em;
+}
+
+.mgi__right-hamburger-menu__content__promo-image {
+  width: 100%;
+}
+/******************* End right hamburger menu *******************/
 
 /******************* Header *******************/
 .mgi__header {
@@ -120,6 +222,7 @@ h1 {
 }
 
 .mgi__promo-icon {
+  cursor: pointer;
   width: 50%;
   display: var(--promo-icon-display);
 }
@@ -204,7 +307,7 @@ h1 {
 /******************* Introduction *******************/
 .mgi__introduction {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 2fr 3fr;
   grid-gap: 2em;
   padding: 4em;
 }
@@ -215,7 +318,7 @@ h1 {
 }
 
 .mgi__introduction__left-content__image {
-  width: 50%;
+  width: 100%;
 }
 
 .mgi__introduction__right-content {
@@ -463,20 +566,38 @@ h1 {
 }
 
 @media only screen and (max-width: 774px) {
+  :root {
+    --number-of-latest-project-cards-per-page: 1;
+  }
+
   .mgi__latest-project-card__image {
     width: 80vw;
   }
 }
 
 @media only screen and (max-width: 999px) and (min-width: 775px) {
+  :root {
+    --number-of-latest-project-cards-per-page: 2;
+  }
+
   .mgi__latest-project-card__image {
     width: calc((80vw - 10px) / 2);
   }
 }
 
 @media only screen and (max-width: 1199px) and (min-width: 1000px) {
+  :root {
+    --number-of-latest-project-cards-per-page: 3;
+  }
+
   .mgi__latest-project-card__image {
     width: calc((80vw - 20px) / 3);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  :root {
+    --number-of-latest-project-cards-per-page: 4;
   }
 }
 
@@ -487,15 +608,23 @@ h1 {
 }
 
 @media only screen and (max-width: 740px) {
+  :root {
+    --number-of-feedback-cards-per-page: 1;
+  }
+
   .mgi__client-feedback-cards__client-feedback-card {
     width: 80vw;
   }
 }
 
 @media only screen and (max-width: 970px) and (min-width: 741px) {
+  :root {
+    --number-of-feedback-cards-per-page: 2;
+  }
+
   .mgi__client-feedback-cards__client-feedback-card {
     width: calc((80vw - 20px) / 2);
-  }  
+  }
 }
 
 /******************* Animation code *******************/
@@ -544,6 +673,46 @@ h1 {
   }
 }
 
+@keyframes slide-out-right-to-left-page-content {
+  from {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  to {
+    margin-right: var(--right-hamburger-menu-width);
+    margin-left: var(--right-hamburger-menu-margin);
+  }
+}
+
+@keyframes slide-in-left-to-right-page-content {
+  from {
+    margin-right: var(--right-hamburger-menu-width);
+    margin-left: var(--right-hamburger-menu-margin);
+  }
+  to {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
+
+@keyframes slide-in-right-to-left-right-hamburger-menu {
+  from {
+    margin-right: var(--right-hamburger-menu-margin);
+  }
+  to {
+    margin-right: 0px;
+  }
+}
+
+@keyframes slide-out-left-to-right-right-hamburger-menu {
+  from {
+    margin-right: 0px;
+  }
+  to {
+    margin-right: var(--right-hamburger-menu-margin);
+  }
+}
+
 .animate-down {
   animation-name: go-down;
   animation-duration: 0.5s;
@@ -573,4 +742,32 @@ h1 {
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
+
+.animate-slide-out-right-to-left-page-content {
+  animation-name: slide-out-right-to-left-page-content;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.animate-slide-in-left-to-right-page-content {
+  animation-name: slide-in-left-to-right-page-content;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.animate-slide-in-right-to-left-right-hamburger-menu {
+  animation-name: slide-in-right-to-left-right-hamburger-menu;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.animate-slide-out-left-to-right-right-hamburger-menu {
+  animation-name: slide-out-left-to-right-right-hamburger-menu;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
 /******************* End animation code *******************/
+
+.show {
+  display: block;
+}
