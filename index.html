@@ -12,19 +12,19 @@
 
   <body onscroll="scrollHandler()">
     <!-- This header is only shown when page header is still visible -->
-    <div id="header-menu-bar" class="header">
-      <div class="header__content">
-        <div class="header__content__left-content">
-          <img class="header-icon" src="icons/hamburgerMenuIcon.png" />
+    <div id="header-menu-bar" class="mgi__header">
+      <div class="mgi__header__content">
+        <div class="mgi__header__content__left-content">
+          <img class="mgi__header-icon" src="icons/hamburgerMenuIcon.png" />
 
-          <p class="header-text">EPOINT</p>
+          <p class="mgi__header-text">EPOINT</p>
         </div>
 
-        <div class="header__content__right-content">
-          <img class="header-icon" src="icons/searchIcon.png" />
-          <img class="header-icon" src="icons/bellIcon.png" />
+        <div class="mgi__header__content__right-content">
+          <img class="mgi__header-icon" src="icons/searchIcon.png" />
+          <img class="mgi__header-icon" src="icons/bellIcon.png" />
           <img
-            class="header-icon"
+            class="mgi__header-icon"
             src="icons/hamburgerMenuIconWithBorder.png"
           />
         </div>
@@ -32,101 +32,109 @@
     </div>
 
     <!-- This header will be shown when page has been scrolled down over 80px -->
-    <div id="sticky-header-menu-bar" class="sticky-header">
-      <div class="header__content">
-        <div class="header__content__left-content">
-          <img class="header-icon" src="icons/hamburgerMenuIcon-dark.png" />
+    <div id="mgi__sticky-header-menu-bar" class="mgi__sticky-header">
+      <div class="mgi__header__content">
+        <div class="mgi__header__content__left-content">
+          <img class="mgi__header-icon" src="icons/hamburgerMenuIcon-dark.png" />
 
-          <p class="sticky-header-text">EPOINT</p>
+          <p class="mgi__sticky-header-text">EPOINT</p>
         </div>
 
-        <div class="header__content__right-content">
-          <img class="header-icon" src="icons/searchIcon-dark.png" />
-          <img class="header-icon" src="icons/bellIcon-dark.png" />
+        <div class="mgi__header__content__right-content">
+          <img class="mgi__header-icon" src="icons/searchIcon-dark.png" />
+          <img class="mgi__header-icon" src="icons/bellIcon-dark.png" />
           <img
-            class="header-icon"
+            class="mgi__header-icon"
             src="icons/hamburgerMenuIconWithBorder-dark.png"
           />
         </div>
       </div>
     </div>
 
-    <div class="promo">
-      <div class="promo__content">
-        <div class="promo__content__side"></div>
+    <div
+      class="mgi__promo"
+      onmouseover="mouseOverPromoAreaHandler()"
+      onmouseleave="mouseOutPromoAreaHandler()"
+    >
+      <div class="mgi__promo__content">
+        <div class="mgi__promo__content__side">
+          <img src="icons/left-icon.png" class="mgi__promo-icon animate-fade-in" />
+        </div>
 
-        <div id="promo-scroll-area" class="promo__scroll-area">
-          <div class="promo__promo-pages">
-            <div class="promo__promo-pages__promo-page">
-              <p class="promo-title">WE ARE CREATIVE</p>
-              <p class="promo-text">
+        <div id="promo-scroll-area" class="mgi__promo__scroll-area">
+          <div class="mgi__promo__promo-pages">
+            <div class="mgi__promo__promo-pages__promo-page">
+              <p class="mgi__promo-title">WE ARE CREATIVE</p>
+              <p class="mgi__promo-text">
                 We believe in Simple, Creative & Flexible Design Standards.
                 Unlimited features, elements and fast and friendly support gives
                 ultimate website to boom your business.
               </p>
-              <button class="button">LEARN MORE</button>
+              <button class="mgi__button">LEARN MORE</button>
             </div>
 
-            <div class="promo__promo-pages__promo-page">
-              <p class="promo-title">WE ARE SIMPLE</p>
-              <p class="promo-text">
+            <div class="mgi__promo__promo-pages__promo-page">
+              <p class="mgi__promo-title">WE ARE SIMPLE</p>
+              <p class="mgi__promo-text">
                 We believe in Simple, Creative & Flexible Design Standards.
                 Unlimited features, elements and fast and friendly support gives
                 ultimate website to boom your business.
               </p>
-              <button class="button">LEARN MORE</button>
+              <button class="mgi__button">LEARN MORE</button>
             </div>
 
-            <div class="promo__promo-pages__promo-page">
-              <p class="promo-title">WE ARE POWERFUL</p>
-              <p class="promo-text">
+            <div class="mgi__promo__promo-pages__promo-page">
+              <p class="mgi__promo-title">WE ARE POWERFUL</p>
+              <p class="mgi__promo-text">
                 We believe in Simple, Creative & Flexible Design Standards.
                 Unlimited features, elements and fast and friendly support gives
                 ultimate website to boom your business.
               </p>
-              <button class="button">LEARN MORE</button>
+              <button class="mgi__button">LEARN MORE</button>
             </div>
           </div>
         </div>
 
-        <div class="promo__content__side"></div>
+        <div class="mgi__promo__content__side">
+          <img src="icons/right-icon.png" class="mgi__promo-icon animate-fade-in" />
+        </div>
       </div>
 
-      <div class="promo__paging-controllers">
-        <div class="promo__paging-button">
+      <div class="mgi__promo__paging-controllers">
+        <div class="mgi__promo__paging-button">
           <button
             id="paging-page-1-button"
-            class="promo__paging-buttons__paging_button"
+            class="mgi__promo__paging-buttons__paging_button"
             onclick="gotoPagePromoPage(1)"
           ></button>
           <button
             id="paging-page-2-button"
-            class="promo__paging-buttons__paging_button"
+            class="mgi__promo__paging-buttons__paging_button"
             onclick="gotoPagePromoPage(2)"
           ></button>
           <button
             id="paging-page-3-button"
-            class="promo__paging-buttons__paging_button"
+            class="mgi__promo__paging-buttons__paging_button"
             onclick="gotoPagePromoPage(3)"
           ></button>
         </div>
       </div>
     </div>
 
-    <div class="page_main">
-      <div class="introduction">
-        <div class="introduction__left-content">
+    <div class="mgi__page_main">
+      <div class="mgi__introduction">
+        <div class="mgi__introduction__left-content">
           <h3>
             We have more than 10 years experience in web design and development
           </h3>
-          <img src="images/2.jpg" class="introduction__left-content__image" />
+          <img src="images/2.jpg" class="mgi__introduction__left-content__image" />
           <p>
             Et culpa dolore odio voluptate suscipit corporis sed ad sunt autem!
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
           </p>
         </div>
 
-        <div class="introduction__right-content">
+        <div class="mgi__introduction__right-content">
           <p>
             Et culpa dolore odio voluptate suscipit corporis sed ad sunt autem!
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -144,63 +152,63 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
           </p>
 
-          <div class="introduction__right-content__web-operations">
-            <div class="introduction__right-content__web-operations__item">
+          <div class="mgi__introduction__right-content__web-operations">
+            <div class="mgi__introduction__right-content__web-operations__item">
               <img
-                class="web-operations-item-icon"
+                class="mgi__web-operations-item-icon"
                 src="icons/analysis-icon.png"
               />
-              <p class="web-operations-item-text">Analysis</p>
+              <p class="mgi__web-operations-item-text">Analysis</p>
             </div>
 
-            <div class="introduction__right-content__web-operations__item">
+            <div class="mgi__introduction__right-content__web-operations__item">
               <img
-                class="web-operations-item-icon"
+                class="mgi__web-operations-item-icon"
                 src="icons/design-icon.png"
               />
-              <p class="web-operations-item-text">Design</p>
+              <p class="mgi__web-operations-item-text">Design</p>
             </div>
 
-            <div class="introduction__right-content__web-operations__item">
+            <div class="mgi__introduction__right-content__web-operations__item">
               <img
-                class="web-operations-item-icon"
+                class="mgi__web-operations-item-icon"
                 src="icons/launch-icon.png"
               />
-              <p class="web-operations-item-text">Launch</p>
+              <p class="mgi__web-operations-item-text">Launch</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="services">
+      <div class="mgi__services">
         <h1>
           We Build Awesome and Beautiful Premium HTML, Wordpress, Magento,
           Joomla, E-commerce Themes and Email Templates.
         </h1>
 
-        <div class="services__services-column">
-          <div class="services__services-column__column-item animation-fade-in">
-            <img src="icons/creative-icon.png" class="services-icon" />
+        <div class="mgi__services__services-column">
+          <div class="mgi__services__services-column__column-item animation-fade-in">
+            <img src="icons/creative-icon.png" class="mgi__services-icon" />
             <h3>Creative Design</h3>
-            <div class="services__separator"></div>
+            <div class="mgi__services__separator"></div>
             <p>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
               commodo ligula eget dolor. Aenean massa.
             </p>
           </div>
 
-          <div class="services__services-column__column-item">
-            <img src="icons/mobile-app-icon.png" class="services-icon" />
+          <div class="mgi__services__services-column__column-item">
+            <img src="icons/mobile-app-icon.png" class="mgi__services-icon" />
             <h3>App Design</h3>
-            <div class="services__separator"></div>
+            <div class="mgi__services__separator"></div>
             <p>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
               commodo ligula eget dolor. Aenean massa.
             </p>
           </div>
 
-          <div class="services__services-column__column-item">
-            <img src="icons/email-icon.png" class="services-icon" />
+          <div class="mgi__services__services-column__column-item">
+            <img src="icons/email-icon.png" class="mgi__services-icon" />
             <h3>Email Marketing</h3>
             <div class="services__separator"></div>
             <p>
@@ -209,30 +217,30 @@
             </p>
           </div>
 
-          <div class="services__services-column__column-item">
-            <img src="icons/marketing-icon.png" class="services-icon" />
+          <div class="mgi__services__services-column__column-item">
+            <img src="icons/marketing-icon.png" class="mgi__services-icon" />
             <h3>Online Marketing</h3>
-            <div class="services__separator"></div>
+            <div class="mgi__services__separator"></div>
             <p>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
               commodo ligula eget dolor. Aenean massa.
             </p>
           </div>
 
-          <div class="services__services-column__column-item">
-            <img src="icons/ecommerce-icon.png" class="services-icon" />
+          <div class="mgi__services__services-column__column-item">
+            <img src="icons/ecommerce-icon.png" class="mgi__services-icon" />
             <h3>E Commerce</h3>
-            <div class="services__separator"></div>
+            <div class="mgi__services__separator"></div>
             <p>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
               commodo ligula eget dolor. Aenean massa.
             </p>
           </div>
 
-          <div class="services__services-column__column-item">
-            <img src="icons/support-icon.png" class="services-icon" />
+          <div class="mgi__services__services-column__column-item">
+            <img src="icons/support-icon.png" class="mgi__services-icon" />
             <h3>Friendly Support</h3>
-            <div class="services__separator"></div>
+            <div class="mgi__services__separator"></div>
             <p>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
               commodo ligula eget dolor. Aenean massa.
@@ -241,77 +249,77 @@
         </div>
       </div>
 
-      <div class="general-page-content">
+      <div class="mgi__general-page-content">
         <h1>Our Latest Projects</h1>
-        <p class="latest-project-text">
+        <p class="mgi__latest-project-text">
           We Build Awesome and Beautiful Premium HTML, Wordpress, Magento,
           Joomla, E-commerce Themes and Email Templates.
         </p>
-        <div class="general-page-content-separator"></div>
+        <div class="mgi__general-page-content-separator"></div>
 
-        <div class="general-page-content__slidable-content">
-          <div class="general-page-content__slidable-content__side">
+        <div class="mgi__general-page-content__slidable-content">
+          <div class="mgi__general-page-content__slidable-content__side">
             <img
-              class="latest-project-icon"
+              class="mgi__latest-project-icon"
               src="icons/left-icon-black.ico"
               onclick="goBackPageLatestProjectPage()"
             />
           </div>
 
           <div
-            class="general-page-content__slidable-content__slidable-content-holder"
+            class="mgi__general-page-content__slidable-content__slidable-content-holder"
           >
-            <div class="latest-project-cards">
-              <div class="latest-project-card">
+            <div class="mgi__latest-project-cards">
+              <div class="mgi__latest-project-card">
                 <img
-                  class="latest-project-card__image"
+                  class="mgi__latest-project-card__image"
                   src="images/latest-project-1.jpeg"
                 />
                 <h3>Wifi Creator</h3>
-                <p class="latest-project-card-text">Branding</p>
+                <p class="mgi__latest-project-card-text">Branding</p>
               </div>
 
-              <div class="latest-project-card">
+              <div class="mgi__latest-project-card">
                 <img
-                  class="latest-project-card__image"
+                  class="mgi__latest-project-card__image"
                   src="images/latest-project-2.jpeg"
                 />
                 <h3>Ohio Shopper</h3>
-                <p class="latest-project-card-text">Photographer</p>
+                <p class="mgi__latest-project-card-text">Photographer</p>
               </div>
 
-              <div class="latest-project-card">
+              <div class="mgi__latest-project-card">
                 <img
-                  class="latest-project-card__image"
+                  class="mgi__latest-project-card__image"
                   src="images/latest-project-3.jpeg"
                 />
                 <h3>Expert Book Seller</h3>
-                <p class="latest-project-card-text">Branding</p>
+                <p class="mgi__latest-project-card-text">Branding</p>
               </div>
 
-              <div class="latest-project-card">
+              <div class="mgi__latest-project-card">
                 <img
-                  class="latest-project-card__image"
+                  class="mgi__latest-project-card__image"
                   src="images/latest-project-4.jpeg"
                 />
                 <h3>Limtop Creation</h3>
-                <p class="latest-project-card-text">Art</p>
+                <p class="mgi__latest-project-card-text">Art</p>
               </div>
 
-              <div class="latest-project-card">
+              <div class="mgi__latest-project-card">
                 <img
-                  class="latest-project-card__image"
+                  class="mgi__latest-project-card__image"
                   src="images/latest-project-5.jpg"
                 />
                 <h3>Orion Studio</h3>
-                <p class="latest-project-card-text">Web Design</p>
+                <p class="mgi__latest-project-card-text">Web Design</p>
               </div>
             </div>
           </div>
 
-          <div class="general-page-content__slidable-content__side">
+          <div class="mgi__general-page-content__slidable-content__side">
             <img
-              class="latest-project-icon"
+              class="mgi__latest-project-icon"
               src="icons/right-icon-black.png"
               onclick="goForwardPageLatestProjectPage()"
             />
@@ -319,179 +327,179 @@
         </div>
       </div>
 
-      <div class="contact">
-        <div class="contact__left">
-          <p class="contact-text">
+      <div class="mgi__contact">
+        <div class="mgi__contact__left">
+          <p class="mgi__contact-text">
             We ensure quality & support. People love us & we love them. We
             provide services more than 100000 Customers worldwide. Do you need
             any Help?
           </p>
         </div>
 
-        <div class="contact__right">
-          <div class="contact-button">
+        <div class="mgi__contact__right">
+          <div class="mgi__contact-button">
             <p>Contact Now</p>
             <img class="contact-button__icon" src="icons/right-arrow.png" />
           </div>
         </div>
       </div>
 
-      <div class="general-page-content">
+      <div class="mgi__general-page-content">
         <h1>What Clients Say?</h1>
-        <div class="general-page-content-separator"></div>
+        <div class="mgi__general-page-content-separator"></div>
 
-        <div class="general-page-content__slidable-content">
-          <div class="general-page-content__slidable-content__side">
+        <div class="mgi__general-page-content__slidable-content">
+          <div class="mgi__general-page-content__slidable-content__side">
             <img
-              class="latest-project-icon"
+              class="mgi__latest-project-icon"
               src="icons/left-icon-black.ico"
               onclick="goBackPageClientFeedbackPages()"
             />
           </div>
 
           <div
-            class="general-page-content__slidable-content__slidable-content-holder"
+            class="mgi__general-page-content__slidable-content__slidable-content-holder"
           >
-            <div class="client-feedback-cards">
-              <div class="client-feedback-cards__client-feedback-card">
+            <div class="mgi__client-feedback-cards">
+              <div class="mgi__client-feedback-cards__client-feedback-card">
                 <img
-                  class="client-feedback-cards__client-feedback-card__quote-icon"
+                  class="mgi__client-feedback-cards__client-feedback-card__quote-icon"
                   src="icons/quote-icon.png"
                 />
                 <div
-                  class="client-feedback-cards__client-feedback-card__content"
+                  class="mgi__client-feedback-cards__client-feedback-card__content"
                 >
                   <p
-                    class="client-feedback-cards__client-feedback-card__content__feedback-content"
+                    class="mgi__client-feedback-cards__client-feedback-card__content__feedback-content"
                   >
                     Duis aute irure dolor in reprehenderit in voluptate velit
                     esse cillum dolore eu fugiat nulla pariatur
                   </p>
 
                   <p
-                    class="client-feedback-cards__client-feedback-card__content__client-bio"
+                    class="mgi__client-feedback-cards__client-feedback-card__content__client-bio"
                   >
                     John Doe
                   </p>
 
                   <p
-                    class="client-feedback-cards__client-feedback-card__content__client-org"
+                    class="mgi__client-feedback-cards__client-feedback-card__content__client-org"
                   >
                     Yahoo
                   </p>
                 </div>
               </div>
 
-              <div class="client-feedback-cards__client-feedback-card">
+              <div class="mgi__client-feedback-cards__client-feedback-card">
                 <img
-                  class="client-feedback-cards__client-feedback-card__quote-icon"
+                  class="mgi__client-feedback-cards__client-feedback-card__quote-icon"
                   src="icons/quote-icon.png"
                 />
                 <div
-                  class="client-feedback-cards__client-feedback-card__content"
+                  class="mgi__client-feedback-cards__client-feedback-card__content"
                 >
                   <p
-                    class="client-feedback-cards__client-feedback-card__content__feedback-content"
+                    class="mgi__client-feedback-cards__client-feedback-card__content__feedback-content"
                   >
                     Duis aute irure dolor in reprehenderit in voluptate velit
                     esse cillum dolore eu fugiat nulla pariatur
                   </p>
 
                   <p
-                    class="client-feedback-cards__client-feedback-card__content__client-bio"
+                    class="mgi__client-feedback-cards__client-feedback-card__content__client-bio"
                   >
                     Sue San
                   </p>
 
                   <p
-                    class="client-feedback-cards__client-feedback-card__content__client-org"
+                    class="mgi__client-feedback-cards__client-feedback-card__content__client-org"
                   >
                     Bing
                   </p>
                 </div>
               </div>
 
-              <div class="client-feedback-cards__client-feedback-card">
+              <div class="mgi__client-feedback-cards__client-feedback-card">
                 <img
-                  class="client-feedback-cards__client-feedback-card__quote-icon"
+                  class="mgi__client-feedback-cards__client-feedback-card__quote-icon"
                   src="icons/quote-icon.png"
                 />
                 <div
-                  class="client-feedback-cards__client-feedback-card__content"
+                  class="mgi__client-feedback-cards__client-feedback-card__content"
                 >
                   <p
-                    class="client-feedback-cards__client-feedback-card__content__feedback-content"
+                    class="mgi__client-feedback-cards__client-feedback-card__content__feedback-content"
                   >
                     Duis aute irure dolor in reprehenderit in voluptate velit
                     esse cillum dolore eu fugiat nulla pariatur
                   </p>
 
                   <p
-                    class="client-feedback-cards__client-feedback-card__content__client-bio"
+                    class="mgi__client-feedback-cards__client-feedback-card__content__client-bio"
                   >
                     Rachel Moore
                   </p>
 
                   <p
-                    class="client-feedback-cards__client-feedback-card__content__client-org"
+                    class="mgi__client-feedback-cards__client-feedback-card__content__client-org"
                   >
                     Google
                   </p>
                 </div>
               </div>
 
-              <div class="client-feedback-cards__client-feedback-card">
+              <div class="mgi__client-feedback-cards__client-feedback-card">
                 <img
-                  class="client-feedback-cards__client-feedback-card__quote-icon"
+                  class="mgi__client-feedback-cards__client-feedback-card__quote-icon"
                   src="icons/quote-icon.png"
                 />
                 <div
-                  class="client-feedback-cards__client-feedback-card__content"
+                  class="mgi__client-feedback-cards__client-feedback-card__content"
                 >
                   <p
-                    class="client-feedback-cards__client-feedback-card__content__feedback-content"
+                    class="mgi__client-feedback-cards__client-feedback-card__content__feedback-content"
                   >
                     Duis aute irure dolor in reprehenderit in voluptate velit
                     esse cillum dolore eu fugiat nulla pariatur
                   </p>
 
                   <p
-                    class="client-feedback-cards__client-feedback-card__content__client-bio"
+                    class="mgi__client-feedback-cards__client-feedback-card__content__client-bio"
                   >
                     Michael Y
                   </p>
 
                   <p
-                    class="client-feedback-cards__client-feedback-card__content__client-org"
+                    class="mgi__client-feedback-cards__client-feedback-card__content__client-org"
                   >
                     Facebook
                   </p>
                 </div>
               </div>
 
-              <div class="client-feedback-cards__client-feedback-card">
+              <div class="mgi__client-feedback-cards__client-feedback-card">
                 <img
-                  class="client-feedback-cards__client-feedback-card__quote-icon"
+                  class="mgi__client-feedback-cards__client-feedback-card__quote-icon"
                   src="icons/quote-icon.png"
                 />
                 <div
-                  class="client-feedback-cards__client-feedback-card__content"
+                  class="mgi__client-feedback-cards__client-feedback-card__content"
                 >
                   <p
-                    class="client-feedback-cards__client-feedback-card__content__feedback-content"
+                    class="mgi__client-feedback-cards__client-feedback-card__content__feedback-content"
                   >
                     Duis aute irure dolor in reprehenderit in voluptate velit
                     esse cillum dolore eu fugiat nulla pariatur
                   </p>
 
                   <p
-                    class="client-feedback-cards__client-feedback-card__content__client-bio"
+                    class="mgi__client-feedback-cards__client-feedback-card__content__client-bio"
                   >
                     Denis Shapovalov
                   </p>
 
                   <p
-                    class="client-feedback-cards__client-feedback-card__content__client-org"
+                    class="mgi__client-feedback-cards__client-feedback-card__content__client-org"
                   >
                     Amazon
                   </p>
@@ -500,9 +508,9 @@
             </div>
           </div>
 
-          <div class="general-page-content__slidable-content__side">
+          <div class="mgi__general-page-content__slidable-content__side">
             <img
-              class="latest-project-icon"
+              class="mgi__latest-project-icon"
               src="icons/right-icon-black.png"
               onclick="goForwardPageClientFeedbackPages()"
             />

@@ -30,8 +30,6 @@ function gotoPagePromoPage(pageNumber) {
     "--promo-page-cursor",
     `${promoPageCurrentWidth * (2 - currentPagePromoPages) * 2}px`
   );
-
-  console.log(promoPageCurrentWidth * (2 - currentPagePromoPages) * 2)
 }
 
 // The function to bring user to previous page in promo pages
@@ -44,8 +42,6 @@ function goBackPagePromoPages() {
     "--promo-page-cursor",
     `${promoPageCurrentWidth * (2 - currentPagePromoPages) * 2}px`
   );
-
-  console.log(promoPageCurrentWidth * (2 - currentPagePromoPages) * 2)
 }
 
 // The function to bring user to next page in promo pages
@@ -58,8 +54,18 @@ function goForwardPagePromoPages() {
     "--promo-page-cursor",
     `${promoPageCurrentWidth * (2 - currentPagePromoPages) * 2}px`
   );
+}
 
-  console.log(promoPageCurrentWidth * (2 - currentPagePromoPages) * 2)
+// The function to handle event of when user brings mouse inside the promo area
+function mouseOverPromoAreaHandler() {
+  // Show the promo icon
+  r.style.setProperty("--promo-icon-display", "block");
+}
+
+// The function to handle event of when user brings mouse out of the promo area
+function mouseOutPromoAreaHandler() {
+  // Show the promo icon
+  r.style.setProperty("--promo-icon-display", "none");
 }
 //******************** Promo pages *********************/
 
@@ -133,7 +139,7 @@ function scrollHandler() {
   if (document.body.scrollTop > 81 || document.documentElement.scrollTop > 81) {
     // Animate the menu down
     stickyHeaderMenuBar.classList.add("animate-down");
-
+    
     // Show sticky header menu bar
     r.style.setProperty("--sticky-header-menu-display", "block");
   } else {
@@ -146,17 +152,17 @@ function scrollHandler() {
 function getScreenWidth() {
   // Get the latest project card element
   var latestProjectCardElement = document.getElementsByClassName(
-    "latest-project-card"
+    "mgi__latest-project-card"
   )[0];
 
   // Get the client feedback card element
   var clientFeedbackCardElement = document.getElementsByClassName(
-    "client-feedback-cards__client-feedback-card"
+    "mgi__client-feedback-cards__client-feedback-card"
   )[0];
 
   // Get the promo page element
   var promoPageElement = document.getElementsByClassName(
-    "promo__scroll-area"
+    "mgi__promo__scroll-area"
   )[0];
 
   // Update current width of the latest project card in
@@ -170,7 +176,6 @@ function getScreenWidth() {
 
   // Update page width for promo pages container
   r.style.setProperty("--promo-page-width", `${promoPageCurrentWidth}px`);
-
 }
 
 // Add a listener for when the window resizes
@@ -181,7 +186,7 @@ window.onload = () => {
 
   // Reference the scroll area
   var promoScrollArea = this.document.getElementsByClassName(
-    "promo__scroll-area"
+    "mgi__promo__scroll-area"
   )[0];
 
   // Add event listener to the scroll area so that it will know when user scrolls
