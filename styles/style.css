@@ -5,15 +5,19 @@
   --promo-page-cursor: 0px;
   --latest-project-page-cursor: 0px;
   --client-feedback-page-cursor: 0px;
+  --latest-news-page-cursor: 0px;
   --header-menu-display: block;
   --sticky-header-menu-display: none;
   --promo-icon-display: none;
   --number-of-latest-project-cards-per-page: 4;
   --number-of-feedback-cards-per-page: 3;
+  --number-of-latest-news-cards-per-page: 3;
   --right-hamburger-menu-margin: -370px;
   --right-hamburger-menu-width: 370px;
   --page-content-left-margin: 0px;
-  --page-content-right-margin: 0px
+  --page-content-right-margin: 0px;
+  --sticky-header-left-margin: 0px;
+  --sticky-header-right-margin: 0px;
 }
 
 body {
@@ -25,6 +29,11 @@ body {
 
 h1 {
   text-align: center;
+}
+
+h4 {
+  text-align: center;
+  font-weight: 200;
 }
 
 .mgi__button {
@@ -48,12 +57,86 @@ h1 {
   margin-right: var(--page-content-right-margin);
 }
 
+/******************* Left hamburger menu *******************/
+.mgi__left-hamburger-menu {
+  background-color: black;
+  width: 80%;
+  height: 100%;
+  position: fixed;
+  z-index: 10;
+  display: none;
+}
+
+.mgi__left-hamburger-menu-area {
+  position: fixed;
+  width: 20%;
+  right: 0;
+  height: 100%;
+  z-index: 10;
+  display: none;
+}
+
+.mgi__left-hamburger-menu__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mgi__left-hamburger-menu__content__title {
+  color: white;
+  font-weight: 600;
+}
+
+.mgi__left-hamburger-menu__search-box {
+  width: 80%;
+  height: 2em;
+  border-radius: 1.5em;
+  border-style: none;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.mgi__left-hamburger-menu__options {
+  margin-top: 1em;
+  width: 90%;
+}
+
+.mgi__left-hamburger-menu__options__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* margin-top: 0.2em; */
+}
+
+.mgi__left-hamburger-menu__options__text {
+  color: white;
+}
+
+.mgi__left-hamburger-menu__options__icon {
+  height: 1em;
+  width: 1em;
+  margin-left: 1em;
+}
+
+.mgi__left-hamburger-menu__options__item__left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.mgi__left-hamburger-menu__options__item__right {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+}
+/******************* End Left hamburger menu *******************/
+
 /******************* Right hamburger menu *******************/
 .mgi__right-hamburger-menu__area {
   position: fixed;
   width: 100%;
   height: 100%;
   z-index: 10;
+  display: none;
   right: var(--right-hamburger-menu-width);
 }
 
@@ -63,7 +146,7 @@ h1 {
   background-color: black;
   height: 100%;
   position: fixed;
-  z-index: 10;
+  z-index: 11;
   overflow-y: scroll;
   display: none;
 }
@@ -139,26 +222,60 @@ h1 {
 }
 /******************* End right hamburger menu *******************/
 
+/******************* Header options *******************/
+.mgi__header-options {
+  display: flex;
+  margin-right: 1em;
+}
+
+.mgi__header-options__option {
+  size: 0.8em;
+  margin: 0.8em;
+  font-weight: 700;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+.mgi__header-options__option--white {
+  color: white;
+}
+
+.mgi__header-options__option--black {
+  color: black;
+}
+
+.mgi__hamburger-menu-button {
+  display: none;
+}
+/******************* End Header options *******************/
+
 /******************* Header *******************/
 .mgi__header {
-  background-color: black;
-  position: relative;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
   display: var(--header-menu-display);
   width: 100%;
 }
 
 .mgi__sticky-header {
+  z-index: 10;
   top: 0;
   background-color: white;
   position: fixed;
   width: 100%;
   display: var(--sticky-header-menu-display);
   box-shadow: 0px 10px 30px -25px rgba(0, 0, 0, 1);
+  left: var(--sticky-header-left-margin);
+  right: var(--sticky-header-right-margin);
 }
 
-.mgi__sticky-header-text {
-  font-size: 1.5em;
-  font-weight: 600;
+.mgi__header-text--black {
+  color: black;
+}
+
+.mgi__header-text--white {
+  color: white;
 }
 
 .mgi__header__content {
@@ -168,17 +285,42 @@ h1 {
   justify-content: space-between;
 }
 
+.mgi__header__notification-indicator {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  margin: 10px;
+}
+
+.mgi__header__notification-indicator__number-of-notificaitons {
+  position: absolute;
+  height: 0.7em;
+  width: 0.7em;
+  background-color: #3498db;
+  right: 0;
+  top: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mgi__header__notification-indicator__number-of-notificaitons__text {
+  font-size: 0.5em;
+  color: white;
+  font-weight: 500;
+}
+
 .mgi__header-icon {
   height: 20px;
-  margin: 10px;
   object-fit: cover;
   cursor: pointer;
+  /* margin-left: 1em; */
 }
 
 .mgi__header-text {
   font-size: 1.5em;
   font-weight: 600;
-  color: white;
 }
 
 .mgi__header__content__left-content {
@@ -210,6 +352,7 @@ h1 {
 }
 
 .mgi__promo__content {
+  margin-top: 4em;
   display: flex;
   align-content: center;
 }
@@ -349,6 +492,11 @@ h1 {
 /******************* End introduction *******************/
 
 /******************* Services *******************/
+.mgi__general-page-content--services {
+  background-color: #f7f7f7;
+  padding: 4em;
+}
+
 .mgi__services {
   background-color: #f7f7f7;
   padding: 4em;
@@ -547,6 +695,104 @@ h1 {
 }
 /******************* End client feedback *******************/
 
+/******************* Latest news *******************/
+.mgi__general-page-content--latest-news {
+  padding-top: 4em;
+  background-color: #f7f7f7;
+}
+
+.mgi__latest-news__cards {
+  margin-top: 2em;
+  grid-template-columns: auto auto auto auto auto;
+  margin-left: var(--latest-news-page-cursor);
+  grid-gap: 20px;
+  display: grid;
+  transition: margin 500ms;
+  transition-timing-function: ease-out;
+}
+
+.mgi__latest-news__cards__card {
+  width: calc((80vw - 40px) / 3);
+  display: flex;
+  flex-direction: column;
+}
+
+.mgi__latest-news__cards__card__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mgi__latest-news__cards__card__content__title {
+  font-size: 1.2em;
+}
+
+.mgi__latest-news__cards__card__content__date-created {
+  margin-top: -1em;
+  font-weight: 200;
+  font-size: 0.8em;
+}
+/******************* End Latest news *******************/
+
+/******************* Footer *******************/
+.footer {
+  padding: 2em;
+  background-color: black;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-gap: 0.5em;
+}
+
+.footer__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__column__title {
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.footer__column__category {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.footer__column__office-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: -1em;
+}
+
+.footer__column__office-info__left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+} 
+
+.footer__column__office-info__left__icon {
+  margin-right: 0.5em;
+  height: 1em;
+}
+
+.footer__column__office-info__right {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.footer__column__text {
+  color: white;
+  font-weight: 200;
+}
+
+.footer__column__text--top-margin {
+  margin-top: -0.5em;
+}
+/******************* End Footer *******************/
+
 @media only screen and (max-width: 977px) {
   .mgi__introduction {
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -610,9 +856,14 @@ h1 {
 @media only screen and (max-width: 740px) {
   :root {
     --number-of-feedback-cards-per-page: 1;
+    --number-of-latest-news-cards-per-page: 1;
   }
 
   .mgi__client-feedback-cards__client-feedback-card {
+    width: 80vw;
+  }
+
+  .mgi__latest-news__cards__card {
     width: 80vw;
   }
 }
@@ -620,13 +871,38 @@ h1 {
 @media only screen and (max-width: 970px) and (min-width: 741px) {
   :root {
     --number-of-feedback-cards-per-page: 2;
+    --number-of-latest-news-cards-per-page: 2;
   }
 
   .mgi__client-feedback-cards__client-feedback-card {
     width: calc((80vw - 20px) / 2);
   }
+
+  .mgi__latest-news__cards__card {
+    width: calc((80vw - 20px) / 2);
+  }
 }
 
+@media only screen and (max-width: 940px) {
+  .mgi__header-options {
+    display: none;
+  }
+
+  .mgi__hamburger-menu-button {
+    display: block;
+  }
+
+  .mgi__header {
+    background-color: black;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  :root {
+    --right-hamburger-menu-margin: -100%;
+    --right-hamburger-menu-width: 100%;
+  }
+}
 /******************* Animation code *******************/
 @keyframes go-down {
   from {
@@ -684,6 +960,17 @@ h1 {
   }
 }
 
+@keyframes slide-out-right-to-left-sticky-header {
+  from {
+    right: 0px;
+    left: 0px;
+  }
+  to {
+    right: var(--right-hamburger-menu-width);
+    left: var(--right-hamburger-menu-margin);
+  }
+}
+
 @keyframes slide-in-left-to-right-page-content {
   from {
     margin-right: var(--right-hamburger-menu-width);
@@ -692,6 +979,17 @@ h1 {
   to {
     margin-right: 0px;
     margin-left: 0px;
+  }
+}
+
+@keyframes slide-in-left-to-right-sticky-header {
+  from {
+    right: var(--right-hamburger-menu-width);
+    left: var(--right-hamburger-menu-margin);
+  }
+  to {
+    right: 0px;
+    left: 0px;
   }
 }
 
@@ -710,6 +1008,24 @@ h1 {
   }
   to {
     margin-right: var(--right-hamburger-menu-margin);
+  }
+}
+
+@keyframes slide-in-left-to-right-left-hamburger-menu {
+  from {
+    margin-left: -80%;
+  }
+  to {
+    margin-left: 0;
+  }
+}
+
+@keyframes slide-out-right-to-left-left-hamburger-menu {
+  from {
+    margin-left: 0;
+  }
+  to {
+    margin-left: -80%;
   }
 }
 
@@ -755,6 +1071,18 @@ h1 {
   animation-fill-mode: forwards;
 }
 
+.animate-slide-out-right-to-left-sticky-header {
+  animation-name: slide-out-right-to-left-sticky-header;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.animate-slide-in-left-to-right-sticky-header {
+  animation-name: slide-in-left-to-right-sticky-header;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
 .animate-slide-in-right-to-left-right-hamburger-menu {
   animation-name: slide-in-right-to-left-right-hamburger-menu;
   animation-duration: 0.5s;
@@ -763,6 +1091,18 @@ h1 {
 
 .animate-slide-out-left-to-right-right-hamburger-menu {
   animation-name: slide-out-left-to-right-right-hamburger-menu;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.animate-slide-in-left-to-right-left-hamburger-menu {
+  animation-name: slide-in-left-to-right-left-hamburger-menu;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.animate-slide-out-right-to-left-left-hamburger-menu {
+  animation-name: slide-out-right-to-left-left-hamburger-menu;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
