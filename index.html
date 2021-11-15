@@ -274,11 +274,14 @@
       <div class="mgi__header__content">
         <div class="mgi__header__content__left-content">
           <img
-            class="mgi__hamburger-menu-button mgi__header-icon"
+            class="mgi__hamburger-menu-button mgi__header-icon mgi__header-icon--with-margin"
             src="icons/hamburgerMenuIcon-dark.png"
+            onclick="openLeftHamburgerMenu()"
           />
 
-          <p class="mgi__header-text mgi__header-text--black">EPOINT</p>
+          <p class="mgi__header-text mgi__header-text--black">
+            EPOINT
+          </p>
         </div>
 
         <div class="mgi__header__content__right-content">
@@ -359,7 +362,7 @@
           <div class="mgi__header__content">
             <div class="mgi__header__content__left-content">
               <img
-                class="mgi__hamburger-menu-button mgi__header-icon"
+                class="mgi__hamburger-menu-button mgi__header-icon mgi__header-icon--with-margin"
                 src="icons/hamburgerMenuIcon.png"
                 onclick="openLeftHamburgerMenu()"
               />
@@ -1026,64 +1029,262 @@
       </div>
 
       <!-- Footer -->
-      <div class="footer">
-        <div class="footer__column">
-          <p class="footer__column__title">EPOINT</p>
-          <p class="footer__column__text footer__column__text--top-margin">
+      <div class="mgi__footer">
+        <div class="mgi__footer__column">
+          <p class="mgi__footer__column__title">EPOINT</p>
+          <p class="mgi__footer__column__text footer__column__text--top-margin">
             We believe in Simple, Creative & Flexible Design Standards.
             Unlimited features, elements and fast and friendly support gives
             ultimate website to boom your business.
           </p>
         </div>
 
-        <div class="footer__column">
-          <p class="footer__column__category">OUR OFFICE</p>
+        <div class="mgi__footer__column">
+          <p class="mgi__footer__column__category">OUR OFFICE</p>
 
-          <div class="footer__column__office-info">
-            <div class="footer__column__office-info__left">
-              <img
-                class="footer__column__office-info__left__icon"
-                src="icons/right-icon-white.png"
-              />
+          <div class="mgi__footer__column__office-info">
+            <div class="mgi__footer__column__office-info__left">
+              <img class="mgi__footer__icon" src="icons/locationIcon.png" />
             </div>
-            <div class="footer__column__office-info__right">
-              <p class="footer__column__text">
+            <div class="mgi__footer__column__office-info__right">
+              <p class="mgi__footer__column__text">
                 Zozotheme.com No. 12, Ribbon Building, Walse street, Australia -
                 30001.
               </p>
             </div>
           </div>
 
-          <div class="footer__column__office-info">
-            <div class="footer__column__office-info__left">
-              <img
-                class="footer__column__office-info__left__icon"
-                src="icons/right-icon-white.png"
-              />
+          <div class="mgi__footer__column__office-info">
+            <div class="mgi__footer__column__office-info__left">
+              <img class="mgi__footer__icon" src="icons/phoneIcon.png" />
             </div>
-            <div class="footer__column__office-info__right">
-              <p class="footer__column__text">
+            <div class="mgi__footer__column__office-info__right">
+              <p class="mgi__footer__column__text">
                 +0 (123) 456-78-90
               </p>
             </div>
           </div>
 
-          <div class="footer__column__office-info">
-            <div class="footer__column__office-info__left">
-              <img
-                class="footer__column__office-info__left__icon"
-                src="icons/right-icon-white.png"
-              />
+          <div class="mgi__footer__column__office-info">
+            <div class="mgi__footer__column__office-info__left">
+              <img class="mgi__footer__icon" src="icons/emailSupportIcon.jpg" />
             </div>
-            <div class="footer__column__office-info__right">
-              <p class="footer__column__text">
+            <div class="mgi__footer__column__office-info__right">
+              <p
+                class="mgi__footer__column__text mgi__footer__column__text--blue"
+              >
                 support@zozothemes.com
               </p>
             </div>
           </div>
         </div>
+
+        <div class="mgi__footer__column">
+          <p class="mgi__footer__column__category">QUICK LINKS</p>
+
+          <div class="mgi__footer__column__quick-links">
+            <div class="mgi__footer__column__quick-links__column">
+              <div class="mgi__footer__column__quick-links__column__item">
+                <img
+                  class="mgi__footer__icon"
+                  src="icons/right-icon-white.png"
+                />
+                <p
+                  class="mgi__footer__column__text mgi__footer__column__text-hoverable"
+                >
+                  Home
+                </p>
+              </div>
+
+              <div class="mgi__footer__column__quick-links__column__item">
+                <img
+                  class="mgi__footer__icon"
+                  src="icons/right-icon-white.png"
+                />
+                <p
+                  class="mgi__footer__column__text mgi__footer__column__text-hoverable"
+                >
+                  Services
+                </p>
+              </div>
+
+              <div class="mgi__footer__column__quick-links__column__item">
+                <img
+                  class="mgi__footer__icon"
+                  src="icons/right-icon-white.png"
+                />
+                <p
+                  class="mgi__footer__column__text mgi__footer__column__text-hoverable"
+                >
+                  Our Portfolio
+                </p>
+              </div>
+
+              <div class="mgi__footer__column__quick-links__column__item">
+                <img
+                  class="mgi__footer__icon"
+                  src="icons/right-icon-white.png"
+                />
+                <p
+                  class="mgi__footer__column__text mgi__footer__column__text-hoverable"
+                >
+                  Our Experts
+                </p>
+              </div>
+
+              <div class="mgi__footer__column__quick-links__column__item">
+                <img
+                  class="mgi__footer__icon"
+                  src="icons/right-icon-white.png"
+                />
+                <p
+                  class="mgi__footer__column__text mgi__footer__column__text-hoverable"
+                >
+                  Blog
+                </p>
+              </div>
+            </div>
+
+            <div class="mgi__footer__column__quick-links__column">
+              <div class="mgi__footer__column__quick-links__column__item">
+                <img
+                  class="mgi__footer__icon"
+                  src="icons/right-icon-white.png"
+                />
+                <p
+                  class="mgi__footer__column__text mgi__footer__column__text-hoverable"
+                >
+                  About us
+                </p>
+              </div>
+
+              <div class="mgi__footer__column__quick-links__column__item">
+                <img
+                  class="mgi__footer__icon"
+                  src="icons/right-icon-white.png"
+                />
+                <p
+                  class="mgi__footer__column__text mgi__footer__column__text-hoverable"
+                >
+                  Features
+                </p>
+              </div>
+
+              <div class="mgi__footer__column__quick-links__column__item">
+                <img
+                  class="mgi__footer__icon"
+                  src="icons/right-icon-white.png"
+                />
+                <p
+                  class="mgi__footer__column__text mgi__footer__column__text-hoverable"
+                >
+                  Client Reviews
+                </p>
+              </div>
+
+              <div class="mgi__footer__column__quick-links__column__item">
+                <img
+                  class="mgi__footer__icon"
+                  src="icons/right-icon-white.png"
+                />
+                <p
+                  class="mgi__footer__column__text mgi__footer__column__text-hoverable"
+                >
+                  Packages
+                </p>
+              </div>
+
+              <div class="mgi__footer__column__quick-links__column__item">
+                <img
+                  class="mgi__footer__icon"
+                  src="icons/right-icon-white.png"
+                />
+                <p
+                  class="mgi__footer__column__text mgi__footer__column__text-hoverable"
+                >
+                  Support
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mgi__footer__column">
+          <p class="mgi__footer__column__category">EMAIL NEWSLETTER</p>
+          <p class="mgi__footer__column__text footer__column__text--top-margin">
+            Subscribe to Our Newsletter to get Important News, Amazing Offers &
+            Inside Scoops:
+          </p>
+
+          <div class="mgi__footer__column__email__newsletter__send-email-area">
+            <input
+              class="mgi__footer__column__email__newsletter__send-email-area__text-area"
+              placeholder="Enter your email"
+            />
+            <div
+              class="mgi__footer__column__email__newsletter__send-email-area__send-button"
+            >
+              <img
+                class="mgi__footer__column__email__newsletter__send-email-area__send-button__icon"
+                src="icons/right-curve-icon.png"
+              />
+            </div>
+          </div>
+        </div>
       </div>
       <!-- End Footer -->
+
+      <div class="mgi__footer-separator"></div>
+
+      <!-- Footer credit -->
+      <div class="mgi__footer-credit">
+        <div class="mgi__footer-credit__left">
+          <p class="mgi__footer-credit__text">
+            &copy ePoint 2016. All Rights Reserved
+          </p>
+
+          <div class="mgi__footer-credit__left__terms-and-conditions">
+            <p class="mgi__footer-credit__text">Terms &amp condition</p>
+            <p class="mgi__footer-credit__text">Cookie Policy</p>
+          </div>
+        </div>
+
+        <div class="mgi__footer-credit__right">
+          <img
+            class="mgi__footer-credit__right__logo"
+            src="logo/facebookLogo.png"
+          />
+          <img
+            class="mgi__footer-credit__right__logo"
+            src="logo/instaLogo.png"
+          />
+          <img
+            class="mgi__footer-credit__right__logo"
+            src="logo/twitterLogo.png"
+          />
+          <img
+            class="mgi__footer-credit__right__logo"
+            src="logo/youtubeLogo.png"
+          />
+          <img
+            class="mgi__footer-credit__right__logo"
+            src="logo/linkedInLogo.png"
+          />
+          <img
+            class="mgi__footer-credit__right__logo"
+            src="logo/githubLogo.png"
+          />
+          <img
+            class="mgi__footer-credit__right__logo"
+            src="logo/reddit-logo.png"
+          />
+          <img
+            class="mgi__footer-credit__right__logo"
+            src="logo/mediumLogo.png"
+          />
+        </div>
+      </div>
+      <!-- End Footer Credit -->
     </div>
   </body>
 </html>
