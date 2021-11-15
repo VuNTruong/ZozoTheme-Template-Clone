@@ -64,6 +64,9 @@ var r = document.querySelector(":root");
 //******************** Right hamburger menu *********************/
 // The function to open right hamburger menu
 function openRightHamburgerMenu() {
+  // Lock body scroll
+  lockBodyScroll();
+
   // Get the page content, hamburger menu, hamburger menu area element
   var pageContent = document.getElementById("page-content");
   var hamburgerMenu = document.getElementById("right-hamburger-menu");
@@ -122,6 +125,9 @@ function openRightHamburgerMenu() {
 
 // The function to close right hamburger menu
 function closeRightHamburgerMenu() {
+  // Unlock body scroll
+  unlockBodyScroll();
+
   // Get the page content, hamburger menu, hamburger menu area element
   var pageContent = document.getElementById("page-content");
   var hamburgerMenu = document.getElementById("right-hamburger-menu");
@@ -176,11 +182,14 @@ function closeRightHamburgerMenu() {
 
   isShowingRightHamburgerMenu = false;
 }
-//******************** Right hamburger menu *********************/
+//******************** End Right hamburger menu *********************/
 
 //******************** Left hamburger menu *********************/
 // The function to open left hamburger menu
 function openLeftHamburgerMenu() {
+  // Lock body scroll
+  lockBodyScroll();
+
   // Get the hamburger menu, hamburger menu area element
   var hamburgerMenu = document.getElementById("left-hamburger-menu");
   var hamburgerMenuArea = document.getElementById("left-hamburger-menu-area");
@@ -207,6 +216,9 @@ function openLeftHamburgerMenu() {
 
 // The function to close left hamburger menu
 function closeLeftHamburgerMenu() {
+  // Unlock body scroll
+  unlockBodyScroll();
+
   // Get the hamburger menu, hamburger menu area
   var hamburgerMenu = document.getElementById("left-hamburger-menu");
   var hamburgerMenuArea = document.getElementById("left-hamburger-menu-area");
@@ -230,7 +242,7 @@ function closeLeftHamburgerMenu() {
     }
   });
 }
-//******************** Left hamburger menu *********************/
+//******************** End Left hamburger menu *********************/
 
 //******************** Promo pages *********************/
 // The function to bring user to previous page in promo pages
@@ -313,7 +325,7 @@ function mouseOutPromoAreaHandler() {
   // Show the promo icon
   r.style.setProperty("--promo-icon-display", "none");
 }
-//******************** Promo pages *********************/
+//******************** End Promo pages *********************/
 
 //******************** Latest project pages *********************/
 // The function to bring user to previous page in latest project pages
@@ -353,7 +365,7 @@ function gotoSpecifiedLatestProjectPage(pageNumber) {
     }px`
   );
 }
-//******************** Latest project pages *********************/
+//******************** End Latest project pages *********************/
 
 //******************** Client feedback pages *********************/
 // The function to bring user to previous page in client feedback pages
@@ -394,7 +406,7 @@ function gotoSpecifiedClientFeedbackPage(pageNumber) {
     }px`
   );
 }
-//******************** Client feedback pages *********************/
+//******************** End Client feedback pages *********************/
 
 //******************** Client logo pages *********************/
 // The function to go to previous page in client logo page
@@ -432,7 +444,7 @@ function gotoSpecifiedClientLogoPage(pageNumber) {
     `-${(clientLogoCardCurrentWidth + 10) * (currentPageClientLogoPages - 1)}px`
   );
 }
-//******************** Client logo pages *********************/
+//******************** End Client logo pages *********************/
 
 //******************** Latest news pages *********************/
 // The function to go to previous page in latest news page
@@ -471,6 +483,17 @@ function gotoSpecifiedLatestNewsPage(pageNumber) {
   );
 }
 //******************** End Latest news pages *********************/
+
+//******************** Handlers *********************/
+// The function to lock body scroll (when hamburger menus are shown)
+function lockBodyScroll() {
+  document.body.style.overflow = "hidden";
+}
+
+// The function to unlock body scroll
+function unlockBodyScroll() {
+  document.body.style.overflow = "scroll";
+}
 
 // The function to handle event of when body is scrolled
 function scrollHandler() {
@@ -587,6 +610,7 @@ function adjustScreenSize() {
   gotoSpecifiedLatestNewsPage(1);
   gotoSpecifiedClientLogoPage(1);
 }
+//******************** End Handlers *********************/
 
 // Add a listener for when the window resizes
 window.addEventListener("resize", adjustScreenSize);
