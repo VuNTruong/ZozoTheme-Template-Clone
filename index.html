@@ -490,22 +490,39 @@
         </div>
 
         <div class="mgi__promo__paging-controllers">
-          <div class="mgi__promo__paging-button">
-            <button
+          <div class="mgi__promo__paging-buttons">
+            <div
               id="paging-page-1-button"
-              class="mgi__promo__paging-buttons__paging_button"
-              onclick="gotoPagePromoPage(1)"
-            ></button>
-            <button
+              class="mgi__promo__paging-buttons__paging-button__area"
+            >
+              <button
+                id="paging-page-1-button-inner"
+                class="mgi__promo__paging-buttons__paging-button__area__button"
+                onclick="gotoPagePromoPage(1)"
+              ></button>
+            </div>
+
+            <div
               id="paging-page-2-button"
-              class="mgi__promo__paging-buttons__paging_button"
-              onclick="gotoPagePromoPage(2)"
-            ></button>
-            <button
+              class="mgi__promo__paging-buttons__paging-button__area"
+            >
+              <button
+                id="paging-page-2-button-inner"
+                class="mgi__promo__paging-buttons__paging-button__area__button"
+                onclick="gotoPagePromoPage(2)"
+              ></button>
+            </div>
+
+            <div
               id="paging-page-3-button"
-              class="mgi__promo__paging-buttons__paging_button"
-              onclick="gotoPagePromoPage(3)"
-            ></button>
+              class="mgi__promo__paging-buttons__paging-button__area"
+            >
+              <button
+                id="paging-page-3-button-inner"
+                class="mgi__promo__paging-buttons__paging-button__area__button"
+                onclick="gotoPagePromoPage(3)"
+              ></button>
+            </div>
           </div>
         </div>
       </div>
@@ -922,6 +939,57 @@
           </div>
         </div>
 
+        <div class="mgi__general-page-content">
+          <div class="mgi__general-page-content__slidable-content">
+            <div
+              class="mgi__general-page-content__slidable-content__slidable-content-holder"
+            >
+              <div class="mgi__client-logo-cards">
+                <img
+                  class="mgi__client-logo-cards__client-logo-card"
+                  src="clientLogos/1.png"
+                />
+                <img
+                  class="mgi__client-logo-cards__client-logo-card"
+                  src="clientLogos/2.png"
+                />
+                <img
+                  class="mgi__client-logo-cards__client-logo-card"
+                  src="clientLogos/3.png"
+                />
+                <img
+                  class="mgi__client-logo-cards__client-logo-card"
+                  src="clientLogos/4.png"
+                />
+                <img
+                  class="mgi__client-logo-cards__client-logo-card"
+                  src="clientLogos/5.png"
+                />
+                <img
+                  class="mgi__client-logo-cards__client-logo-card"
+                  src="clientLogos/6.png"
+                />
+                <img
+                  class="mgi__client-logo-cards__client-logo-card"
+                  src="clientLogos/7.png"
+                />
+                <img
+                  class="mgi__client-logo-cards__client-logo-card"
+                  src="clientLogos/8.png"
+                />
+                <img
+                  class="mgi__client-logo-cards__client-logo-card"
+                  src="clientLogos/9.png"
+                />
+                <img
+                  class="mgi__client-logo-cards__client-logo-card"
+                  src="clientLogos/10.png"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div
           class="mgi__general-page-content mgi__general-page-content--latest-news"
         >
@@ -1240,12 +1308,20 @@
       <div class="mgi__footer-credit">
         <div class="mgi__footer-credit__left">
           <p class="mgi__footer-credit__text">
-            &copy ePoint 2016. All Rights Reserved
+            &copy 2016 ePoint. All Rights Reserved.
           </p>
 
           <div class="mgi__footer-credit__left__terms-and-conditions">
-            <p class="mgi__footer-credit__text">Terms &amp condition</p>
-            <p class="mgi__footer-credit__text">Cookie Policy</p>
+            <p
+              class="mgi__footer-credit__text mgi__footer-credit__text--clickable"
+            >
+              Terms &amp Conditions
+            </p>
+            <p
+              class="mgi__footer-credit__text mgi__footer-credit__text--clickable"
+            >
+              Cookie Policy
+            </p>
           </div>
         </div>
 

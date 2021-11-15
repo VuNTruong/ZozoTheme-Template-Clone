@@ -6,12 +6,14 @@
   --latest-project-page-cursor: 0px;
   --client-feedback-page-cursor: 0px;
   --latest-news-page-cursor: 0px;
+  --client-logo-page-cursor: 0px;
   --header-menu-display: block;
   --sticky-header-menu-display: none;
   --promo-icon-display: none;
   --number-of-latest-project-cards-per-page: 4;
   --number-of-feedback-cards-per-page: 3;
   --number-of-latest-news-cards-per-page: 3;
+  --number-of-client-logos-cards-per-page: 7;
   --right-hamburger-menu-margin: -370px;
   --right-hamburger-menu-width: 370px;
   --page-content-left-margin: 0px;
@@ -413,19 +415,32 @@ h4 {
 .mgi__promo__paging-buttons {
   display: grid;
   grid-template-columns: auto auto auto;
+  grid-gap: 0.5em;
 }
 
-.mgi__promo__paging-buttons__paging_button {
-  background-color: darkgray;
-  width: 16px;
-  height: 16px;
+.mgi__promo__paging-buttons__paging-button__area {
+  background-color: transparent;
+  border-style: solid;
+  border-color: transparent;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mgi__promo__paging-buttons__paging-button__area__button {
+  background-color: gray;
+  width: 12px;
+  height: 12px;
   border: none;
-  margin: 5px;
   border-radius: 50%;
 }
 
-.mgi__promo__paging-buttons__paging_button :focus {
-  background-color: black;
+.mgi__promo__paging-buttons__paging_button:hover {
+  background-color: white;
+  cursor: pointer;
 }
 
 .mgi__promo-title {
@@ -670,7 +685,7 @@ h4 {
   display: grid;
   grid-template-columns: auto auto;
   width: calc((80vw - 40px) / 3);
-  background-color: white;
+  background-color: transparent;
 }
 
 .mgi__client-feedback-cards__client-feedback-card__quote-icon {
@@ -700,6 +715,21 @@ h4 {
   color: gray;
 }
 /******************* End client feedback *******************/
+
+/******************* Client logo *******************/
+.mgi__client-logo-cards {
+  margin-top: 2em;
+  margin-left: var(--client-logo-page-cursor);
+  display: flex;
+  transition: margin 500ms;
+  transition-timing-function: ease-out;
+}
+
+.mgi__client-logo-cards__client-logo-card {
+  width: calc((80vw - 60px) / 7);
+  margin: 5px;
+}
+/******************* End Client logo *******************/
 
 /******************* Latest news *******************/
 .mgi__general-page-content--latest-news {
@@ -749,7 +779,7 @@ h4 {
   padding-bottom: 2em;
   background-color: black;
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-gap: 1em;
 }
 
@@ -850,6 +880,7 @@ h4 {
   border-color: #3498db;
   border-style: solid;
   border-width: 2px;
+  cursor: pointer;
 }
 
 .mgi__footer__column__email__newsletter__send-email-area__send-button__icon {
@@ -879,7 +910,7 @@ h4 {
 /******************* Footer Separator *******************/
 .mgi__footer-separator {
   width: 100%;
-  background-color: darkgray;
+  background-color: gray;
   height: 1px;
 }
 /******************* End Footer Separator *******************/
@@ -899,6 +930,11 @@ h4 {
   font-size: 0.8em;
   font-weight: 200;
   color: white;
+}
+
+.mgi__footer-credit__text--clickable:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .mgi__footer-credit__left {
@@ -923,6 +959,7 @@ h4 {
 .mgi__footer-credit__right__logo {
   height: 1em;
   margin-right: 1em;
+  cursor: pointer;
 }
 /******************* End Footer Credit *******************/
 
@@ -998,7 +1035,7 @@ h4 {
   }
 
   .mgi__footer {
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .mgi__footer-credit {
@@ -1037,6 +1074,46 @@ h4 {
   }
 }
 
+@media only screen and (max-width: 1150px) and (min-width: 981px) {
+  :root {
+    --number-of-client-logos-cards-per-page: 5;
+  }
+
+  .mgi__client-logo-cards__client-logo-card {
+    width: calc((80vw - 40px) / 5);
+  }
+}
+
+@media only screen and (max-width: 980px) and (min-width: 771px) {
+  :root {
+    --number-of-client-logos-cards-per-page: 4;
+  }
+
+  .mgi__client-logo-cards__client-logo-card {
+    width: calc((80vw - 30px) / 4);
+  }
+}
+
+@media only screen and (max-width: 770px) and (min-width: 531px) {
+  :root {
+    --number-of-client-logos-cards-per-page: 3;
+  }
+
+  .mgi__client-logo-cards__client-logo-card {
+    width: calc((80vw - 20px) / 3);
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  :root {
+    --number-of-client-logos-cards-per-page: 2;
+  }
+
+  .mgi__client-logo-cards__client-logo-card {
+    width: calc((80vw - 10px) / 2);
+  }
+}
+
 @media only screen and (max-width: 940px) {
   .mgi__header-options {
     display: none;
@@ -1067,7 +1144,7 @@ h4 {
 
 @media only screen and (max-width: 770px) {
   .mgi__footer {
-    grid-template-columns: auto;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
 /******************* Animation code *******************/

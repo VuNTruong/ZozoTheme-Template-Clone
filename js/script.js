@@ -10,6 +10,9 @@ var currentPageClientFeedbackPages = 1;
 // This is to keep track of current page in latest news pages
 var currentPageLatestNewsPages = 1;
 
+// This is to keep track of current page in client logo pages
+var currentPageClientLogoPages = 1;
+
 // This is to keep track of current width of the promo page
 var promoPageCurrentWidth = 0;
 
@@ -21,6 +24,9 @@ var clientFeedbackCardCurrentWidth = 0;
 
 // This is to keep track of current width of the latest news card
 var latestNewsCardCurrentWidth = 0;
+
+// This is to keep track of current width of the client logo card
+var clientLogoCardCurrentWidth = 0;
 
 // This is to keep track of number of pages in latest project pages
 var numberOfPagesLatestProjectPages = 0;
@@ -34,11 +40,17 @@ var numberOfPagesFeedbackPages = 0;
 // This is to keep track of number of cards per page in feedback pages
 var numberOfCardsPerPageFeedbackPages = 0;
 
-// This is to keep track of nunber of pages in latest news page
+// This is to keep track of number of pages in latest news page
 var numberOfPagesLatestNewsPages = 0;
 
 // This is to keep track of number of cards per page in latest news page
 var numberOfCardsPerPageLatestNewsPages = 0;
+
+// This is to keep track of number of pages in client logo pages
+var numberOfPagesClientLogoPages = 0;
+
+// This is to keep track of number of cards per page in client logo pages
+var numberOfCardsPerPageClientLogoPages = 0;
 
 // This is to keep track of if the sticky header menu is being shown or not
 var isShowingStickyHeader = false;
@@ -67,7 +79,7 @@ function openRightHamburgerMenu() {
     "animate-slide-in-right-to-left-right-hamburger-menu"
   );
   pageContent.classList.add("animate-slide-out-right-to-left-page-content");
-  // Only sticky header menu if is being shown
+  // Only animate the sticky header if it is being shown
   if (isShowingStickyHeader) {
     stickyHeader.classList.add("animate-slide-out-right-to-left-sticky-header");
   }
@@ -255,6 +267,39 @@ function gotoPagePromoPage(pageNumber) {
     "--promo-page-cursor",
     `${promoPageCurrentWidth * (2 - currentPagePromoPages) * 2}px`
   );
+
+  // Reset paging indicator
+  document.getElementById("paging-page-1-button").style.borderColor =
+    "transparent";
+  document.getElementById("paging-page-2-button").style.borderColor =
+    "transparent";
+  document.getElementById("paging-page-3-button").style.borderColor =
+    "transparent";
+
+  document.getElementById("paging-page-1-button-inner").style.backgroundColor =
+    "gray";
+  document.getElementById("paging-page-2-button-inner").style.backgroundColor =
+    "gray";
+  document.getElementById("paging-page-3-button-inner").style.backgroundColor =
+    "gray";
+
+  // Set paging indicator
+  if (pageNumber == 1) {
+    document.getElementById("paging-page-1-button").style.borderColor = "white";
+    document.getElementById(
+      "paging-page-1-button-inner"
+    ).style.backgroundColor = "white";
+  } else if (pageNumber == 2) {
+    document.getElementById("paging-page-2-button").style.borderColor = "white";
+    document.getElementById(
+      "paging-page-2-button-inner"
+    ).style.backgroundColor = "white";
+  } else if (pageNumber == 3) {
+    document.getElementById("paging-page-3-button").style.borderColor = "white";
+    document.getElementById(
+      "paging-page-3-button-inner"
+    ).style.backgroundColor = "white";
+  }
 }
 
 // The function to handle event of when user brings mouse inside the promo area
@@ -351,6 +396,44 @@ function gotoSpecifiedClientFeedbackPage(pageNumber) {
 }
 //******************** Client feedback pages *********************/
 
+//******************** Client logo pages *********************/
+// The function to go to previous page in client logo page
+function goBackPageClientLogoPage() {
+  // Check and see if user is at the first page or not
+  if (currentPageClientLogoPages == 1) {
+    // Call the function and take user to the last page
+    gotoSpecifiedClientLogoPage(numberOfPagesClientLogoPages);
+  } else {
+    // Call the function and take user to the previous page
+    gotoSpecifiedClientLogoPage(currentPageClientLogoPages - 1);
+  }
+}
+
+// The function to go to next page in client logo page
+function goForwardPageClientLogoPages() {
+  // Check and see if user is at the last page or not
+  if (currentPageClientLogoPages == numberOfPagesClientLogoPages) {
+    // Call the function and take user to the first page
+    gotoSpecifiedClientLogoPage(1);
+  } else {
+    // Call the function and take user to the next page
+    gotoSpecifiedClientLogoPage(currentPageClientLogoPages + 1);
+  }
+}
+
+// The function to take user to a specified client logo page
+function gotoSpecifiedClientLogoPage(pageNumber) {
+  // Update current page
+  currentPageClientLogoPages = pageNumber;
+
+  // Update cursor
+  r.style.setProperty(
+    "--client-logo-page-cursor",
+    `-${(clientLogoCardCurrentWidth + 10) * (currentPageClientLogoPages - 1)}px`
+  );
+}
+//******************** Client logo pages *********************/
+
 //******************** Latest news pages *********************/
 // The function to go to previous page in latest news page
 function goBackPageLatestNewsPage() {
@@ -434,6 +517,11 @@ function adjustScreenSize() {
     "mgi__client-feedback-cards__client-feedback-card"
   )[0];
 
+  // Get the client logo card element
+  var clientLogoCardElement = document.getElementsByClassName(
+    "mgi__client-logo-cards__client-logo-card"
+  )[0];
+
   // Get the latest news card element
   var latestNewsCardElement = document.getElementsByClassName(
     "mgi__latest-news__cards__card"
@@ -447,6 +535,9 @@ function adjustScreenSize() {
 
   // Update current width of the client feedback card
   clientFeedbackCardCurrentWidth = clientFeedbackCardElement.clientWidth;
+
+  // Update current width of the client logo card
+  clientLogoCardCurrentWidth = clientLogoCardElement.clientWidth;
 
   // Update current width of the latest news card
   latestNewsCardCurrentWidth = latestNewsCardElement.clientWidth;
@@ -471,6 +562,14 @@ function adjustScreenSize() {
   // Update number of feedback pages
   numberOfPagesFeedbackPages = 5 - numberOfCardsPerPageFeedbackPages + 1;
 
+  // Update number of client logos per page
+  numberOfCardsPerPageClientLogoPages = getComputedStyle(
+    document.documentElement
+  ).getPropertyValue("--number-of-client-logos-cards-per-page");
+
+  // Update number of client logo pages
+  numberOfPagesClientLogoPages = 10 - numberOfCardsPerPageClientLogoPages + 1;
+
   // Update number of latest news cards per page
   numberOfCardsPerPageLatestNewsPages = getComputedStyle(
     document.documentElement
@@ -486,6 +585,7 @@ function adjustScreenSize() {
   gotoSpecifiedClientFeedbackPage(1);
   gotoSpecifiedLatestProjectPage(1);
   gotoSpecifiedLatestNewsPage(1);
+  gotoSpecifiedClientLogoPage(1);
 }
 
 // Add a listener for when the window resizes
@@ -502,5 +602,6 @@ window.onload = () => {
   // Make sliders run automatically
   setInterval(goForwardPageLatestProjectPage, 2000);
   setInterval(goForwardPageClientFeedbackPages, 2000);
+  setInterval(goForwardPageClientLogoPages, 2000);
   setInterval(goForwardPageLatestNewsPages, 2000);
 };
