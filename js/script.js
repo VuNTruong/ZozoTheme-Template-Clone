@@ -64,9 +64,6 @@ var r = document.querySelector(":root");
 //******************** Right hamburger menu *********************/
 // The function to open right hamburger menu
 function openRightHamburgerMenu() {
-  // Lock body scroll
-  lockBodyScroll();
-
   // Get the page content, hamburger menu, hamburger menu area element
   var pageContent = document.getElementById("page-content");
   var hamburgerMenu = document.getElementById("right-hamburger-menu");
@@ -125,9 +122,6 @@ function openRightHamburgerMenu() {
 
 // The function to close right hamburger menu
 function closeRightHamburgerMenu() {
-  // Unlock body scroll
-  unlockBodyScroll();
-
   // Get the page content, hamburger menu, hamburger menu area element
   var pageContent = document.getElementById("page-content");
   var hamburgerMenu = document.getElementById("right-hamburger-menu");
@@ -187,9 +181,6 @@ function closeRightHamburgerMenu() {
 //******************** Left hamburger menu *********************/
 // The function to open left hamburger menu
 function openLeftHamburgerMenu() {
-  // Lock body scroll
-  lockBodyScroll();
-
   // Get the hamburger menu, hamburger menu area element
   var hamburgerMenu = document.getElementById("left-hamburger-menu");
   var hamburgerMenuArea = document.getElementById("left-hamburger-menu-area");
@@ -216,9 +207,6 @@ function openLeftHamburgerMenu() {
 
 // The function to close left hamburger menu
 function closeLeftHamburgerMenu() {
-  // Unlock body scroll
-  unlockBodyScroll();
-
   // Get the hamburger menu, hamburger menu area
   var hamburgerMenu = document.getElementById("left-hamburger-menu");
   var hamburgerMenuArea = document.getElementById("left-hamburger-menu-area");
@@ -485,16 +473,6 @@ function gotoSpecifiedLatestNewsPage(pageNumber) {
 //******************** End Latest news pages *********************/
 
 //******************** Handlers *********************/
-// The function to lock body scroll (when hamburger menus are shown)
-function lockBodyScroll() {
-  document.body.style.overflow = "hidden";
-}
-
-// The function to unlock body scroll
-function unlockBodyScroll() {
-  document.body.style.overflow = "scroll";
-}
-
 // The function to handle event of when body is scrolled
 function scrollHandler() {
   // Reference the sticky header menu bar
@@ -564,6 +542,11 @@ function adjustScreenSize() {
 
   // Update current width of the latest news card
   latestNewsCardCurrentWidth = latestNewsCardElement.clientWidth;
+  r.style.setProperty(
+    "--latest-news-card-width",
+    `${latestNewsCardElement.clientWidth}px`
+  );
+  console.log(`Latest news card with ${latestNewsCardElement.clientWidth}`);
 
   // Update page width for promo pages container
   r.style.setProperty("--promo-page-width", `${promoPageCurrentWidth}px`);
@@ -627,5 +610,8 @@ window.onload = () => {
   setInterval(goForwardPageLatestProjectPage, 2000);
   setInterval(goForwardPageClientFeedbackPages, 2000);
   setInterval(goForwardPageClientLogoPages, 2000);
-  setInterval(goForwardPageLatestNewsPages, 2000);
+  // setInterval(goForwardPageLatestNewsPages, 2000);
 };
+
+// **************************************************
+

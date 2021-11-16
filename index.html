@@ -7,7 +7,6 @@
       href="https://fonts.googleapis.com/css?family=Source Sans Pro"
     />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <script src="js/script.js"></script>
   </head>
 
   <!-- Right hamburger menu -->
@@ -687,7 +686,7 @@
             <div
               class="mgi__general-page-content__slidable-content__slidable-content-holder"
             >
-              <div class="mgi__latest-project-cards">
+              <div class="mgi__latest-project-cards" id="">
                 <div class="mgi__latest-project-card">
                   <img
                     class="mgi__latest-project-card__image"
@@ -1005,91 +1004,21 @@
               <img
                 class="mgi__latest-project-icon"
                 src="icons/left-icon-black.ico"
-                onclick="goBackPageLatestNewsPage()"
+                onclick="gotoPreviousPageLatestNewsCardsUpdated()"
               />
             </div>
 
             <div
               class="mgi__general-page-content__slidable-content__slidable-content-holder"
             >
-              <div class="mgi__latest-news__cards">
-                <div class="mgi__latest-news__cards__card">
-                  <img src="blogImages/t1.jpg" />
-                  <div class="mgi__latest-news__cards__card__content">
-                    <p class="mgi__latest-news__cards__card__content__title">
-                      Wordpress Installation Docs
-                    </p>
-                    <p
-                      class="mgi__latest-news__cards__card__content__date-created"
-                    >
-                      Aug 23rd, 2016
-                    </p>
-                  </div>
-                </div>
-
-                <div class="mgi__latest-news__cards__card">
-                  <img src="blogImages/t4.jpg" />
-                  <div class="mgi__latest-news__cards__card__content">
-                    <p class="mgi__latest-news__cards__card__content__title">
-                      ChangLog For ZozoThemes
-                    </p>
-                    <p
-                      class="mgi__latest-news__cards__card__content__date-created"
-                    >
-                      Aug 3rd, 2016
-                    </p>
-                  </div>
-                </div>
-
-                <div class="mgi__latest-news__cards__card">
-                  <img src="blogImages/t5.jpg" />
-                  <div class="mgi__latest-news__cards__card__content">
-                    <p class="mgi__latest-news__cards__card__content__title">
-                      Latest app update
-                    </p>
-                    <p
-                      class="mgi__latest-news__cards__card__content__date-created"
-                    >
-                      Aug 3rd, 2016
-                    </p>
-                  </div>
-                </div>
-
-                <div class="mgi__latest-news__cards__card">
-                  <img src="blogImages/t3.jpeg" />
-                  <div class="mgi__latest-news__cards__card__content">
-                    <p class="mgi__latest-news__cards__card__content__title">
-                      How to Slide PSD files?
-                    </p>
-                    <p
-                      class="mgi__latest-news__cards__card__content__date-created"
-                    >
-                      Aug 3rd, 2016
-                    </p>
-                  </div>
-                </div>
-
-                <div class="mgi__latest-news__cards__card">
-                  <img src="blogImages/t2.jpg" />
-                  <div class="mgi__latest-news__cards__card__content">
-                    <p class="mgi__latest-news__cards__card__content__title">
-                      Make your website more fast
-                    </p>
-                    <p
-                      class="mgi__latest-news__cards__card__content__date-created"
-                    >
-                      Aug 12th, 2016
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <div class="mgi__latest-news__cards"></div>
             </div>
 
             <div class="mgi__general-page-content__slidable-content__side">
               <img
                 class="mgi__latest-project-icon"
                 src="icons/right-icon-black.png"
-                onclick="goForwardPageLatestNewsPages()"
+                onclick="gotoNextPageLatestNewsCardsUpdated()"
               />
             </div>
           </div>
@@ -1362,5 +1291,7 @@
       </div>
       <!-- End Footer Credit -->
     </div>
+    <script src="js/script.js"></script>
+    <script src="js/latestNewsSliders.js"></script>
   </body>
 </html>
