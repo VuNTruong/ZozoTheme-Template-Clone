@@ -1,6 +1,9 @@
 // Get the root CSS element
 var r = document.querySelector(":root");
 
+// This is to keep track of current width of the latest news card
+var latestNewsCardCurrentWidth = 0;
+
 // Array of latest news cards strings
 const latestNewsPageCardsStrings = [
   `<div class="mgi__latest-news__cards__card">
@@ -99,7 +102,10 @@ function gotoNextPageLatestNewsCardsUpdated() {
     "mgi__latest-news__cards"
   )[0];
 
-  r.style.setProperty("--latest-news-page-cursor", "-391px");
+  r.style.setProperty(
+    "--latest-news-page-cursor",
+    `-${latestNewsCardCurrentWidth}px`
+  );
 
   // Pop the first element in latest news pages cards queue array
   var poppedFirstElementFromCardsQueueArray = latestNewsPageCardsQueue[0];
@@ -143,7 +149,12 @@ function gotoPreviousPageLatestNewsCardsUpdated() {
     "mgi__latest-news__cards"
   )[0];
 
-  r.style.setProperty("--latest-news-page-cursor", "-391px");
+  r.style.setProperty(
+    "--latest-news-page-cursor",
+    `-${latestNewsCardCurrentWidth}px`
+  );
+
+  console.log(latestNewsCardCurrentWidth);
 
   // Pop the last element in latest news pages cards queue array
   var poppedLastElementFromCardsQueueArray = latestNewsPageCardsQueue.pop();
@@ -157,7 +168,7 @@ function gotoPreviousPageLatestNewsCardsUpdated() {
 
   // Animate
   latestNewsCardsElement.classList.add(
-    "animate-slide-right-to-left-news-carousel"
+    "animate-slide-left-to-right-news-carousel"
   );
 
   // The animation will run for 200ms. Hence, we will wait until it ends
@@ -165,7 +176,7 @@ function gotoPreviousPageLatestNewsCardsUpdated() {
   setTimeout(() => {
     // Remove the animation
     latestNewsCardsElement.classList.remove(
-      "animate-slide-right-to-left-news-carousel"
+      "animate-slide-left-to-right-news-carousel"
     );
 
     // Pop the last element in latest news pages cards showing array
@@ -181,7 +192,19 @@ function gotoPreviousPageLatestNewsCardsUpdated() {
 
     // Reupdate list of cards
     reupdateListOfCards();
-  }, 1000);
+  }, 200);
+}
+
+// The function to reupdate card layout
+function reupdateCardLayout() {
+  r.style.setProperty(
+    "--latest-news-page-cursor",
+    `-${latestNewsCardCurrentWidth}px`
+  );
+  r.style.setProperty("--latest-news-page-margin", "0px");
+
+  // Reupdate list of cards to be shown so that it is ready for transition
+  reupdateListOfCards();
 }
 
 // The function to reupdate list of cards
@@ -191,6 +214,7 @@ function reupdateListOfCards() {
     "mgi__latest-news__cards"
   )[0];
 
+  // Clear curremt child
   latestNewsCardsElement.innerHTML = "";
 
   // Add all cards that will be shown to the list
@@ -200,7 +224,11 @@ function reupdateListOfCards() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Call the function to update list of cards in HTML
   reupdateListOfCards();
+
+  // Call the function to adjust card's with accordingly
+  adjustScreenSize();
 });
 
 // The function to create HTML element from HTML string
@@ -210,4 +238,57 @@ function createElementFromHTML(htmlString) {
 
   // Change this to div.childNodes to support multiple top-level nodes
   return div.firstChild;
+}
+
+// Add a listener for when the window resizes
+window.addEventListener("resize", adjustScreenSize);
+
+// The function to adjust card's width accordingly
+function adjustScreenSize() {
+  // Update the number of latest news cards per page
+  var numberOfLatestNewsCardsPerPage = getComputedStyle(
+    document.documentElement
+  ).getPropertyValue("--number-of-latest-news-cards-per-page");
+
+  // Get the latest news card element
+  var latestNewsCardElement = document.getElementsByClassName(
+    "mgi__latest-news__cards__card"
+  )[0];
+
+  // Get current width of the latest news card
+  latestNewsCardCurrentWidth = latestNewsCardElement.clientWidth;
+
+  // Adjust number of cards per page
+  if (numberOfLatestNewsCardsPerPage == 3) {
+    latestNewsPageCardsQueue = [latestNewsPageCards[3], latestNewsPageCards[4]];
+
+    latestNewsPageCardsShowing = [
+      latestNewsPageCards[0],
+      latestNewsPageCards[1],
+      latestNewsPageCards[2],
+    ];
+  } else if (numberOfLatestNewsCardsPerPage == 2) {
+    latestNewsPageCardsQueue = [
+      latestNewsPageCards[2],
+      latestNewsPageCards[3],
+      latestNewsPageCards[4],
+    ];
+
+    latestNewsPageCardsShowing = [
+      latestNewsPageCards[0],
+      latestNewsPageCards[1],
+    ];
+  } else if (numberOfLatestNewsCardsPerPage == 1) {
+    latestNewsPageCardsQueue = [
+      latestNewsPageCards[1],
+      latestNewsPageCards[2],
+      latestNewsPageCards[3],
+      latestNewsPageCards[4],
+    ];
+
+    latestNewsPageCardsShowing = [latestNewsPageCards[0]];
+  }
+
+  // Call the function to reupdate card layout
+  reupdateCardLayout();
 }
