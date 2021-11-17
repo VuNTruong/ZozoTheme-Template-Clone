@@ -1,3 +1,5 @@
+import * as sliderUtils from "./sliderUtils.js";
+
 // Get the root CSS element
 var r = document.querySelector(":root");
 
@@ -102,44 +104,14 @@ function gotoNextPageLatestNewsCardsUpdated() {
     "mgi__latest-news__cards"
   )[0];
 
-  r.style.setProperty(
+  sliderUtils.gotoNextPage(
+    latestNewsCardsElement,
     "--latest-news-page-cursor",
-    `-${latestNewsCardCurrentWidth}px`
+    latestNewsCardCurrentWidth,
+    latestNewsPageCardsShowing,
+    latestNewsPageCardsQueue,
+    "animate-slide-latest-news-carousel"
   );
-
-  // Pop the first element in latest news pages cards queue array
-  var poppedFirstElementFromCardsQueueArray = latestNewsPageCardsQueue[0];
-  latestNewsPageCardsQueue.shift();
-
-  // Push the popped first element from latest news pages cards queue array
-  // into latest news page cards showing
-  latestNewsPageCardsShowing.push(poppedFirstElementFromCardsQueueArray);
-
-  // Reupdate list of cards to be shown so that it will be ready for transition
-  reupdateListOfCards();
-
-  // Animate
-  latestNewsCardsElement.classList.add("animate-slide-latest-news-carousel");
-
-  // The animation will run for 200ms. Hence, we will wait until it ends to reupdate
-  // list of cards
-  setTimeout(() => {
-    // Remove the animation
-    latestNewsCardsElement.classList.remove(
-      "animate-slide-latest-news-carousel"
-    );
-
-    // Pop the first element in latest news pages cards showing array
-    var poppedFirstElementFromCardsShowingArray = latestNewsPageCardsShowing[0];
-    latestNewsPageCardsShowing.shift();
-
-    // Push the popped first element from latest news pages cards showing array
-    // into latest news page cards queue
-    latestNewsPageCardsQueue.push(poppedFirstElementFromCardsShowingArray);
-
-    // Reupdate list of cards
-    reupdateListOfCards();
-  }, 200);
 }
 
 // The function to go to previous page
@@ -149,50 +121,14 @@ function gotoPreviousPageLatestNewsCardsUpdated() {
     "mgi__latest-news__cards"
   )[0];
 
-  r.style.setProperty(
+  sliderUtils.gotoPreviousPage(
+    latestNewsCardsElement,
     "--latest-news-page-cursor",
-    `-${latestNewsCardCurrentWidth}px`
-  );
-
-  console.log(latestNewsCardCurrentWidth);
-
-  // Pop the last element in latest news pages cards queue array
-  var poppedLastElementFromCardsQueueArray = latestNewsPageCardsQueue.pop();
-
-  // Push the popped last element from latest news pages cards queue array
-  // into latest news page cards showing
-  latestNewsPageCardsShowing.splice(0, 0, poppedLastElementFromCardsQueueArray);
-
-  // Reupdate list of cards to be shown so that it is ready for transition
-  reupdateListOfCards();
-
-  // Animate
-  latestNewsCardsElement.classList.add(
+    latestNewsCardCurrentWidth,
+    latestNewsPageCardsShowing,
+    latestNewsPageCardsQueue,
     "animate-slide-left-to-right-news-carousel"
   );
-
-  // The animation will run for 200ms. Hence, we will wait until it ends
-  // before reupdatting list of cards
-  setTimeout(() => {
-    // Remove the animation
-    latestNewsCardsElement.classList.remove(
-      "animate-slide-left-to-right-news-carousel"
-    );
-
-    // Pop the last element in latest news pages cards showing array
-    var poppedLastElementFromCardsShowingArray = latestNewsPageCardsShowing.pop();
-
-    // Push the popped first element from latest news pages showing array
-    // into latest news page cards queue
-    latestNewsPageCardsQueue.splice(
-      0,
-      0,
-      poppedLastElementFromCardsShowingArray
-    );
-
-    // Reupdate list of cards
-    reupdateListOfCards();
-  }, 200);
 }
 
 // The function to reupdate card layout
@@ -202,9 +138,6 @@ function reupdateCardLayout() {
     `-${latestNewsCardCurrentWidth}px`
   );
   r.style.setProperty("--latest-news-page-margin", "0px");
-
-  // Reupdate list of cards to be shown so that it is ready for transition
-  reupdateListOfCards();
 }
 
 // The function to reupdate list of cards
@@ -214,7 +147,7 @@ function reupdateListOfCards() {
     "mgi__latest-news__cards"
   )[0];
 
-  // Clear curremt child
+  // Clear current child
   latestNewsCardsElement.innerHTML = "";
 
   // Add all cards that will be shown to the list
@@ -223,13 +156,14 @@ function reupdateListOfCards() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+// The function to do initial set up
+function latestNewsSliderInitialSetup() {
   // Call the function to update list of cards in HTML
   reupdateListOfCards();
 
-  // Call the function to adjust card's with accordingly
+  // Call the function to adjust card's width accordingly
   adjustScreenSize();
-});
+}
 
 // The function to create HTML element from HTML string
 function createElementFromHTML(htmlString) {
@@ -292,3 +226,9 @@ function adjustScreenSize() {
   // Call the function to reupdate card layout
   reupdateCardLayout();
 }
+
+export {
+  gotoNextPageLatestNewsCardsUpdated,
+  gotoPreviousPageLatestNewsCardsUpdated,
+  latestNewsSliderInitialSetup,
+};

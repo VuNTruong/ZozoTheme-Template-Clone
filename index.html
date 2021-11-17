@@ -348,14 +348,10 @@
     </div>
   </div>
 
-  <body onscroll="scrollHandler()">
+  <body>
     <!-- Page content -->
     <div id="page-content" class="mgi__page-content">
-      <div
-        class="mgi__promo"
-        onmouseover="mouseOverPromoAreaHandler()"
-        onmouseleave="mouseOutPromoAreaHandler()"
-      >
+      <div class="mgi__promo">
         <!-- This header is only shown when page header is still visible -->
         <div id="header-menu-bar" class="mgi__header">
           <div class="mgi__header__content">
@@ -428,6 +424,7 @@
               </div>
 
               <img
+                id="open-right-hamburger-menu-static-header-button"
                 class="mgi__header-icon"
                 src="icons/hamburgerMenuIconWithBorder.png"
                 onclick="openRightHamburgerMenu()"
@@ -773,166 +770,21 @@
               <img
                 class="mgi__latest-project-icon"
                 src="icons/left-icon-black.ico"
-                onclick="goBackPageClientFeedbackPages()"
+                id="go-previous-page-client-feedback-button"
               />
             </div>
 
             <div
               class="mgi__general-page-content__slidable-content__slidable-content-holder"
             >
-              <div class="mgi__client-feedback-cards">
-                <div class="mgi__client-feedback-cards__client-feedback-card">
-                  <img
-                    class="mgi__client-feedback-cards__client-feedback-card__quote-icon"
-                    src="icons/quote-icon.png"
-                  />
-                  <div
-                    class="mgi__client-feedback-cards__client-feedback-card__content"
-                  >
-                    <p
-                      class="mgi__client-feedback-cards__client-feedback-card__content__feedback-content"
-                    >
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur
-                    </p>
-
-                    <p
-                      class="mgi__client-feedback-cards__client-feedback-card__content__client-bio"
-                    >
-                      Djokovic
-                    </p>
-
-                    <p
-                      class="mgi__client-feedback-cards__client-feedback-card__content__client-org"
-                    >
-                      Amazon
-                    </p>
-                  </div>
-                </div>
-
-                <div class="mgi__client-feedback-cards__client-feedback-card">
-                  <img
-                    class="mgi__client-feedback-cards__client-feedback-card__quote-icon"
-                    src="icons/quote-icon.png"
-                  />
-                  <div
-                    class="mgi__client-feedback-cards__client-feedback-card__content"
-                  >
-                    <p
-                      class="mgi__client-feedback-cards__client-feedback-card__content__feedback-content"
-                    >
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur
-                    </p>
-
-                    <p
-                      class="mgi__client-feedback-cards__client-feedback-card__content__client-bio"
-                    >
-                      Federer
-                    </p>
-
-                    <p
-                      class="mgi__client-feedback-cards__client-feedback-card__content__client-org"
-                    >
-                      Microsoft
-                    </p>
-                  </div>
-                </div>
-
-                <div class="mgi__client-feedback-cards__client-feedback-card">
-                  <img
-                    class="mgi__client-feedback-cards__client-feedback-card__quote-icon"
-                    src="icons/quote-icon.png"
-                  />
-                  <div
-                    class="mgi__client-feedback-cards__client-feedback-card__content"
-                  >
-                    <p
-                      class="mgi__client-feedback-cards__client-feedback-card__content__feedback-content"
-                    >
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur
-                    </p>
-
-                    <p
-                      class="mgi__client-feedback-cards__client-feedback-card__content__client-bio"
-                    >
-                      Nadal
-                    </p>
-
-                    <p
-                      class="mgi__client-feedback-cards__client-feedback-card__content__client-org"
-                    >
-                      Airbus
-                    </p>
-                  </div>
-                </div>
-
-                <div class="mgi__client-feedback-cards__client-feedback-card">
-                  <img
-                    class="mgi__client-feedback-cards__client-feedback-card__quote-icon"
-                    src="icons/quote-icon.png"
-                  />
-                  <div
-                    class="mgi__client-feedback-cards__client-feedback-card__content"
-                  >
-                    <p
-                      class="mgi__client-feedback-cards__client-feedback-card__content__feedback-content"
-                    >
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur
-                    </p>
-
-                    <p
-                      class="mgi__client-feedback-cards__client-feedback-card__content__client-bio"
-                    >
-                      Auger Aliassime
-                    </p>
-
-                    <p
-                      class="mgi__client-feedback-cards__client-feedback-card__content__client-org"
-                    >
-                      Boeing
-                    </p>
-                  </div>
-                </div>
-
-                <div class="mgi__client-feedback-cards__client-feedback-card">
-                  <img
-                    class="mgi__client-feedback-cards__client-feedback-card__quote-icon"
-                    src="icons/quote-icon.png"
-                  />
-                  <div
-                    class="mgi__client-feedback-cards__client-feedback-card__content"
-                  >
-                    <p
-                      class="mgi__client-feedback-cards__client-feedback-card__content__feedback-content"
-                    >
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur
-                    </p>
-
-                    <p
-                      class="mgi__client-feedback-cards__client-feedback-card__content__client-bio"
-                    >
-                      Shapovalov
-                    </p>
-
-                    <p
-                      class="mgi__client-feedback-cards__client-feedback-card__content__client-org"
-                    >
-                      Delta
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <div class="mgi__client-feedback-cards"></div>
             </div>
 
             <div class="mgi__general-page-content__slidable-content__side">
               <img
+                id="go-forward-page-client-feedback-button"
                 class="mgi__latest-project-icon"
                 src="icons/right-icon-black.png"
-                onclick="goForwardPageClientFeedbackPages()"
               />
             </div>
           </div>
@@ -940,51 +792,26 @@
 
         <div class="mgi__general-page-content">
           <div class="mgi__general-page-content__slidable-content">
+            <div class="mgi__general-page-content__slidable-content__side">
+              <img
+                id="go-previous-page-client-logo-button"
+                class="mgi__latest-project-icon"
+                src="icons/left-icon-black.ico"
+              />
+            </div>
+
             <div
               class="mgi__general-page-content__slidable-content__slidable-content-holder"
             >
-              <div class="mgi__client-logo-cards">
-                <img
-                  class="mgi__client-logo-cards__client-logo-card"
-                  src="clientLogos/1.png"
-                />
-                <img
-                  class="mgi__client-logo-cards__client-logo-card"
-                  src="clientLogos/2.png"
-                />
-                <img
-                  class="mgi__client-logo-cards__client-logo-card"
-                  src="clientLogos/3.png"
-                />
-                <img
-                  class="mgi__client-logo-cards__client-logo-card"
-                  src="clientLogos/4.png"
-                />
-                <img
-                  class="mgi__client-logo-cards__client-logo-card"
-                  src="clientLogos/5.png"
-                />
-                <img
-                  class="mgi__client-logo-cards__client-logo-card"
-                  src="clientLogos/6.png"
-                />
-                <img
-                  class="mgi__client-logo-cards__client-logo-card"
-                  src="clientLogos/7.png"
-                />
-                <img
-                  class="mgi__client-logo-cards__client-logo-card"
-                  src="clientLogos/8.png"
-                />
-                <img
-                  class="mgi__client-logo-cards__client-logo-card"
-                  src="clientLogos/9.png"
-                />
-                <img
-                  class="mgi__client-logo-cards__client-logo-card"
-                  src="clientLogos/10.png"
-                />
-              </div>
+              <div class="mgi__client-logo-cards"></div>
+            </div>
+
+            <div class="mgi__general-page-content__slidable-content__side">
+              <img
+                id="go-forward-page-client-logo-button"
+                class="mgi__latest-project-icon"
+                src="icons/right-icon-black.png"
+              />
             </div>
           </div>
         </div>
@@ -1002,9 +829,9 @@
           <div class="mgi__general-page-content__slidable-content">
             <div class="mgi__general-page-content__slidable-content__side">
               <img
+                id="go-previous-page-latest-news-button"
                 class="mgi__latest-project-icon"
                 src="icons/left-icon-black.ico"
-                onclick="gotoPreviousPageLatestNewsCardsUpdated()"
               />
             </div>
 
@@ -1017,9 +844,9 @@
 
             <div class="mgi__general-page-content__slidable-content__side">
               <img
+                id="go-forward-page-latest-news-button"
                 class="mgi__latest-project-icon"
                 src="icons/right-icon-black.png"
-                onclick="gotoNextPageLatestNewsCardsUpdated()"
               />
             </div>
           </div>
@@ -1292,7 +1119,8 @@
       </div>
       <!-- End Footer Credit -->
     </div>
-    <script src="js/script.js"></script>
-    <script src="js/latestNewsSliders.js"></script>
+    <script src="js/script.js" type="module"></script>
+    <!-- <script src="js/latestNewsSliders.js"></script> -->
+    <!-- <script src="js/clientLogosSliders.js"></script> -->
   </body>
 </html>

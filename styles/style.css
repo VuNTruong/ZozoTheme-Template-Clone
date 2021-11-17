@@ -7,7 +7,9 @@
   --client-feedback-page-cursor: 0px;
   --latest-news-page-cursor: 0px;
   --latest-news-page-margin: 0px;
+  --client-logo-page-margin: 0px;
   --client-logo-page-cursor: 0px;
+  --client-feedback-page-margin: 0px;
   --header-menu-display: block;
   --sticky-header-menu-display: none;
   --promo-icon-display: none;
@@ -675,7 +677,7 @@ h4 {
 .mgi__client-feedback-cards {
   margin-top: 2em;
   grid-template-columns: auto auto auto auto auto;
-  margin-left: var(--client-feedback-page-cursor);
+  margin-left: var(--client-feedback-page-margin);
   grid-gap: 20px;
   display: grid;
   transition: margin 500ms;
@@ -720,10 +722,10 @@ h4 {
 /******************* Client logo *******************/
 .mgi__client-logo-cards {
   margin-top: 2em;
-  margin-left: var(--client-logo-page-cursor);
+  margin-left: var(--client-logo-page-margin);
   display: flex;
-  transition: margin 500ms;
-  transition-timing-function: ease-out;
+  /* transition: margin 500ms; */
+  /* transition-timing-function: ease-out; */
 }
 
 .mgi__client-logo-cards__client-logo-card {
@@ -1290,6 +1292,42 @@ h4 {
   }
 }
 
+@keyframes slide-client-logo-carousel {
+  from {
+    margin-left: 0;
+  }
+  to {
+    margin-left: var(--client-logo-page-cursor);
+  }
+}
+
+@keyframes slide-left-to-right-client-logo-carousel {
+  from {
+    margin-left: var(--client-logo-page-cursor);
+  }
+  to {
+    margin-left: 0;
+  }
+}
+
+@keyframes slide-client-feedback-carousel {
+  from {
+    margin-left: 0;
+  }
+  to {
+    margin-left: var(--client-feedback-page-cursor);
+  }
+}
+
+@keyframes slide-left-to-right-client-feedback-carousel {
+  from {
+    margin-left: var(--client-feedback-page-cursor);
+  }
+  to {
+    margin-left: 0;
+  }
+}
+
 .animate-slide-latest-news-carousel {
   animation-name: slide-latest-news-carousel;
   animation-duration: 0.2s;
@@ -1297,6 +1335,26 @@ h4 {
 
 .animate-slide-left-to-right-news-carousel {
   animation-name: slide-left-to-right-news-carousel;
+  animation-duration: 0.2s;
+}
+
+.animate-slide-client-logo-carousel {
+  animation-name: slide-client-logo-carousel;
+  animation-duration: 0.2s;
+}
+
+.animate-slide-left-to-right-client-logo-carousel {
+  animation-name: slide-left-to-right-client-logo-carousel;
+  animation-duration: 0.2s;
+}
+
+.animate-slide-client-feedback-carousel {
+  animation-name: slide-client-feedback-carousel;
+  animation-duration: 0.2s;
+}
+
+.animate-slide-left-to-right-client-feedback-carousel {
+  animation-name: slide-left-to-right-client-feedback-carousel;
   animation-duration: 0.2s;
 }
 
