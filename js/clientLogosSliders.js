@@ -59,22 +59,10 @@ clientLogoCardsStrings.forEach((clientLogoCardsString) => {
 });
 
 // Array of cards that are in a queue
-let clientLogoCardsQueue = [
-  clientLogosCards[7],
-  clientLogosCards[8],
-  clientLogosCards[9],
-];
+let clientLogoCardsQueue = [];
 
 // Array of cards that are being shown
-let clientLogoCardsShowing = [
-  clientLogosCards[0],
-  clientLogosCards[1],
-  clientLogosCards[2],
-  clientLogosCards[3],
-  clientLogosCards[4],
-  clientLogosCards[5],
-  clientLogosCards[6],
-];
+let clientLogoCardsShowing = [];
 
 // The function to go to next page
 function gotoNextPageClientLogoCardsUpdated() {
@@ -112,6 +100,8 @@ function gotoPreviousPageClientLogoCardsUpdated() {
 
 // The function to do initial set up for client logo slider
 function clientLogoSliderInitialSetUp() {
+  updateShowingAndQueueArray(7);
+
   // Call the function to update list of cards in HTML
   reupdateListOfCards();
 
@@ -166,83 +156,8 @@ function adjustScreenSize() {
   clientLogoCardCurrentWidth = clientLogoCardElement.clientWidth;
 
   // Adjust number of cards per page
-  if (numberOfClientLogoCardsPerPage == 7) {
-    clientLogoCardsQueue = [
-      clientLogosCards[7],
-      clientLogosCards[8],
-      clientLogosCards[9],
-    ];
-
-    clientLogoCardsShowing = [
-      clientLogosCards[0],
-      clientLogosCards[1],
-      clientLogosCards[2],
-      clientLogosCards[3],
-      clientLogosCards[4],
-      clientLogosCards[5],
-      clientLogosCards[6],
-    ];
-  } else if (numberOfClientLogoCardsPerPage == 5) {
-    clientLogoCardsQueue = [
-      clientLogosCards[5],
-      clientLogosCards[6],
-      clientLogosCards[7],
-      clientLogosCards[8],
-      clientLogosCards[9],
-    ];
-
-    clientLogoCardsShowing = [
-      clientLogosCards[0],
-      clientLogosCards[1],
-      clientLogosCards[2],
-      clientLogosCards[3],
-      clientLogosCards[4],
-    ];
-  } else if (numberOfClientLogoCardsPerPage == 4) {
-    clientLogoCardsQueue = [
-      clientLogosCards[4],
-      clientLogosCards[5],
-      clientLogosCards[6],
-      clientLogosCards[7],
-      clientLogosCards[8],
-      clientLogosCards[9],
-    ];
-
-    clientLogoCardsShowing = [
-      clientLogosCards[0],
-      clientLogosCards[1],
-      clientLogosCards[2],
-      clientLogosCards[3],
-    ];
-  } else if (numberOfClientLogoCardsPerPage == 3) {
-    clientLogoCardsQueue = [
-      clientLogosCards[3],
-      clientLogosCards[4],
-      clientLogosCards[5],
-      clientLogosCards[6],
-      clientLogosCards[7],
-      clientLogosCards[8],
-      clientLogosCards[9],
-    ];
-
-    clientLogoCardsShowing = [
-      clientLogosCards[0],
-      clientLogosCards[1],
-      clientLogosCards[2],
-    ];
-  } else if (numberOfClientLogoCardsPerPage == 2) {
-    clientLogoCardsQueue = [
-      clientLogosCards[2],
-      clientLogosCards[3],
-      clientLogosCards[4],
-      clientLogosCards[5],
-      clientLogosCards[6],
-      clientLogosCards[7],
-      clientLogosCards[8],
-      clientLogosCards[9],
-    ];
-
-    clientLogoCardsShowing = [clientLogosCards[0], clientLogosCards[1]];
+  if (Number.isInteger(numberOfClientLogoCardsPerPage)) {
+    updateShowingAndQueueArray(numberOfClientLogoCardsPerPage);
   }
 
   // Call the function to reupdate card layout
@@ -256,6 +171,17 @@ function createElementFromHTML(htmlString) {
 
   // Change this to div.childNodes to support multiple top-level nodes
   return div.firstChild;
+}
+
+// The function to update queue array and showing array
+function updateShowingAndQueueArray(numberOfShowingElements) {
+  const showingCardsAndQueueCards = sliderUtils.adjustShowingAndQueueArray(
+    numberOfShowingElements,
+    clientLogosCards
+  );
+
+  clientLogoCardsShowing = showingCardsAndQueueCards.showingArray;
+  clientLogoCardsQueue = showingCardsAndQueueCards.queueArray;
 }
 
 export {

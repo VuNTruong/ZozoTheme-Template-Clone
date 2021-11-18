@@ -19,9 +19,9 @@
   <div id="right-hamburger-menu" class="mgi__right-hamburger-menu">
     <div class="mgi__right-hamburger-menu__content">
       <img
+        id="close-hamburger-menu-button"
         class="mgi__right-hamburger-menu__content__icon mgi__right-hamburger-menu__content__icon--clickable"
         src="icons/close-hamburger-menu.png"
-        onclick="closeRightHamburgerMenu()"
       />
       <p class="mgi__right-hamburger-menu__content__title">About us</p>
       <img
@@ -272,6 +272,7 @@
     <div class="mgi__header__content">
       <div class="mgi__header__content__left-content">
         <img
+          id="open-left-hamburger-menu-button-sticky-header"
           class="mgi__hamburger-menu-button mgi__header-icon mgi__header-icon--with-margin"
           src="icons/hamburgerMenuIcon-dark.png"
           onclick="openLeftHamburgerMenu()"
@@ -340,9 +341,9 @@
           </div>
         </div>
         <img
+          id="open-right-hamburger-menu-sticky-header"
           class="mgi__header-icon"
           src="icons/hamburgerMenuIconWithBorder-dark.png"
-          onclick="openRightHamburgerMenu()"
         />
       </div>
     </div>
@@ -351,12 +352,13 @@
   <body>
     <!-- Page content -->
     <div id="page-content" class="mgi__page-content">
-      <div class="mgi__promo">
+      <div class="mgi__promo" id="promo-page-area">
         <!-- This header is only shown when page header is still visible -->
         <div id="header-menu-bar" class="mgi__header">
           <div class="mgi__header__content">
             <div class="mgi__header__content__left-content">
               <img
+                id="open-left-hamburger-menu-button-static-header"
                 class="mgi__hamburger-menu-button mgi__header-icon mgi__header-icon--with-margin"
                 src="icons/hamburgerMenuIcon.png"
                 onclick="openLeftHamburgerMenu()"
@@ -436,58 +438,28 @@
         <div class="mgi__promo__content">
           <div class="mgi__promo__content__side">
             <img
+              id="go-previous-page-promo-page-button"
               src="icons/left-icon.png"
               class="mgi__promo-icon animate-fade-in"
-              onclick="goBackPagePromoPages()"
             />
           </div>
 
           <div id="promo-scroll-area" class="mgi__promo__scroll-area">
-            <div class="mgi__promo__promo-pages">
-              <div class="mgi__promo__promo-pages__promo-page">
-                <p class="mgi__promo-title">WE ARE CREATIVE</p>
-                <p class="mgi__promo-text">
-                  We believe in Simple, Creative & Flexible Design Standards.
-                  Unlimited features, elements and fast and friendly support
-                  gives ultimate website to boom your business.
-                </p>
-                <button class="mgi__button">LEARN MORE</button>
-              </div>
-
-              <div class="mgi__promo__promo-pages__promo-page">
-                <p class="mgi__promo-title">WE ARE SIMPLE</p>
-                <p class="mgi__promo-text">
-                  We believe in Simple, Creative & Flexible Design Standards.
-                  Unlimited features, elements and fast and friendly support
-                  gives ultimate website to boom your business.
-                </p>
-                <button class="mgi__button">LEARN MORE</button>
-              </div>
-
-              <div class="mgi__promo__promo-pages__promo-page">
-                <p class="mgi__promo-title">WE ARE POWERFUL</p>
-                <p class="mgi__promo-text">
-                  We believe in Simple, Creative & Flexible Design Standards.
-                  Unlimited features, elements and fast and friendly support
-                  gives ultimate website to boom your business.
-                </p>
-                <button class="mgi__button">LEARN MORE</button>
-              </div>
-            </div>
+            <div class="mgi__promo__promo-pages"></div>
           </div>
 
           <div class="mgi__promo__content__side">
             <img
+              id="go-forward-page-promo-page-button"
               src="icons/right-icon.png"
               class="mgi__promo-icon animate-fade-in"
-              onclick="goForwardPagePromoPages()"
             />
           </div>
         </div>
 
         <div class="mgi__promo__paging-controllers">
-          <div class="mgi__promo__paging-buttons">
-            <div
+          <div id="promo-paging-buttons-area" class="mgi__promo__paging-buttons">
+            <!-- <div
               id="paging-page-1-button"
               class="mgi__promo__paging-buttons__paging-button__area"
             >
@@ -518,7 +490,7 @@
                 class="mgi__promo__paging-buttons__paging-button__area__button"
                 onclick="gotoPagePromoPage(3)"
               ></button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -674,6 +646,7 @@
           <div class="mgi__general-page-content__slidable-content">
             <div class="mgi__general-page-content__slidable-content__side">
               <img
+                id="go-previous-page-latest-project-button"
                 class="mgi__latest-project-icon"
                 src="icons/left-icon-black.ico"
                 onclick="goBackPageLatestProjectPage()"
@@ -683,56 +656,12 @@
             <div
               class="mgi__general-page-content__slidable-content__slidable-content-holder"
             >
-              <div class="mgi__latest-project-cards" id="">
-                <div class="mgi__latest-project-card">
-                  <img
-                    class="mgi__latest-project-card__image"
-                    src="images/latest-project-1.jpeg"
-                  />
-                  <h3>Wifi Creator</h3>
-                  <p class="mgi__latest-project-card-text">Branding</p>
-                </div>
-
-                <div class="mgi__latest-project-card">
-                  <img
-                    class="mgi__latest-project-card__image"
-                    src="images/latest-project-2.jpeg"
-                  />
-                  <h3>Ohio Shopper</h3>
-                  <p class="mgi__latest-project-card-text">Photographer</p>
-                </div>
-
-                <div class="mgi__latest-project-card">
-                  <img
-                    class="mgi__latest-project-card__image"
-                    src="images/latest-project-3.jpeg"
-                  />
-                  <h3>Expert Book Seller</h3>
-                  <p class="mgi__latest-project-card-text">Branding</p>
-                </div>
-
-                <div class="mgi__latest-project-card">
-                  <img
-                    class="mgi__latest-project-card__image"
-                    src="images/latest-project-4.jpeg"
-                  />
-                  <h3>Limtop Creation</h3>
-                  <p class="mgi__latest-project-card-text">Art</p>
-                </div>
-
-                <div class="mgi__latest-project-card">
-                  <img
-                    class="mgi__latest-project-card__image"
-                    src="images/latest-project-5.jpg"
-                  />
-                  <h3>Orion Studio</h3>
-                  <p class="mgi__latest-project-card-text">Web Design</p>
-                </div>
-              </div>
+              <div class="mgi__latest-project-cards" id=""></div>
             </div>
 
             <div class="mgi__general-page-content__slidable-content__side">
               <img
+                id="go-forward-page-latest-project-button"
                 class="mgi__latest-project-icon"
                 src="icons/right-icon-black.png"
                 onclick="goForwardPageLatestProjectPage()"
@@ -792,13 +721,9 @@
 
         <div class="mgi__general-page-content">
           <div class="mgi__general-page-content__slidable-content">
-            <div class="mgi__general-page-content__slidable-content__side">
-              <img
-                id="go-previous-page-client-logo-button"
-                class="mgi__latest-project-icon"
-                src="icons/left-icon-black.ico"
-              />
-            </div>
+            <div
+              class="mgi__general-page-content__slidable-content__side"
+            ></div>
 
             <div
               class="mgi__general-page-content__slidable-content__slidable-content-holder"
@@ -806,13 +731,9 @@
               <div class="mgi__client-logo-cards"></div>
             </div>
 
-            <div class="mgi__general-page-content__slidable-content__side">
-              <img
-                id="go-forward-page-client-logo-button"
-                class="mgi__latest-project-icon"
-                src="icons/right-icon-black.png"
-              />
-            </div>
+            <div
+              class="mgi__general-page-content__slidable-content__side"
+            ></div>
           </div>
         </div>
 
@@ -839,7 +760,7 @@
               id="latest-news-slider"
               class="mgi__general-page-content__slidable-content__slidable-content-holder"
             >
-              <div class="mgi__latest-news__cards"></div>
+              <div id="latest-news-cards" class="mgi__latest-news__cards"></div>
             </div>
 
             <div class="mgi__general-page-content__slidable-content__side">
@@ -1120,7 +1041,5 @@
       <!-- End Footer Credit -->
     </div>
     <script src="js/script.js" type="module"></script>
-    <!-- <script src="js/latestNewsSliders.js"></script> -->
-    <!-- <script src="js/clientLogosSliders.js"></script> -->
   </body>
 </html>

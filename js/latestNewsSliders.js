@@ -87,15 +87,8 @@ latestNewsPageCardsStrings.forEach((latestNewsCardsString) => {
   latestNewsPageCards.push(createElementFromHTML(latestNewsCardsString));
 });
 
-// Array of cards that are in a queue
-let latestNewsPageCardsQueue = [latestNewsPageCards[3], latestNewsPageCards[4]];
-
-// Array of cards that are being shown
-let latestNewsPageCardsShowing = [
-  latestNewsPageCards[0],
-  latestNewsPageCards[1],
-  latestNewsPageCards[2],
-];
+let latestNewsPageCardsQueue = [];
+let latestNewsPageCardsShowing = [];
 
 // The function to go to next page
 function gotoNextPageLatestNewsCardsUpdated() {
@@ -158,6 +151,8 @@ function reupdateListOfCards() {
 
 // The function to do initial set up
 function latestNewsSliderInitialSetup() {
+  updateShowingAndQueueArray(3);
+
   // Call the function to update list of cards in HTML
   reupdateListOfCards();
 
@@ -193,38 +188,23 @@ function adjustScreenSize() {
   latestNewsCardCurrentWidth = latestNewsCardElement.clientWidth;
 
   // Adjust number of cards per page
-  if (numberOfLatestNewsCardsPerPage == 3) {
-    latestNewsPageCardsQueue = [latestNewsPageCards[3], latestNewsPageCards[4]];
-
-    latestNewsPageCardsShowing = [
-      latestNewsPageCards[0],
-      latestNewsPageCards[1],
-      latestNewsPageCards[2],
-    ];
-  } else if (numberOfLatestNewsCardsPerPage == 2) {
-    latestNewsPageCardsQueue = [
-      latestNewsPageCards[2],
-      latestNewsPageCards[3],
-      latestNewsPageCards[4],
-    ];
-
-    latestNewsPageCardsShowing = [
-      latestNewsPageCards[0],
-      latestNewsPageCards[1],
-    ];
-  } else if (numberOfLatestNewsCardsPerPage == 1) {
-    latestNewsPageCardsQueue = [
-      latestNewsPageCards[1],
-      latestNewsPageCards[2],
-      latestNewsPageCards[3],
-      latestNewsPageCards[4],
-    ];
-
-    latestNewsPageCardsShowing = [latestNewsPageCards[0]];
+  if (Number.isInteger(numberOfLatestNewsCardsPerPage)) {
+    updateShowingAndQueueArray(numberOfLatestNewsCardsPerPage);
   }
 
   // Call the function to reupdate card layout
   reupdateCardLayout();
+}
+
+// The function to update queue array and showing array
+function updateShowingAndQueueArray(numberOfShowingElements) {
+  const showingCardsAndQueueCards = sliderUtils.adjustShowingAndQueueArray(
+    numberOfShowingElements,
+    latestNewsPageCards
+  );
+
+  latestNewsPageCardsShowing = showingCardsAndQueueCards.showingArray;
+  latestNewsPageCardsQueue = showingCardsAndQueueCards.queueArray;
 }
 
 export {

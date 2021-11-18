@@ -8,6 +8,8 @@
   --latest-news-page-cursor: 0px;
   --latest-news-page-margin: 0px;
   --client-logo-page-margin: 0px;
+  --latest-project-page-margin: 0px;
+  --promo-page-margin: 0px;
   --client-logo-page-cursor: 0px;
   --client-feedback-page-margin: 0px;
   --header-menu-display: block;
@@ -383,7 +385,6 @@ h4 {
 
 .mgi__promo__scroll-area {
   display: flex;
-  justify-content: center;
   width: 80vw;
   overflow: hidden;
 }
@@ -393,7 +394,7 @@ h4 {
 }
 
 .mgi__promo__promo-pages {
-  margin-left: var(--promo-page-cursor);
+  margin-left: var(--promo-page-margin);
   display: grid;
   grid-template-columns: auto auto auto;
   transition: margin 500ms;
@@ -404,7 +405,7 @@ h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: var(--promo-page-width);
+  width: 80vw;
 }
 
 .mgi__promo__paging-controllers {
@@ -451,8 +452,6 @@ h4 {
   font-weight: 900;
   color: white;
   text-align: center;
-  margin-left: 25%;
-  margin-right: 25%;
 }
 
 .mgi__promo-text {
@@ -604,7 +603,7 @@ h4 {
 
 .mgi__latest-project-cards {
   grid-template-columns: auto auto auto auto auto;
-  margin-left: var(--latest-project-page-cursor);
+  margin-left: var(--latest-project-page-margin);
   grid-gap: 10px;
   display: grid;
   transition: margin 500ms;
@@ -1328,6 +1327,42 @@ h4 {
   }
 }
 
+@keyframes slide-latest-project-carousel {
+  from {
+    margin-left: 0;
+  }
+  to {
+    margin-left: var(--latest-project-page-cursor);
+  }
+}
+
+@keyframes slide-left-to-right-latest-project-carousel {
+  from {
+    margin-left: var(--latest-project-page-cursor);
+  }
+  to {
+    margin-left: 0;
+  }
+}
+
+@keyframes slide-promo-page-carousel {
+  from {
+    margin-left: 0;
+  }
+  to {
+    margin-left: var(--promo-page-cursor);
+  }
+}
+
+@keyframes slide-left-to-right-promo-page-carousel {
+  from {
+    margin-left: var(--promo-page-cursor);
+  }
+  to {
+    margin-left: 0;
+  }
+}
+
 .animate-slide-latest-news-carousel {
   animation-name: slide-latest-news-carousel;
   animation-duration: 0.2s;
@@ -1355,6 +1390,26 @@ h4 {
 
 .animate-slide-left-to-right-client-feedback-carousel {
   animation-name: slide-left-to-right-client-feedback-carousel;
+  animation-duration: 0.2s;
+}
+
+.animate-slide-latest-project-carousel {
+  animation-name: slide-latest-project-carousel;
+  animation-duration: 0.2s;
+}
+
+.animate-slide-left-to-right-latest-project-carousel {
+  animation-name: slide-left-to-right-latest-project-carousel;
+  animation-duration: 0.2s;
+}
+
+.animate-slide-promo-page-carousel {
+  animation-name: slide-promo-page-carousel;
+  animation-duration: 0.2s;
+}
+
+.animate-slide-left-to-right-promo-page-carousel {
+  animation-name: slide-left-to-right-promo-page-carousel;
   animation-duration: 0.2s;
 }
 

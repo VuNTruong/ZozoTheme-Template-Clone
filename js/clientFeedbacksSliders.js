@@ -179,8 +179,6 @@ function gotoNextPageClientFeedbackCardsUpdated() {
     "mgi__client-feedback-cards"
   )[0];
 
-  console.log(clientFeedbackCardCurrentWidth);
-
   sliderUtils.gotoNextPage(
     clientFeedbackCardsElement,
     "--client-feedback-page-cursor",
@@ -219,6 +217,8 @@ function createElementFromHTML(htmlString) {
 
 // The function to do initial set up for client feedback slider
 function clientFeedbackSliderInitialSetUp() {
+  updateShowingAndQueueArray(3);
+
   // Call the function to update list of cards in HTML
   reupdateListOfCards();
 
@@ -270,38 +270,23 @@ function adjustScreenSize() {
   clientFeedbackCardCurrentWidth = clientFeedbackCardElement.clientWidth;
 
   // Adjust number of cards per page
-  if (numberOfClientFeedbackCardsPerPage == 3) {
-    clientFeedbackCardsQueue = [clientFeedbackCards[3], clientFeedbackCards[4]];
-
-    clientFeedbackCardsShowing = [
-      clientFeedbackCards[0],
-      clientFeedbackCards[1],
-      clientFeedbackCards[2],
-    ];
-  } else if (numberOfClientFeedbackCardsPerPage == 2) {
-    clientFeedbackCardsQueue = [
-      clientFeedbackCards[2],
-      clientFeedbackCards[3],
-      clientFeedbackCards[4],
-    ];
-
-    clientFeedbackCardsShowing = [
-      clientFeedbackCards[0],
-      clientFeedbackCards[1],
-    ];
-  } else if (numberOfClientFeedbackCardsPerPage == 1) {
-    clientFeedbackCardsQueue = [
-      clientFeedbackCards[1],
-      clientFeedbackCards[2],
-      clientFeedbackCards[3],
-      clientFeedbackCards[4],
-    ];
-
-    clientFeedbackCardsShowing = [clientFeedbackCards[0]];
+  if (Number.isInteger(numberOfClientFeedbackCardsPerPage)) {
+    updateShowingAndQueueArray(numberOfClientFeedbackCardsPerPage);
   }
 
   // Call the function to reupdate card layout
   reupdateCardLayout();
+}
+
+// The function to update queue array and showing array
+function updateShowingAndQueueArray(numberOfShowingElements) {
+  const showingCardsAndQueueCards = sliderUtils.adjustShowingAndQueueArray(
+    numberOfShowingElements,
+    clientFeedbackCards
+  );
+
+  clientFeedbackCardsShowing = showingCardsAndQueueCards.showingArray;
+  clientFeedbackCardsQueue = showingCardsAndQueueCards.queueArray;
 }
 
 export {

@@ -60,7 +60,7 @@ function gotoPreviousPage(
 
   // Push the popped last element from queue cards array
   // into showing cards array
-  showingCardsArray.splice(0, 0, poppedLastElementFromCardsQueueArray);
+  showingCardsArray.unshift(poppedLastElementFromCardsQueueArray);
 
   // Reupdate list of cards
   reupdateListOfCards(cardsElement, showingCardsArray);
@@ -78,8 +78,7 @@ function gotoPreviousPage(
 
     // Push the popped first element from showing cards array
     // into queue cards array
-    queueCardsArray.splice(0, 0, poppedLastElementFromCardsShowingArray);
-
+    queueCardsArray.unshift(poppedLastElementFromCardsShowingArray);
     // Reupdate list of cards
     // reupdateListOfCards();
   }, 200);
@@ -96,4 +95,40 @@ function reupdateListOfCards(cardsElement, showingCardsArray) {
   });
 }
 
-export { gotoNextPage, gotoPreviousPage };
+// The function to adjust queue array and showing array
+function adjustShowingAndQueueArray(
+  numberOfShowingElements,
+  fullElementsArray
+) {
+  var showingArray = [];
+  var queueArray = [];
+
+  for (let i = 0; i < numberOfShowingElements; i++) {
+    showingArray.push(fullElementsArray[i]);
+  }
+
+  for (let i = numberOfShowingElements; i < fullElementsArray.length; i++) {
+    queueArray.push(fullElementsArray[i]);
+  }
+
+  return {
+    showingArray,
+    queueArray,
+  };
+}
+
+// The function to create HTML element from HTML string
+function createElementFromHTML(htmlString) {
+  var div = document.createElement("div");
+  div.innerHTML = htmlString.trim();
+
+  // Change this to div.childNodes to support multiple top-level nodes
+  return div.firstChild;
+}
+
+export {
+  gotoNextPage,
+  gotoPreviousPage,
+  adjustShowingAndQueueArray,
+  createElementFromHTML,
+};
