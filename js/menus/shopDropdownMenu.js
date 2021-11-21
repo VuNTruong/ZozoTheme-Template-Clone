@@ -9,6 +9,10 @@ function openShopDropdownMenu() {
   // Get the body element
   var body = document.getElementsByTagName("BODY")[0];
 
+  // Make the shop button blue
+  document.getElementById("open-shop-menu-button-static-header").style.color =
+    "#3498db";
+
   // Get the elements menu open button (to the right of this menu which will be the margin for this menu as well)
   var elementsMenuOpenButton = document.getElementById(
     "open-elements-menu-button-static-header"
@@ -17,21 +21,58 @@ function openShopDropdownMenu() {
   // Adjust margin of menu
   r.style.setProperty(
     "--dropdown-menu-margin",
-    `calc(5% + 80px + 2.4rem + ${elementsMenuOpenButton.clientWidth}px`
+    `calc(5% + 80px + 2.4rem + ${elementsMenuOpenButton.clientWidth}px)`
   );
 
   // Create the menu element
   var menuElement = utils.createElementFromHTML(`
-    <div id="shop-dropdown-menu" class="mgi__dropdown-menu__menu ">
-      <div class="mgi__dropdown-menu__menu__regular-menu">
-        <p class="mgi__dropdown-menu__menu__regular-menu__item">3 COLUMNS</p>
-        <p class="mgi__dropdown-menu__menu__regular-menu__item">4 COLUMNS</p>
-        <p class="mgi__dropdown-menu__menu__regular-menu__item">5 COLUMNS</p>
-        <p class="mgi__dropdown-menu__menu__regular-menu__item">6 COLUMNS</p>
-        <p class="mgi__dropdown-menu__menu__regular-menu__item">WITH SIDEBAR</p>
-        <p class="mgi__dropdown-menu__menu__regular-menu__item">SHOP PAGE</p>
-        <p class="mgi__dropdown-menu__menu__regular-menu__item">SHOP SINGLE</p>
-      </div>
+  <div id="shop-dropdown-menu" class="mgi__dropdown-menu__menu ">
+    <div class="mgi__dropdown-menu__menu__regular-menu">
+        <div class="mgi__dropdown-menu__menu__regular-menu__item">
+        <div class="mgi__dropdown-menu__menu__regular-menu__item__content">
+            <p class="mgi__dropdown-menu__menu__regular-menu__item__content__text">3 COLUMNS</p>
+        </div>
+        </div>
+
+        <div class="mgi__dropdown-menu__menu__regular-menu__item">
+        <div class="mgi__dropdown-menu__menu__regular-menu__item__content">
+            <p class="mgi__dropdown-menu__menu__regular-menu__item__content__text">4 COLUMNS</p>
+        </div>
+        </div>
+
+        <div class="mgi__dropdown-menu__menu__regular-menu__item">
+        <div class="mgi__dropdown-menu__menu__regular-menu__item__content">
+            <p class="mgi__dropdown-menu__menu__regular-menu__item__content__text">5 COLUMNS</p>
+        </div>
+        </div>
+
+        <div class="mgi__dropdown-menu__menu__regular-menu__item">
+        <div class="mgi__dropdown-menu__menu__regular-menu__item__content">
+            <p class="mgi__dropdown-menu__menu__regular-menu__item__content__text">6 COLUMNS</p>
+        </div>
+        </div>
+
+        <div class="mgi__dropdown-menu__menu__regular-menu__item">
+        <div class="mgi__dropdown-menu__menu__regular-menu__item__content">
+            <p class="mgi__dropdown-menu__menu__regular-menu__item__content__text">WITH SIDEBAR</p>
+        </div>
+        </div>
+
+        <div class="mgi__dropdown-menu__menu__regular-menu__item">
+        <div class="mgi__dropdown-menu__menu__regular-menu__item__content">
+            <p class="mgi__dropdown-menu__menu__regular-menu__item__content__text">SHOP PAGE</p>
+        </div>
+        <div class="mgi__dropdown-menu__menu__regular-menu__item__icon">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        </div>
+
+        <div class="mgi__dropdown-menu__menu__regular-menu__item">
+        <div class="mgi__dropdown-menu__menu__regular-menu__item__content">
+            <p class="mgi__dropdown-menu__menu__regular-menu__item__content__text">SHOP SINGLE</p>
+        </div>
+        </div>
+    </div>
     </div>
     `);
 
@@ -56,6 +97,10 @@ function closeShopDropdownMenu() {
 
   // Reference and remove the shop dropdown menu
   document.getElementById("shop-dropdown-menu").remove();
+
+  // Make the shop button white
+  document.getElementById("open-shop-menu-button-static-header").style.color =
+    "white";
 }
 //******************** End Shop dropdown menu *********************/
 

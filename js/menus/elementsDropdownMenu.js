@@ -9,6 +9,11 @@ function openElementsDropdownMenu() {
   // Get the body element
   var body = document.getElementsByTagName("BODY")[0];
 
+  // Make the elements button blue
+  document.getElementById(
+    "open-elements-menu-button-static-header"
+  ).style.color = "#3498db";
+
   // This menu will be on the very right
   r.style.setProperty("--dropdown-menu-margin", `calc(5% + 80px + 2.4rem)`);
 
@@ -456,6 +461,11 @@ function closeElementsDropdownMenu() {
 
   // Reference and remove the elements dropdown menu
   document.getElementById("elements-dropdown-menu").remove();
+
+  // Make the elements button white
+  document.getElementById(
+    "open-elements-menu-button-static-header"
+  ).style.color = "white";
 }
 //******************** End elements dropdown menu *********************/
 

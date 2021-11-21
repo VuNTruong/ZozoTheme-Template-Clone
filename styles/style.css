@@ -1125,21 +1125,42 @@ h4 {
 .mgi__dropdown-menu__menu__regular-menu {
   position: fixed;
   top: 80px;
+  z-index: 11;
   right:var(--dropdown-menu-margin);
   background-color: #242424;
   border-style: solid;
   border-color: black;
   border-width: 1px;
   display: flex;
-  flex-direction: column;
-  padding-left: 1em;
-  padding-right: 5em;
+  flex-direction: column; 
+  width: 190px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .mgi__dropdown-menu__menu__regular-menu__item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.mgi__dropdown-menu__menu__regular-menu__item__content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.mgi__dropdown-menu__menu__regular-menu__item__content__text {
   color: white;
   font-size: 0.9em;
 }
+
+.mgi__dropdown-menu__menu__regular-menu__item__icon {
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+} 
 
 .mgi__dropdown-menu__menu__wide-menu {
   position: fixed;

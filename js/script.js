@@ -9,6 +9,9 @@ import * as promoPageSliders from "./promoPageSlider.js";
 import * as menu from "./menu.js";
 import * as elementsDropdownMenu from "./menus/elementsDropdownMenu.js";
 import * as shopDropdownMenu from "./menus/shopDropdownMenu.js";
+import * as blogDropdownMenu from "./menus/blogDropdownMenu.js";
+import * as portfolioDropdownMenu from "./menus/portfolioDropdownMenu.js";
+import * as featuresDropdownMenu from "./menus/featuresDropdownMenu.js";
 
 // This is to keep track of if the sticky header menu is being shown or not
 var isShowingStickyHeader = false;
@@ -88,6 +91,15 @@ document.getElementById("open-elements-menu-button-static-header").onclick =
 
 document.getElementById("open-shop-menu-button-static-header").onclick =
   shopDropdownMenu.openShopDropdownMenu;
+
+document.getElementById("open-blog-menu-button-static-header").onclick =
+  blogDropdownMenu.openBlogDropdownMenu;
+
+document.getElementById("open-portfolio-menu-button-static-header").onclick =
+  portfolioDropdownMenu.openPortfolioDropdownMenu;
+
+document.getElementById("open-features-menu-button-static-header").onclick =
+  featuresDropdownMenu.openFeaturesDropdownMenu;
 
 //******************** Handlers *********************/
 // The function to handle event of when body is scrolled
