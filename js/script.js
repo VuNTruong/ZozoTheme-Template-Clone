@@ -4,7 +4,11 @@ import * as latestNewsSliders from "./latestNewsSliders.js";
 import * as clientFeedbackSliders from "./clientFeedbacksSliders.js";
 import * as latestProjectSliders from "./latestProjectSlider.js";
 import * as promoPageSliders from "./promoPageSlider.js";
+
+/************** Import menu **************/
 import * as menu from "./menu.js";
+import * as elementsDropdownMenu from "./menus/elementsDropdownMenu.js";
+import * as shopDropdownMenu from "./menus/shopDropdownMenu.js";
 
 // This is to keep track of if the sticky header menu is being shown or not
 var isShowingStickyHeader = false;
@@ -70,14 +74,38 @@ document.getElementById(
 document.getElementById("left-hamburger-menu-area").onclick =
   menu.closeLeftHamburgerMenu;
 
+document.getElementById("open-shopping-cart-static-header").onclick =
+  menu.openShoppingCartMenu;
+
+document.getElementById("open-shopping-cart-sticky-header").onclick =
+  menu.openShoppingCartMenu;
+
+document.getElementById("shopping-cart-area").onclick =
+  menu.closeShoppingCartMenu;
+
+document.getElementById("open-elements-menu-button-static-header").onclick =
+  elementsDropdownMenu.openElementsDropdownMenu;
+
+document.getElementById("open-shop-menu-button-static-header").onclick =
+  shopDropdownMenu.openShopDropdownMenu;
+
 //******************** Handlers *********************/
 // The function to handle event of when body is scrolled
 function scrollHandler() {
   // Reference the sticky header menu bar
   var stickyHeaderMenuBar = document.getElementById("sticky-header");
 
+  if (document.documentElement.scrollTop <= 80) {
+    r.style.setProperty(
+      "--shopping-cart-top-margin",
+      `${80 - document.documentElement.scrollTop}px`
+    );
+  }
+
   // Show the sticky menu bar when user scrolls down to more than 80px
   if (document.documentElement.scrollTop > 81 && !isShowingStickyHeader) {
+    r.style.setProperty("--shopping-cart-top-margin", "80px");
+
     // Animate the menu down
     stickyHeaderMenuBar.classList.add("animate-down");
 

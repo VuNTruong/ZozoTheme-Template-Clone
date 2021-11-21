@@ -6,8 +6,125 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Source Sans Pro"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   </head>
+
+  <!-- Shopping cart menu -->
+  <div id="shopping-cart-area" class="mgi__shopping-cart__area"></div>
+  <div id="shopping-cart-menu" class="mgi__shopping-cart__menu">
+    <div id="shopping-cart-menu" class="mgi__shopping-cart__menu__content">
+      <div class="mgi__shopping-cart__menu__content__item">
+        <div class="mgi__shopping-cart__menu__content__item__left">
+          <img
+            class="mgi__shopping-cart__menu__content__item__left__image"
+            src="shopImages/small1.jpg"
+          />
+        </div>
+
+        <div class="mgi__shopping-cart__menu__content__item__right">
+          <p class="mgi__shopping-cart__menu__content__item__right__title">
+            MUF JACKET FOR MEN
+          </p>
+          <p class="mgi__shopping-cart__menu__content__item__right__price">
+            23$
+          </p>
+        </div>
+
+        <div class="mgi__shopping-cart__menu__content__item__remove-button">
+          <img
+            src="icons/close-icon-red.png"
+            class="mgi__shopping-cart__menu__content__item__remove-button__image"
+          />
+        </div>
+      </div>
+
+      <div class="mgi__shopping-cart__menu__content__item">
+        <div class="mgi__shopping-cart__menu__content__item__left">
+          <img
+            class="mgi__shopping-cart__menu__content__item__left__image"
+            src="shopImages/small2.jpg"
+          />
+        </div>
+
+        <div class="mgi__shopping-cart__menu__content__item__right">
+          <p class="mgi__shopping-cart__menu__content__item__right__title">
+            LADY STYLISH BLACK SHOES
+          </p>
+          <p class="mgi__shopping-cart__menu__content__item__right__price">
+            23$
+          </p>
+        </div>
+
+        <div class="mgi__shopping-cart__menu__content__item__remove-button">
+          <img
+            src="icons/close-icon-red.png"
+            class="mgi__shopping-cart__menu__content__item__remove-button__image"
+          />
+        </div>
+      </div>
+
+      <div class="mgi__shopping-cart__menu__content__item">
+        <div class="mgi__shopping-cart__menu__content__item__left">
+          <img
+            class="mgi__shopping-cart__menu__content__item__left__image"
+            src="shopImages/small3.jpg"
+          />
+        </div>
+
+        <div class="mgi__shopping-cart__menu__content__item__right">
+          <p class="mgi__shopping-cart__menu__content__item__right__title">
+            RICH AVIATOR SUNGLASSES
+          </p>
+          <p class="mgi__shopping-cart__menu__content__item__right__price">
+            23$
+          </p>
+        </div>
+
+        <div class="mgi__shopping-cart__menu__content__item__remove-button">
+          <img
+            src="icons/close-icon-red.png"
+            class="mgi__shopping-cart__menu__content__item__remove-button__image"
+          />
+        </div>
+      </div>
+
+      <div class="mgi__shopping-cart__menu__content__separator"></div>
+
+      <div class="mgi__shopping-cart__menu__content__price-summary">
+        <div class="mgi__shopping-cart__menu__content__price-summary__left">
+          <p
+            class="mgi__shopping-cart__menu__content__price-summary__left__total-price"
+          >
+            50$
+          </p>
+        </div>
+
+        <div class="mgi__shopping-cart__menu__content__price-summary__right">
+          <div
+            class="mgi__shopping-cart__menu__content__price-summary__right__button"
+          >
+            <img
+              class="mgi__shopping-cart__menu__content__price-summary__right__button__icon"
+              src="icons/shopping-cart-icon.png"
+            />
+            <p
+              class="mgi__shopping-cart__menu__content__price-summary__right__button__text"
+            >
+              View cart
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Shopping cart menu -->
 
   <!-- Right hamburger menu -->
   <div
@@ -252,7 +369,9 @@
 
         <div class="mgi__left-hamburger-menu__options__item">
           <div class="mgi__left-hamburger-menu__options__item__left">
-            <p class="mgi__left-hamburger-menu__options__text">ELEMENTS</p>
+            <p class="mgi__left-hamburger-menu__options__text">
+              ELEMENTS
+            </p>
           </div>
           <div class="mgi__left-hamburger-menu__options__item__right">
             <p class="mgi__left-hamburger-menu__options__text">4</p>
@@ -266,6 +385,15 @@
     </div>
   </div>
   <!-- End left hamburger menu -->
+
+  <!-- Element Dropdown menu -->
+  <!-- End Element Dropdown menu -->
+
+  <!-- Page dropdown menu -->
+  <!-- End Page Dropdown menu -->
+
+  <!-- Shop Dropdown menu -->
+  <!-- End Shop Dropdown menu -->
 
   <!-- This header will be shown when page has been scrolled down over 80px -->
   <div id="sticky-header" class="mgi__sticky-header">
@@ -329,7 +457,11 @@
         <img class="mgi__header-icon" src="icons/searchIcon-dark.png" />
 
         <div class="mgi__header__notification-indicator">
-          <img class="mgi__header-icon" src="icons/bellIcon-dark.png" />
+          <img
+            id="open-shopping-cart-sticky-header"
+            class="mgi__header-icon"
+            src="icons/shopping-icon.png"
+          />
           <div
             class="mgi__header__notification-indicator__number-of-notificaitons"
           >
@@ -370,50 +502,63 @@
             <div class="mgi__header__content__right-content">
               <div class="mgi__header-options">
                 <p
+                  id="open-home-menu-button-static-header"
                   class="mgi__header-options__option mgi__header-options__option--white"
                 >
                   HOME
                 </p>
                 <p
+                  id="open-headers-menu-button-static-header"
                   class="mgi__header-options__option mgi__header-options__option--white"
                 >
                   HEADERS
                 </p>
                 <p
+                  id="open-page-menu-button-static-header"
                   class="mgi__header-options__option mgi__header-options__option--white"
                 >
                   PAGES
                 </p>
                 <p
+                  id="open-features-menu-button-static-header"
                   class="mgi__header-options__option mgi__header-options__option--white"
                 >
                   FEATURES
                 </p>
                 <p
+                  id="open-portfolio-menu-button-static-header"
                   class="mgi__header-options__option mgi__header-options__option--white"
                 >
                   PORTFOLIO
                 </p>
                 <p
+                  id="open-blog-menu-button-static-header"
                   class="mgi__header-options__option mgi__header-options__option--white"
                 >
                   BLOG
                 </p>
                 <p
+                  id="open-shop-menu-button-static-header"
                   class="mgi__header-options__option mgi__header-options__option--white"
                 >
                   SHOP
                 </p>
                 <p
+                  id="open-elements-menu-button-static-header"
                   class="mgi__header-options__option mgi__header-options__option--white"
                 >
                   ELEMENTS
                 </p>
               </div>
+
               <img class="mgi__header-icon" src="icons/searchIcon.png" />
 
               <div class="mgi__header__notification-indicator">
-                <img class="mgi__header-icon" src="icons/bellIcon.png" />
+                <img
+                  id="open-shopping-cart-static-header"
+                  class="mgi__header-icon"
+                  src="icons/shopping-icon-white.png"
+                />
                 <div
                   class="mgi__header__notification-indicator__number-of-notificaitons"
                 >
@@ -429,7 +574,6 @@
                 id="open-right-hamburger-menu-static-header-button"
                 class="mgi__header-icon"
                 src="icons/hamburgerMenuIconWithBorder.png"
-                onclick="openRightHamburgerMenu()"
               />
             </div>
           </div>
@@ -458,40 +602,10 @@
         </div>
 
         <div class="mgi__promo__paging-controllers">
-          <div id="promo-paging-buttons-area" class="mgi__promo__paging-buttons">
-            <!-- <div
-              id="paging-page-1-button"
-              class="mgi__promo__paging-buttons__paging-button__area"
-            >
-              <button
-                id="paging-page-1-button-inner"
-                class="mgi__promo__paging-buttons__paging-button__area__button"
-                onclick="gotoPagePromoPage(1)"
-              ></button>
-            </div>
-
-            <div
-              id="paging-page-2-button"
-              class="mgi__promo__paging-buttons__paging-button__area"
-            >
-              <button
-                id="paging-page-2-button-inner"
-                class="mgi__promo__paging-buttons__paging-button__area__button"
-                onclick="gotoPagePromoPage(2)"
-              ></button>
-            </div>
-
-            <div
-              id="paging-page-3-button"
-              class="mgi__promo__paging-buttons__paging-button__area"
-            >
-              <button
-                id="paging-page-3-button-inner"
-                class="mgi__promo__paging-buttons__paging-button__area__button"
-                onclick="gotoPagePromoPage(3)"
-              ></button>
-            </div> -->
-          </div>
+          <div
+            id="promo-paging-buttons-area"
+            class="mgi__promo__paging-buttons"
+          ></div>
         </div>
       </div>
 
@@ -831,61 +945,36 @@
           <div class="mgi__footer__column__quick-links">
             <div class="mgi__footer__column__quick-links__column">
               <div class="mgi__footer__column__quick-links__column__item">
-                <img
-                  class="mgi__footer__icon"
-                  src="icons/right-icon-white.png"
-                />
-                <p
-                  class="mgi__footer__column__text mgi__footer__column__text-hoverable"
-                >
+                <i class="fas fa-chevron-right"></i>
+                <p class="mgi__footer__column__quick-links__column__item__text">
                   Home
                 </p>
               </div>
 
               <div class="mgi__footer__column__quick-links__column__item">
-                <img
-                  class="mgi__footer__icon"
-                  src="icons/right-icon-white.png"
-                />
-                <p
-                  class="mgi__footer__column__text mgi__footer__column__text-hoverable"
-                >
+                <i class="fas fa-chevron-right"></i>
+                <p class="mgi__footer__column__quick-links__column__item__text">
                   Services
                 </p>
               </div>
 
               <div class="mgi__footer__column__quick-links__column__item">
-                <img
-                  class="mgi__footer__icon"
-                  src="icons/right-icon-white.png"
-                />
-                <p
-                  class="mgi__footer__column__text mgi__footer__column__text-hoverable"
-                >
+                <i class="fas fa-chevron-right"></i>
+                <p class="mgi__footer__column__quick-links__column__item__text">
                   Our Portfolio
                 </p>
               </div>
 
               <div class="mgi__footer__column__quick-links__column__item">
-                <img
-                  class="mgi__footer__icon"
-                  src="icons/right-icon-white.png"
-                />
-                <p
-                  class="mgi__footer__column__text mgi__footer__column__text-hoverable"
-                >
+                <i class="fas fa-chevron-right"></i>
+                <p class="mgi__footer__column__quick-links__column__item__text">
                   Our Experts
                 </p>
               </div>
 
               <div class="mgi__footer__column__quick-links__column__item">
-                <img
-                  class="mgi__footer__icon"
-                  src="icons/right-icon-white.png"
-                />
-                <p
-                  class="mgi__footer__column__text mgi__footer__column__text-hoverable"
-                >
+                <i class="fas fa-chevron-right"></i>
+                <p class="mgi__footer__column__quick-links__column__item__text">
                   Blog
                 </p>
               </div>
@@ -893,61 +982,36 @@
 
             <div class="mgi__footer__column__quick-links__column">
               <div class="mgi__footer__column__quick-links__column__item">
-                <img
-                  class="mgi__footer__icon"
-                  src="icons/right-icon-white.png"
-                />
-                <p
-                  class="mgi__footer__column__text mgi__footer__column__text-hoverable"
-                >
+                <i class="fas fa-chevron-right"></i>
+                <p class="mgi__footer__column__quick-links__column__item__text">
                   About us
                 </p>
               </div>
 
               <div class="mgi__footer__column__quick-links__column__item">
-                <img
-                  class="mgi__footer__icon"
-                  src="icons/right-icon-white.png"
-                />
-                <p
-                  class="mgi__footer__column__text mgi__footer__column__text-hoverable"
-                >
+                <i class="fas fa-chevron-right"></i>
+                <p class="mgi__footer__column__quick-links__column__item__text">
                   Features
                 </p>
               </div>
 
               <div class="mgi__footer__column__quick-links__column__item">
-                <img
-                  class="mgi__footer__icon"
-                  src="icons/right-icon-white.png"
-                />
-                <p
-                  class="mgi__footer__column__text mgi__footer__column__text-hoverable"
-                >
+                <i class="fas fa-chevron-right"></i>
+                <p class="mgi__footer__column__quick-links__column__item__text">
                   Client Reviews
                 </p>
               </div>
 
               <div class="mgi__footer__column__quick-links__column__item">
-                <img
-                  class="mgi__footer__icon"
-                  src="icons/right-icon-white.png"
-                />
-                <p
-                  class="mgi__footer__column__text mgi__footer__column__text-hoverable"
-                >
+                <i class="fas fa-chevron-right"></i>
+                <p class="mgi__footer__column__quick-links__column__item__text">
                   Packages
                 </p>
               </div>
 
               <div class="mgi__footer__column__quick-links__column__item">
-                <img
-                  class="mgi__footer__icon"
-                  src="icons/right-icon-white.png"
-                />
-                <p
-                  class="mgi__footer__column__text mgi__footer__column__text-hoverable"
-                >
+                <i class="fas fa-chevron-right"></i>
+                <p class="mgi__footer__column__quick-links__column__item__text">
                   Support
                 </p>
               </div>

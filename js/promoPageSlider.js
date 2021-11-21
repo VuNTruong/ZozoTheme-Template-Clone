@@ -60,6 +60,8 @@ let promoPageCardsShowing = [promoPageCards[0]];
 function gotoNextPagePromoPageCardsUpdated() {
   if (currentShowingPageNumber == promoPageCards.length) {
     currentShowingPageNumber = 1;
+  } else {
+    currentShowingPageNumber += 1;
   }
 
   // Get the promo pages cards element
@@ -75,12 +77,16 @@ function gotoNextPagePromoPageCardsUpdated() {
     promoPageCardsQueue,
     "animate-slide-promo-page-carousel"
   );
+
+  circleShowingPage(currentShowingPageNumber);
 }
 
 // The function to go to previous page
 function gotoPreviousPagePromoPageCardsUpdated() {
   if (currentShowingPageNumber == 1) {
     currentShowingPageNumber = promoPageCards.length;
+  } else {
+    currentShowingPageNumber -= 1;
   }
 
   // Get the promo pages cards element
@@ -96,6 +102,8 @@ function gotoPreviousPagePromoPageCardsUpdated() {
     promoPageCardsQueue,
     "animate-slide-left-to-right-promo-page-carousel"
   );
+
+  circleShowingPage(currentShowingPageNumber);
 }
 
 // The function to reupdate card layout
@@ -148,6 +156,8 @@ function promoPageInitialSetUp() {
     };
   }
 
+  gotoSpecifiedPage(1);
+
   // The promo pages area will only show 1 page at a time
   updateShowingAndQueueArray(1);
 
@@ -166,13 +176,6 @@ function gotoSpecifiedPage(destinationPage) {
   // Step
   let step;
 
-  for (let i = 0; i < promoPageCards.length; i++) {
-    document.getElementById(`promo-paging-button-${i + 1}`).style.borderColor =
-      "transparent";
-  }
-
-  console.log(currentShowingPageNumber);
-
   // If current page number is less than destination page number, user is
   // going to next page
   if (pageDifference > 0) {
@@ -184,12 +187,6 @@ function gotoSpecifiedPage(destinationPage) {
         gotoNextPagePromoPageCardsUpdated();
       }, 200);
     }
-
-    currentShowingPageNumber = currentShowingPageNumber + step;
-
-    document.getElementById(
-      `promo-paging-button-${currentShowingPageNumber}`
-    ).style.borderColor = "white";
   } else if (pageDifference < 0) {
     // Step
     step = -pageDifference;
@@ -199,11 +196,9 @@ function gotoSpecifiedPage(destinationPage) {
         gotoPreviousPagePromoPageCardsUpdated();
       }, 200);
     }
-
-    currentShowingPageNumber = currentShowingPageNumber - step;
-
+  } else {
     document.getElementById(
-      `promo-paging-button-${currentShowingPageNumber}`
+      `promo-paging-button-${destinationPage}`
     ).style.borderColor = "white";
   }
 }
@@ -220,6 +215,18 @@ function adjustScreenSize() {
 
   // Call the function to reupdate card layout
   reupdateCardLayout();
+}
+
+// The function to circle page that is being shown
+function circleShowingPage(showingPageNumber) {
+  for (let i = 0; i < promoPageCards.length; i++) {
+    document.getElementById(`promo-paging-button-${i + 1}`).style.borderColor =
+      "transparent";
+  }
+
+  document.getElementById(
+    `promo-paging-button-${showingPageNumber}`
+  ).style.borderColor = "white";
 }
 
 // The function to update queue array and showing array

@@ -76,7 +76,7 @@ const latestNewsPageCardsStrings = [
               Aug 12th, 2016
           </p>
           </div>
-      </div>`,
+      </div>`
 ];
 
 // Array of latest news cards (can be appended to DOM elements)

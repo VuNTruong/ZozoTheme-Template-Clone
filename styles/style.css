@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;500&display=swap");
 
 :root {
-  --promo-page-width: 500px;
   --promo-page-cursor: 0px;
   --latest-project-page-cursor: 0px;
   --client-feedback-page-cursor: 0px;
@@ -25,6 +24,8 @@
   --page-content-right-margin: 0px;
   --sticky-header-left-margin: 0px;
   --sticky-header-right-margin: 0px;
+  --shopping-cart-top-margin: 80px;
+  --dropdown-menu-margin: calc(5vw + 80px + 2.4rem + 57.25px);
 }
 
 body {
@@ -232,14 +233,13 @@ h4 {
 /******************* Header options *******************/
 .mgi__header-options {
   display: flex;
-  margin-right: 1em;
+  margin-right: 0.8rem;
 }
 
 .mgi__header-options__option {
-  size: 0.8em;
-  margin: 0.8em;
+  margin: 0.8rem;
   font-weight: 700;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   cursor: pointer;
 }
 
@@ -266,7 +266,7 @@ h4 {
 }
 
 .mgi__sticky-header {
-  z-index: 10;
+  z-index: 9;
   top: 0;
   background-color: white;
   position: fixed;
@@ -301,8 +301,8 @@ h4 {
 
 .mgi__header__notification-indicator__number-of-notificaitons {
   position: absolute;
-  height: 0.7em;
-  width: 0.7em;
+  height: 0.8em;
+  width: 0.8em;
   background-color: #3498db;
   right: 0;
   top: 0;
@@ -406,6 +406,7 @@ h4 {
   flex-direction: column;
   align-items: center;
   width: 80vw;
+  height: 280px;
 }
 
 .mgi__promo__paging-controllers {
@@ -417,9 +418,7 @@ h4 {
 }
 
 .mgi__promo__paging-buttons {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 0.5em;
+  display: flex;
 }
 
 .mgi__promo__paging-buttons__paging-button__area {
@@ -428,6 +427,7 @@ h4 {
   border-color: transparent;
   width: 20px;
   height: 20px;
+  margin: 0.5em;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -824,13 +824,8 @@ h4 {
 }
 
 .mgi__footer__column__text {
-  color: white;
   font-weight: 200;
-}
-
-.mgi__footer__column__text-hoverable:hover {
-  color: #3498db;
-  cursor: pointer;
+  color: white;
 }
 
 .mgi__footer__column__text--blue {
@@ -855,12 +850,24 @@ h4 {
 .mgi__footer__column__quick-links__column {
   display: flex;
   flex-direction: column;
+  color: white;
 }
 
 .mgi__footer__column__quick-links__column__item {
   display: flex;
   align-items: center;
   margin-bottom: -1em;
+  color: white;
+  cursor: pointer;
+}
+
+.mgi__footer__column__quick-links__column__item__text {
+  font-weight: lighter;
+  margin-left: 1em;
+}
+
+.mgi__footer__column__quick-links__column__item:hover {
+  color: #3498db;
 }
 
 .mgi__footer__column__email__newsletter__send-email-area {
@@ -901,6 +908,7 @@ h4 {
 }
 
 .mgi__footer__column__email__newsletter__send-email-area__text-area:focus {
+  outline: none;
   border-color: darkgray;
   border-style: solid;
   border-width: 1px;
@@ -962,6 +970,230 @@ h4 {
   cursor: pointer;
 }
 /******************* End Footer Credit *******************/
+
+/******************* Shopping cart *******************/
+.mgi__shopping-cart__area {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  display: none;
+}
+
+.mgi__shopping-cart__menu {
+  display: none;
+}
+
+.mgi__shopping-cart__menu__content {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 11;
+  padding: 0.7em;
+  background-color: #242424;
+  right: calc(5% + 20px);
+  top: var(--shopping-cart-top-margin);
+}
+
+.mgi__shopping-cart__menu__content__item {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+
+.mgi__shopping-cart__menu__content__item__left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mgi__shopping-cart__menu__content__item__left__image {
+  height: 70px;
+  width: 70px;
+}
+
+.mgi__shopping-cart__menu__content__item__right {
+  display: flex;
+  flex-direction: column;
+}
+
+.mgi__shopping-cart__menu__content__item__right__title {
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.mgi__shopping-cart__menu__content__item__right__price {
+  color: white;
+  font-size: 0.9em;
+  font-weight: lighter;
+  margin-top: -0.5em;
+}
+
+.mgi__shopping-cart__menu__content__item__remove-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mgi__shopping-cart__menu__content__item__remove-button__image {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.mgi__shopping-cart__menu__content__separator {
+  height: 1px;
+  background-color: gray;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.mgi__shopping-cart__menu__content__price-summary {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mgi__shopping-cart__menu__content__price-summary__left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.mgi__shopping-cart__menu__content__price-summary__left__total-price {
+  font-size: 1.5em;
+  font-weight: lighter;
+  color: white;
+}
+
+.mgi__shopping-cart__menu__content__price-summary__right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.mgi__shopping-cart__menu__content__price-summary__right__button {
+  background-color: #3498db;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.mgi__shopping-cart__menu__content__price-summary__right__button:hover {
+  background-color: black;
+}
+
+.mgi__shopping-cart__menu__content__price-summary__right__button__icon {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
+}
+
+.mgi__shopping-cart__menu__content__price-summary__right__button__text {
+  color: white;
+  font-weight: bold;
+}
+/******************* End Shopping cart *******************/
+
+/******************* Dropdown menu *******************/
+.mgi__dropdown-menu__area {
+  z-index: 10;
+  top: 0;
+  right: 0;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+}
+
+.mgi__dropdown-menu__areas {
+  z-index: 10;
+  top: 0;
+  right: 0;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+}
+
+.mgi__dropdown-menu__menu__regular-menu {
+  position: fixed;
+  top: 80px;
+  right:var(--dropdown-menu-margin);
+  background-color: #242424;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1em;
+  padding-right: 5em;
+}
+
+.mgi__dropdown-menu__menu__regular-menu__item {
+  color: white;
+  font-size: 0.9em;
+}
+
+.mgi__dropdown-menu__menu__wide-menu {
+  position: fixed;
+  z-index: 11;
+  top: 80px;
+  width: 90vw;
+  left: 5%;
+  right: 5%;
+  display: grid;
+  padding: 1em;
+  grid-template-columns: auto auto auto auto;
+  background-color: black;
+  color: white;
+}
+
+.mgi__dropdown-menu__menu__wide-menu__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.mgi__dropdown-menu__menu__wide-menu__column__title {
+  font-size: 1.2em;
+  color: white;
+  font-weight: bolder;
+}
+
+.mgi__dropdown-menu__menu__wide-menu__column__item {
+  display: flex;
+  margin-bottom: -0.5em;
+}
+
+.mgi__dropdown-menu__menu__wide-menu__column__item__left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 1em;
+}
+
+.mgi__dropdown-menu__menu__wide-menu__column__item__left__icon {
+  height: 1em;
+  width: 1em;
+}
+
+.mgi__dropdown-menu__menu__wide-menu__column__item__right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.mgi__dropdown-menu__menu__wide-menu__column__item__right__text {
+  color: white;
+  font-weight: bold;
+}
+/******************* End Dropdown menu *******************/
 
 @media only screen and (max-width: 977px) {
   .mgi__introduction {

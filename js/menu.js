@@ -178,6 +178,30 @@ function closeLeftHamburgerMenu() {
 }
 //******************** End Left hamburger menu *********************/
 
+//******************** Shopping cart menu *********************/
+// The function to open shopping cart menu
+function openShoppingCartMenu() {
+  // Get the shopping cart menu as well as its area
+  var shoppingCartMenu = document.getElementById("shopping-cart-menu");
+  var shoppingCartArea = document.getElementById("shopping-cart-area");
+
+  shoppingCartMenu.classList.toggle("show");
+  shoppingCartArea.classList.toggle("show");
+}
+
+// The function to close shopping cart menu
+function closeShoppingCartMenu() {
+  console.log("Close shopping cart menu");
+
+  // Get the shopping cart menu as well as its area
+  var shoppingCartMenu = document.getElementById("shopping-cart-menu");
+  var shoppingCartArea = document.getElementById("shopping-cart-area");
+
+  shoppingCartMenu.classList.remove("show");
+  shoppingCartArea.classList.remove("show");
+}
+//******************** End Shopping cart menu *********************/
+
 // The function to set show status of the sticky header
 function setStickyHeaderShowStatus(showStatus) {
   isShowingStickyHeader = showStatus;
@@ -193,6 +217,8 @@ export {
   closeRightHamburgerMenu,
   openLeftHamburgerMenu,
   closeLeftHamburgerMenu,
+  openShoppingCartMenu,
+  closeShoppingCartMenu,
   setStickyHeaderShowStatus,
   getRightHamburgerMenuShowStatus,
 };
