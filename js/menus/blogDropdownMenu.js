@@ -9,6 +9,11 @@ function openBlogDropdownMenu() {
   // Get the body element
   var body = document.getElementsByTagName("BODY")[0];
 
+  // Make the blog button blue
+  document
+    .getElementById("open-blog-menu-button-static-header")
+    .classList.add("mgi__header-options__option--blue");
+
   // Get the elements, shop menu open button
   var elementsMenuOpenButton = document.getElementById(
     "open-elements-menu-button-static-header"
@@ -16,10 +21,6 @@ function openBlogDropdownMenu() {
   var shopMenuOpenButton = document.getElementById(
     "open-shop-menu-button-static-header"
   );
-
-  // Make the blog button blue
-  document.getElementById("open-blog-menu-button-static-header").style.color =
-    "#3498db";
 
   // Adjust margin of menu
   r.style.setProperty(
@@ -146,9 +147,9 @@ function closeBlogDropdownMenu() {
   document.getElementById("blog-dropdown-menu").remove();
 
   // Make the blog button back to white
-  document.getElementById(
-    "open-blog-menu-button-static-header"
-  ).style.color = "white";
+  document
+    .getElementById("open-blog-menu-button-static-header")
+    .classList.remove("mgi__header-options__option--blue");
 }
 //******************** End Blog dropdown menu *********************/
 

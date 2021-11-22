@@ -12,9 +12,15 @@ import * as shopDropdownMenu from "./menus/shopDropdownMenu.js";
 import * as blogDropdownMenu from "./menus/blogDropdownMenu.js";
 import * as portfolioDropdownMenu from "./menus/portfolioDropdownMenu.js";
 import * as featuresDropdownMenu from "./menus/featuresDropdownMenu.js";
+import * as pagesDropdownMenu from "./menus/pagesDropdownMenu.js";
+import * as headersDropdownMenu from "./menus/headersDropdownMenu.js";
+import * as homeDropdownMenu from "./menus/homeDropdownMenu.js";
 
 // This is to keep track of if the sticky header menu is being shown or not
 var isShowingStickyHeader = false;
+
+// This is to keep track of if header is being shown for mobile or not
+var isShowingMobileHeader = false;
 
 // Get the root CSS element
 var r = document.querySelector(":root");
@@ -60,15 +66,8 @@ document.getElementById(
 
 document.getElementsByTagName("BODY")[0].onscroll = scrollHandler;
 
-document.getElementById("open-right-hamburger-menu-sticky-header").onclick =
-  menu.openRightHamburgerMenu;
-
 document.getElementById("close-hamburger-menu-button").onclick =
   menu.closeRightHamburgerMenu;
-
-document.getElementById(
-  "open-left-hamburger-menu-button-sticky-header"
-).onclick = menu.openLeftHamburgerMenu;
 
 document.getElementById(
   "open-left-hamburger-menu-button-static-header"
@@ -78,9 +77,6 @@ document.getElementById("left-hamburger-menu-area").onclick =
   menu.closeLeftHamburgerMenu;
 
 document.getElementById("open-shopping-cart-static-header").onclick =
-  menu.openShoppingCartMenu;
-
-document.getElementById("open-shopping-cart-sticky-header").onclick =
   menu.openShoppingCartMenu;
 
 document.getElementById("shopping-cart-area").onclick =
@@ -101,12 +97,24 @@ document.getElementById("open-portfolio-menu-button-static-header").onclick =
 document.getElementById("open-features-menu-button-static-header").onclick =
   featuresDropdownMenu.openFeaturesDropdownMenu;
 
+document.getElementById("open-pages-menu-button-static-header").onclick =
+  pagesDropdownMenu.openPagesDropdownMenu;
+
+document.getElementById("open-headers-menu-button-static-header").onclick =
+  headersDropdownMenu.openHeadersDropdownMenu;
+
+document.getElementById("open-home-menu-button-static-header").onclick =
+  homeDropdownMenu.openHomeDropdownMenu;
+
+document.getElementById("open-header-search-bar-button").onclick =
+  menu.openHeaderSearchBar;
+
+document.getElementById("close-header-search-bar").onclick =
+  menu.closeHeaderSearchBar;
+
 //******************** Handlers *********************/
 // The function to handle event of when body is scrolled
 function scrollHandler() {
-  // Reference the sticky header menu bar
-  var stickyHeaderMenuBar = document.getElementById("sticky-header");
-
   if (document.documentElement.scrollTop <= 80) {
     r.style.setProperty(
       "--shopping-cart-top-margin",
@@ -114,30 +122,31 @@ function scrollHandler() {
     );
   }
 
+  // Get the header menu bar element
+  var headerMenuBar = document.getElementById("header-menu-bar");
+  var headerSearchBar = document.getElementById("header-search-bar");
+
   // Show the sticky menu bar when user scrolls down to more than 80px
   if (document.documentElement.scrollTop > 81 && !isShowingStickyHeader) {
+    isShowingStickyHeader = true;
     r.style.setProperty("--shopping-cart-top-margin", "80px");
 
-    // Animate the menu down
-    stickyHeaderMenuBar.classList.add("animate-down");
+    headerMenuBar.classList.add("mgi__header--sticky");
+    headerMenuBar.classList.add("animate-down");
+    headerSearchBar.classList.add("mgi__header--sticky");
+    headerSearchBar.classList.add("animate-down");
 
-    isShowingStickyHeader = true;
-    menu.setStickyHeaderShowStatus(true);
-
-    if (menu.getRightHamburgerMenuShowStatus()) {
-      r.style.setProperty("--sticky-header-left-margin", "-370px");
-      r.style.setProperty("--sticky-header-right-margin", "370px");
-    }
-
-    // Show sticky header menu bar
-    r.style.setProperty("--sticky-header-menu-display", "block");
+    formatHeader();
   } // Hide the sticky menu bar when user scrolls up to less than 80px
   else if (document.documentElement.scrollTop <= 80) {
     isShowingStickyHeader = false;
-    menu.setStickyHeaderShowStatus(false);
 
-    // Hide sticky header menu bar
-    r.style.setProperty("--sticky-header-menu-display", "none");
+    headerMenuBar.classList.remove("mgi__header--sticky");
+    headerMenuBar.classList.remove("animate-down");
+    headerSearchBar.classList.remove("mgi__header--sticky");
+    headerSearchBar.classList.remove("animate-down");
+
+    formatHeader();
   }
 }
 
@@ -154,7 +163,36 @@ function mouseOutPromoAreaHandler() {
 }
 //******************** End Handlers *********************/
 
+// The function to check and see how should header be formatted
+function formatHeader() {
+  if (isShowingMobileHeader && isShowingStickyHeader) {
+    r.style.setProperty("--header-background-color", "white");
+    r.style.setProperty("--header-text-color", "black");
+  } else if (isShowingMobileHeader && !isShowingStickyHeader) {
+    r.style.setProperty("--header-background-color", "black");
+    r.style.setProperty("--header-text-color", "white");
+  } else if (!isShowingMobileHeader && isShowingStickyHeader) {
+    r.style.setProperty("--header-background-color", "white");
+    r.style.setProperty("--header-text-color", "black");
+  } else {
+    r.style.setProperty("--header-background-color", "transparent");
+    r.style.setProperty("--header-text-color", "white");
+  }
+}
+
 // Initial set up
+window.addEventListener("resize", () => {
+  if (window.innerWidth <= 940) {
+    isShowingMobileHeader = true;
+
+    formatHeader();
+  } else {
+    isShowingMobileHeader = false;
+
+    formatHeader();
+  }
+});
+
 window.onload = () => {
   clientLogosSliders.clientLogoSliderInitialSetUp();
   latestNewsSliders.latestNewsSliderInitialSetup();

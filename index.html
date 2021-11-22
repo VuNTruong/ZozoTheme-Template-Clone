@@ -384,102 +384,6 @@
       </div>
     </div>
   </div>
-  <!-- End left hamburger menu -->
-
-  <!-- Element Dropdown menu -->
-  <!-- End Element Dropdown menu -->
-
-  <!-- Page dropdown menu -->
-  <!-- End Page Dropdown menu -->
-
-  <!-- Shop Dropdown menu -->
-  <!-- End Shop Dropdown menu -->
-
-  <!-- This header will be shown when page has been scrolled down over 80px -->
-  <div id="sticky-header" class="mgi__sticky-header">
-    <div class="mgi__header__content">
-      <div class="mgi__header__content__left-content">
-        <img
-          id="open-left-hamburger-menu-button-sticky-header"
-          class="mgi__hamburger-menu-button mgi__header-icon mgi__header-icon--with-margin"
-          src="icons/hamburgerMenuIcon-dark.png"
-          onclick="openLeftHamburgerMenu()"
-        />
-
-        <p class="mgi__header-text mgi__header-text--black">
-          EPOINT
-        </p>
-      </div>
-
-      <div class="mgi__header__content__right-content">
-        <div class="mgi__header-options">
-          <p
-            class="mgi__header-options__option mgi__header-options__option--black"
-          >
-            HOME
-          </p>
-          <p
-            class="mgi__header-options__option mgi__header-options__option--black"
-          >
-            HEADERS
-          </p>
-          <p
-            class="mgi__header-options__option mgi__header-options__option--black"
-          >
-            PAGES
-          </p>
-          <p
-            class="mgi__header-options__option mgi__header-options__option--black"
-          >
-            FEATURES
-          </p>
-          <p
-            class="mgi__header-options__option mgi__header-options__option--black"
-          >
-            PORTFOLIO
-          </p>
-          <p
-            class="mgi__header-options__option mgi__header-options__option--black"
-          >
-            BLOG
-          </p>
-          <p
-            class="mgi__header-options__option mgi__header-options__option--black"
-          >
-            SHOP
-          </p>
-          <p
-            class="mgi__header-options__option mgi__header-options__option--black"
-          >
-            ELEMENTS
-          </p>
-        </div>
-        <img class="mgi__header-icon" src="icons/searchIcon-dark.png" />
-
-        <div class="mgi__header__notification-indicator">
-          <img
-            id="open-shopping-cart-sticky-header"
-            class="mgi__header-icon"
-            src="icons/shopping-icon.png"
-          />
-          <div
-            class="mgi__header__notification-indicator__number-of-notificaitons"
-          >
-            <p
-              class="mgi__header__notification-indicator__number-of-notificaitons__text"
-            >
-              1
-            </p>
-          </div>
-        </div>
-        <img
-          id="open-right-hamburger-menu-sticky-header"
-          class="mgi__header-icon"
-          src="icons/hamburgerMenuIconWithBorder-dark.png"
-        />
-      </div>
-    </div>
-  </div>
 
   <body>
     <!-- Page content -->
@@ -489,76 +393,79 @@
         <div id="header-menu-bar" class="mgi__header">
           <div class="mgi__header__content">
             <div class="mgi__header__content__left-content">
-              <img
+              <div
                 id="open-left-hamburger-menu-button-static-header"
                 class="mgi__hamburger-menu-button mgi__header-icon mgi__header-icon--with-margin"
-                src="icons/hamburgerMenuIcon.png"
-                onclick="openLeftHamburgerMenu()"
-              />
+              >
+                <i class="fas fa-bars"></i>
+              </div>
 
-              <p class="mgi__header-text mgi__header-text--white">EPOINT</p>
+              <p class="mgi__header-text">EPOINT</p>
             </div>
 
             <div class="mgi__header__content__right-content">
               <div class="mgi__header-options">
                 <p
                   id="open-home-menu-button-static-header"
-                  class="mgi__header-options__option mgi__header-options__option--white"
+                  class="mgi__header-options__option"
                 >
                   HOME
                 </p>
                 <p
                   id="open-headers-menu-button-static-header"
-                  class="mgi__header-options__option mgi__header-options__option--white"
+                  class="mgi__header-options__option"
                 >
                   HEADERS
                 </p>
                 <p
-                  id="open-page-menu-button-static-header"
-                  class="mgi__header-options__option mgi__header-options__option--white"
+                  id="open-pages-menu-button-static-header"
+                  class="mgi__header-options__option"
                 >
                   PAGES
                 </p>
                 <p
                   id="open-features-menu-button-static-header"
-                  class="mgi__header-options__option mgi__header-options__option--white"
+                  class="mgi__header-options__option"
                 >
                   FEATURES
                 </p>
                 <p
                   id="open-portfolio-menu-button-static-header"
-                  class="mgi__header-options__option mgi__header-options__option--white"
+                  class="mgi__header-options__option"
                 >
                   PORTFOLIO
                 </p>
                 <p
                   id="open-blog-menu-button-static-header"
-                  class="mgi__header-options__option mgi__header-options__option--white"
+                  class="mgi__header-options__option"
                 >
                   BLOG
                 </p>
                 <p
                   id="open-shop-menu-button-static-header"
-                  class="mgi__header-options__option mgi__header-options__option--white"
+                  class="mgi__header-options__option"
                 >
                   SHOP
                 </p>
                 <p
                   id="open-elements-menu-button-static-header"
-                  class="mgi__header-options__option mgi__header-options__option--white"
+                  class="mgi__header-options__option"
                 >
                   ELEMENTS
                 </p>
               </div>
 
-              <img class="mgi__header-icon" src="icons/searchIcon.png" />
+              <div class="mgi__header-icon" id="open-header-search-bar-button">
+                <i class="fas fa-search"></i>
+              </div>
 
               <div class="mgi__header__notification-indicator">
-                <img
+                <div
                   id="open-shopping-cart-static-header"
                   class="mgi__header-icon"
-                  src="icons/shopping-icon-white.png"
-                />
+                >
+                  <i class="fas fa-shopping-bag"></i>
+                </div>
                 <div
                   class="mgi__header__notification-indicator__number-of-notificaitons"
                 >
@@ -570,11 +477,24 @@
                 </div>
               </div>
 
-              <img
-                id="open-right-hamburger-menu-static-header-button"
+              <div
                 class="mgi__header-icon"
-                src="icons/hamburgerMenuIconWithBorder.png"
-              />
+                id="open-right-hamburger-menu-static-header-button"
+              >
+                <i class="fas fa-bars"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="header-search-bar" class="mgi__header-search">
+          <div class="mgi__header-search__search-area">
+            <input
+              class="mgi__header-search__search-area__input"
+              placeholder="TYPE AND HIT ENTER"
+            />
+            <div id="close-header-search-bar" class="mgi__header-search__search-area__close-button">
+              <i class="fas fa-times"></i>
             </div>
           </div>
         </div>
@@ -795,11 +715,8 @@
 
           <div class="mgi__contact__right">
             <div class="mgi__contact-button">
-              <p>Contact Now</p>
-              <img
-                class="mgi__contact-button__icon"
-                src="icons/right-arrow.png"
-              />
+              <p style="margin-right: 1em;">Contact Now</p>
+              <i class="fas fa-arrow-right"></i>
             </div>
           </div>
         </div>
@@ -889,155 +806,196 @@
       </div>
 
       <!-- Footer -->
-      <div class="mgi__footer">
-        <div class="mgi__footer__column">
-          <p class="mgi__footer__column__title">EPOINT</p>
-          <p class="mgi__footer__column__text footer__column__text--top-margin">
-            We believe in Simple, Creative & Flexible Design Standards.
-            Unlimited features, elements and fast and friendly support gives
-            ultimate website to boom your business.
-          </p>
-        </div>
-
-        <div class="mgi__footer__column">
-          <p class="mgi__footer__column__category">OUR OFFICE</p>
-
-          <div class="mgi__footer__column__office-info">
-            <div class="mgi__footer__column__office-info__left">
-              <img class="mgi__footer__icon" src="icons/locationIcon.png" />
-            </div>
-            <div class="mgi__footer__column__office-info__right">
-              <p class="mgi__footer__column__text">
-                Zozotheme.com No. 12, Ribbon Building, Walse street, Australia -
-                30001.
-              </p>
-            </div>
+      <div class="mgi__footer-cover">
+        <div class="mgi__footer-cover__contact">
+          <div class="mgi__footer-cover__contact__text">
+            <p>Contact Now</p>
           </div>
 
-          <div class="mgi__footer__column__office-info">
-            <div class="mgi__footer__column__office-info__left">
-              <img class="mgi__footer__icon" src="icons/phoneIcon.png" />
-            </div>
-            <div class="mgi__footer__column__office-info__right">
-              <p class="mgi__footer__column__text">
-                +0 (123) 456-78-90
-              </p>
-            </div>
-          </div>
-
-          <div class="mgi__footer__column__office-info">
-            <div class="mgi__footer__column__office-info__left">
-              <img class="mgi__footer__icon" src="icons/emailSupportIcon.jpg" />
-            </div>
-            <div class="mgi__footer__column__office-info__right">
-              <p
-                class="mgi__footer__column__text mgi__footer__column__text--blue"
-              >
-                support@zozothemes.com
-              </p>
-            </div>
+          <div class="mgi__footer-cover__contact__icon">
+            <i class="fas fa-envelope"></i>
           </div>
         </div>
 
-        <div class="mgi__footer__column">
-          <p class="mgi__footer__column__category">QUICK LINKS</p>
-
-          <div class="mgi__footer__column__quick-links">
-            <div class="mgi__footer__column__quick-links__column">
-              <div class="mgi__footer__column__quick-links__column__item">
-                <i class="fas fa-chevron-right"></i>
-                <p class="mgi__footer__column__quick-links__column__item__text">
-                  Home
-                </p>
-              </div>
-
-              <div class="mgi__footer__column__quick-links__column__item">
-                <i class="fas fa-chevron-right"></i>
-                <p class="mgi__footer__column__quick-links__column__item__text">
-                  Services
-                </p>
-              </div>
-
-              <div class="mgi__footer__column__quick-links__column__item">
-                <i class="fas fa-chevron-right"></i>
-                <p class="mgi__footer__column__quick-links__column__item__text">
-                  Our Portfolio
-                </p>
-              </div>
-
-              <div class="mgi__footer__column__quick-links__column__item">
-                <i class="fas fa-chevron-right"></i>
-                <p class="mgi__footer__column__quick-links__column__item__text">
-                  Our Experts
-                </p>
-              </div>
-
-              <div class="mgi__footer__column__quick-links__column__item">
-                <i class="fas fa-chevron-right"></i>
-                <p class="mgi__footer__column__quick-links__column__item__text">
-                  Blog
-                </p>
-              </div>
-            </div>
-
-            <div class="mgi__footer__column__quick-links__column">
-              <div class="mgi__footer__column__quick-links__column__item">
-                <i class="fas fa-chevron-right"></i>
-                <p class="mgi__footer__column__quick-links__column__item__text">
-                  About us
-                </p>
-              </div>
-
-              <div class="mgi__footer__column__quick-links__column__item">
-                <i class="fas fa-chevron-right"></i>
-                <p class="mgi__footer__column__quick-links__column__item__text">
-                  Features
-                </p>
-              </div>
-
-              <div class="mgi__footer__column__quick-links__column__item">
-                <i class="fas fa-chevron-right"></i>
-                <p class="mgi__footer__column__quick-links__column__item__text">
-                  Client Reviews
-                </p>
-              </div>
-
-              <div class="mgi__footer__column__quick-links__column__item">
-                <i class="fas fa-chevron-right"></i>
-                <p class="mgi__footer__column__quick-links__column__item__text">
-                  Packages
-                </p>
-              </div>
-
-              <div class="mgi__footer__column__quick-links__column__item">
-                <i class="fas fa-chevron-right"></i>
-                <p class="mgi__footer__column__quick-links__column__item__text">
-                  Support
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mgi__footer__column">
-          <p class="mgi__footer__column__category">EMAIL NEWSLETTER</p>
-          <p class="mgi__footer__column__text footer__column__text--top-margin">
-            Subscribe to Our Newsletter to get Important News, Amazing Offers &
-            Inside Scoops:
-          </p>
-
-          <div class="mgi__footer__column__email__newsletter__send-email-area">
-            <input
-              class="mgi__footer__column__email__newsletter__send-email-area__text-area"
-              placeholder="Enter your email"
-            />
-            <div
-              class="mgi__footer__column__email__newsletter__send-email-area__send-button"
+        <div class="mgi__footer">
+          <div class="mgi__footer__column">
+            <p class="mgi__footer__column__title">EPOINT</p>
+            <p
+              class="mgi__footer__column__text footer__column__text--top-margin"
             >
-              <img
-                class="mgi__footer__column__email__newsletter__send-email-area__send-button__icon"
-                src="icons/right-curve-icon.png"
+              We believe in Simple, Creative & Flexible Design Standards.
+              Unlimited features, elements and fast and friendly support gives
+              ultimate website to boom your business.
+            </p>
+          </div>
+
+          <div class="mgi__footer__column">
+            <p class="mgi__footer__column__category">OUR OFFICE</p>
+
+            <div class="mgi__footer__column__office-info">
+              <div class="mgi__footer__column__office-info__left">
+                <img class="mgi__footer__icon" src="icons/locationIcon.png" />
+              </div>
+              <div class="mgi__footer__column__office-info__right">
+                <p class="mgi__footer__column__text">
+                  Zozotheme.com No. 12, Ribbon Building, Walse street, Australia
+                  - 30001.
+                </p>
+              </div>
+            </div>
+
+            <div class="mgi__footer__column__office-info">
+              <div class="mgi__footer__column__office-info__left">
+                <img class="mgi__footer__icon" src="icons/phoneIcon.png" />
+              </div>
+              <div class="mgi__footer__column__office-info__right">
+                <p class="mgi__footer__column__text">
+                  +0 (123) 456-78-90
+                </p>
+              </div>
+            </div>
+
+            <div class="mgi__footer__column__office-info">
+              <div class="mgi__footer__column__office-info__left">
+                <img
+                  class="mgi__footer__icon"
+                  src="icons/emailSupportIcon.jpg"
+                />
+              </div>
+              <div class="mgi__footer__column__office-info__right">
+                <p
+                  class="mgi__footer__column__text mgi__footer__column__text--blue"
+                >
+                  support@zozothemes.com
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mgi__footer__column">
+            <p class="mgi__footer__column__category">QUICK LINKS</p>
+
+            <div class="mgi__footer__column__quick-links">
+              <div class="mgi__footer__column__quick-links__column">
+                <div class="mgi__footer__column__quick-links__column__item">
+                  <i class="fas fa-chevron-right"></i>
+                  <p
+                    class="mgi__footer__column__quick-links__column__item__text"
+                  >
+                    Home
+                  </p>
+                </div>
+
+                <div class="mgi__footer__column__quick-links__column__item">
+                  <i class="fas fa-chevron-right"></i>
+                  <p
+                    class="mgi__footer__column__quick-links__column__item__text"
+                  >
+                    Services
+                  </p>
+                </div>
+
+                <div class="mgi__footer__column__quick-links__column__item">
+                  <i class="fas fa-chevron-right"></i>
+                  <p
+                    class="mgi__footer__column__quick-links__column__item__text"
+                  >
+                    Our Portfolio
+                  </p>
+                </div>
+
+                <div class="mgi__footer__column__quick-links__column__item">
+                  <i class="fas fa-chevron-right"></i>
+                  <p
+                    class="mgi__footer__column__quick-links__column__item__text"
+                  >
+                    Our Experts
+                  </p>
+                </div>
+
+                <div class="mgi__footer__column__quick-links__column__item">
+                  <i class="fas fa-chevron-right"></i>
+                  <p
+                    class="mgi__footer__column__quick-links__column__item__text"
+                  >
+                    Blog
+                  </p>
+                </div>
+              </div>
+
+              <div class="mgi__footer__column__quick-links__column">
+                <div class="mgi__footer__column__quick-links__column__item">
+                  <i class="fas fa-chevron-right"></i>
+                  <p
+                    class="mgi__footer__column__quick-links__column__item__text"
+                  >
+                    About us
+                  </p>
+                </div>
+
+                <div class="mgi__footer__column__quick-links__column__item">
+                  <i class="fas fa-chevron-right"></i>
+                  <p
+                    class="mgi__footer__column__quick-links__column__item__text"
+                  >
+                    Features
+                  </p>
+                </div>
+
+                <div class="mgi__footer__column__quick-links__column__item">
+                  <i class="fas fa-chevron-right"></i>
+                  <p
+                    class="mgi__footer__column__quick-links__column__item__text"
+                  >
+                    Client Reviews
+                  </p>
+                </div>
+
+                <div class="mgi__footer__column__quick-links__column__item">
+                  <i class="fas fa-chevron-right"></i>
+                  <p
+                    class="mgi__footer__column__quick-links__column__item__text"
+                  >
+                    Packages
+                  </p>
+                </div>
+
+                <div class="mgi__footer__column__quick-links__column__item">
+                  <i class="fas fa-chevron-right"></i>
+                  <p
+                    class="mgi__footer__column__quick-links__column__item__text"
+                  >
+                    Support
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mgi__footer__column">
+            <p class="mgi__footer__column__category">EMAIL NEWSLETTER</p>
+            <p
+              class="mgi__footer__column__text footer__column__text--top-margin"
+            >
+              Subscribe to Our Newsletter to get Important News, Amazing Offers
+              & Inside Scoops:
+            </p>
+
+            <div
+              class="mgi__footer__column__email__newsletter__send-email-area"
+            >
+              <input
+                class="mgi__footer__column__email__newsletter__send-email-area__text-area"
+                placeholder="Enter your email"
               />
+              <div
+                class="mgi__footer__column__email__newsletter__send-email-area__send-button"
+              >
+                <img
+                  class="mgi__footer__column__email__newsletter__send-email-area__send-button__icon"
+                  src="icons/right-curve-icon.png"
+                />
+              </div>
             </div>
           </div>
         </div>

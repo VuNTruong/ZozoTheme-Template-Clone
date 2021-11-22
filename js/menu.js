@@ -14,7 +14,6 @@ function openRightHamburgerMenu() {
   var pageContent = document.getElementById("page-content");
   var hamburgerMenu = document.getElementById("right-hamburger-menu");
   var hamburgerMenuArea = document.getElementById("right-hamburger-menu-area");
-  var stickyHeader = document.getElementById("sticky-header");
 
   // Show the menu
   hamburgerMenu.classList.toggle("show");
@@ -25,10 +24,6 @@ function openRightHamburgerMenu() {
     "animate-slide-in-right-to-left-right-hamburger-menu"
   );
   pageContent.classList.add("animate-slide-out-right-to-left-page-content");
-  // Only animate the sticky header if it is being shown
-  if (isShowingStickyHeader) {
-    stickyHeader.classList.add("animate-slide-out-right-to-left-sticky-header");
-  }
 
   // Remove the animation once they are done
   hamburgerMenu.addEventListener("animationend", (event) => {
@@ -47,19 +42,6 @@ function openRightHamburgerMenu() {
       // Push page content to the left
       r.style.setProperty("--page-content-left-margin", "-370px");
       r.style.setProperty("--page-content-right-margin", "370px");
-    }
-  });
-  stickyHeader.addEventListener("animationend", (event) => {
-    if (event.animationName == "slide-out-right-to-left-sticky-header") {
-      stickyHeader.classList.remove(
-        "animate-slide-out-right-to-left-sticky-header"
-      );
-
-      stickyHeader.classList.remove("animate-down");
-
-      // Push sticky header to the left
-      r.style.setProperty("--sticky-header-left-margin", "-370px");
-      r.style.setProperty("--sticky-header-right-margin", "370px");
     }
   });
 
@@ -106,17 +88,6 @@ function closeRightHamburgerMenu() {
       );
 
       hamburgerMenu.classList.remove("animate-down");
-    }
-  });
-  stickyHeader.addEventListener("animationend", (event) => {
-    if (event.animationName == "slide-in-left-to-right-sticky-header") {
-      stickyHeader.classList.remove(
-        "animate-slide-in-left-to-right-sticky-header"
-      );
-
-      // Bring sticky header back to the right
-      r.style.setProperty("--sticky-header-left-margin", "0px");
-      r.style.setProperty("--sticky-header-right-margin", "0px");
     }
   });
 
@@ -212,6 +183,17 @@ function getRightHamburgerMenuShowStatus() {
   return isShowingRightHamburgerMenu;
 }
 
+// The function to open header search bar
+function openHeaderSearchBar() {
+  r.style.setProperty("--header-menu-bar-display", "none");
+  r.style.setProperty("--header-search-bar-display", "block");
+}
+
+function closeHeaderSearchBar() {
+  r.style.setProperty("--header-menu-bar-display", "block");
+  r.style.setProperty("--header-search-bar-display", "none");
+}
+
 export {
   openRightHamburgerMenu,
   closeRightHamburgerMenu,
@@ -220,5 +202,7 @@ export {
   openShoppingCartMenu,
   closeShoppingCartMenu,
   setStickyHeaderShowStatus,
+  openHeaderSearchBar,
+  closeHeaderSearchBar,
   getRightHamburgerMenuShowStatus,
 };

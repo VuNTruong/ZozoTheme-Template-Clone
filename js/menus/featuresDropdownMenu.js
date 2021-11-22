@@ -9,6 +9,11 @@ function openFeaturesDropdownMenu() {
   // Get the body element
   var body = document.getElementsByTagName("BODY")[0];
 
+  // Make the features button blue
+  document
+    .getElementById("open-features-menu-button-static-header")
+    .classList.add("mgi__header-options__option--blue");
+
   // Get the elements, shop, blog, portfolio menu open button
   var elementsMenuOpenButton = document.getElementById(
     "open-elements-menu-button-static-header"
@@ -22,11 +27,6 @@ function openFeaturesDropdownMenu() {
   var portfolioMenuOpenButton = document.getElementById(
     "open-portfolio-menu-button-static-header"
   );
-
-  // Make the features button blue
-  document.getElementById(
-    "open-features-menu-button-static-header"
-  ).style.color = "#3498db";
 
   // Adjust margin of menu
   r.style.setProperty(
@@ -163,10 +163,10 @@ function closeFeaturesDropdownMenu() {
   // Reference and remove the features dropdown menu
   document.getElementById("features-dropdown-menu").remove();
 
-  // Make the features button back to white
-  document.getElementById(
-    "open-features-menu-button-static-header"
-  ).style.color = "white";
+  // Make the features button blue
+  document
+    .getElementById("open-features-menu-button-static-header")
+    .classList.remove("mgi__header-options__option--blue");
 }
 //******************** End Features dropdown menu *********************/
 

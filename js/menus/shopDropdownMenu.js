@@ -10,8 +10,9 @@ function openShopDropdownMenu() {
   var body = document.getElementsByTagName("BODY")[0];
 
   // Make the shop button blue
-  document.getElementById("open-shop-menu-button-static-header").style.color =
-    "#3498db";
+  document
+    .getElementById("open-shop-menu-button-static-header")
+    .classList.add("mgi__header-options__option--blue");
 
   // Get the elements menu open button (to the right of this menu which will be the margin for this menu as well)
   var elementsMenuOpenButton = document.getElementById(
@@ -98,9 +99,10 @@ function closeShopDropdownMenu() {
   // Reference and remove the shop dropdown menu
   document.getElementById("shop-dropdown-menu").remove();
 
-  // Make the shop button white
-  document.getElementById("open-shop-menu-button-static-header").style.color =
-    "white";
+  // Make the shop button white again
+  document
+    .getElementById("open-shop-menu-button-static-header")
+    .classList.remove("mgi__header-options__option--blue");
 }
 //******************** End Shop dropdown menu *********************/
 

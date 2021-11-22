@@ -10,9 +10,9 @@ function openPortfolioDropdownMenu() {
   var body = document.getElementsByTagName("BODY")[0];
 
   // Make the portfolio button blue
-  document.getElementById(
-    "open-portfolio-menu-button-static-header"
-  ).style.color = "#3498db";
+  document
+    .getElementById("open-portfolio-menu-button-static-header")
+    .classList.add("mgi__header-options__option--blue");
 
   // Get the elements, shop, blog menu open button
   var elementsMenuOpenButton = document.getElementById(
@@ -136,10 +136,10 @@ function closePortfolioDropdownMenu() {
   // Reference and remove the portfolio dropdown menu
   document.getElementById("portfolio-dropdown-menu").remove();
 
-  // Make the portfolio button white
-  document.getElementById(
-    "open-portfolio-menu-button-static-header"
-  ).style.color = "white";
+  // Make the portfolio button back to white
+  document
+    .getElementById("open-portfolio-menu-button-static-header")
+    .classList.remove("mgi__header-options__option--blue");
 }
 //******************** End Portfolio dropdown menu *********************/
 
