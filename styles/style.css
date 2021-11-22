@@ -11,7 +11,7 @@
   --promo-page-margin: 0px;
   --client-logo-page-cursor: 0px;
   --client-feedback-page-margin: 0px;
-  --promo-icon-display: none;
+  --promo-icon-display: 0;
   --number-of-latest-project-cards-per-page: 4;
   --number-of-feedback-cards-per-page: 3;
   --number-of-latest-news-cards-per-page: 3;
@@ -26,6 +26,8 @@
   --header-text-color: white;
   --header-menu-bar-display: block;
   --header-search-bar-display: none;
+  --option-panel-margin: -274px;
+  --main-theme-color: #3498db;
 }
 
 body {
@@ -49,7 +51,7 @@ h4 {
 
 .mgi__button {
   display: flex;
-  background-color: #3498db;
+  background-color: var(--main-theme-color);
   padding: 10px;
   font-family: sans-serif;
   color: white;
@@ -252,11 +254,11 @@ h4 {
 }
 
 .mgi__header-options__option:hover {
-  color: #3498db;
+  color: var(--main-theme-color);
 }
 
 .mgi__header-options__option--blue {
-  color: #3498db;
+  color: var(--main-theme-color);
 }
 
 .mgi__hamburger-menu-button {
@@ -272,7 +274,7 @@ h4 {
   width: 100%;
   color: var(--header-text-color);
   display: var(--header-menu-bar-display);
-  z-index: 10;
+  z-index: 9;
 }
 
 .mgi__header-search {
@@ -311,9 +313,8 @@ h4 {
 }
 
 .mgi__header--sticky {
-  /* background-color: white; */
   position: fixed;
-  /* color: black; */
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 }
 
 .mgi__header-text--black {
@@ -342,7 +343,7 @@ h4 {
   position: absolute;
   height: 0.8em;
   width: 0.8em;
-  background-color: #3498db;
+  background-color: var(--main-theme-color);
   right: 0;
   top: 0;
   border-radius: 50%;
@@ -364,7 +365,7 @@ h4 {
 }
 
 .mgi__header-icon:hover {
-  color: #3498db;
+  color: var(--main-theme-color);
 }
 
 .mgi__header-icon--with-margin {
@@ -412,14 +413,22 @@ h4 {
 .mgi__promo__content__side {
   width: 10vw;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
 
 .mgi__promo-icon {
   cursor: pointer;
-  width: 50%;
-  display: var(--promo-icon-display);
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 50%;
+  opacity: var(--promo-icon-display);
+  background-color: var(--main-theme-color);
 }
 
 .mgi__promo__scroll-area {
@@ -588,10 +597,16 @@ h4 {
 .mgi__services-icon {
   height: 40px;
   width: 40px;
+  background-color: var(--main-theme-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
 .mgi__services__separator {
-  background-color: #3498db;
+  background-color: var(--main-theme-color);
   height: 2px;
   width: 100px;
 }
@@ -605,7 +620,7 @@ h4 {
 }
 
 .mgi__general-page-content-separator {
-  background-color: #3498db;
+  background-color: var(--main-theme-color);
   height: 2px;
   width: 100px;
 }
@@ -669,7 +684,7 @@ h4 {
 
 /******************* Contact *******************/
 .mgi__contact {
-  background-color: #3498db;
+  background-color: var(--main-theme-color);
   display: grid;
   grid-template-columns: auto auto;
   padding: 2em;
@@ -829,7 +844,7 @@ h4 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #3498db;
+  background-color: var(--main-theme-color);
   width: 8rem;
   padding-left: 0.8rem;
   padding-right: 0.8rem;
@@ -909,7 +924,7 @@ h4 {
 
 .mgi__footer__column__text--blue {
   cursor: pointer;
-  color: #3498db;
+  color: var(--main-theme-color);
 }
 
 .mgi__footer__column__text--blue:hover {
@@ -946,7 +961,7 @@ h4 {
 }
 
 .mgi__footer__column__quick-links__column__item:hover {
-  color: #3498db;
+  color: var(--main-theme-color);
 }
 
 .mgi__footer__column__email__newsletter__send-email-area {
@@ -959,11 +974,11 @@ h4 {
 .mgi__footer__column__email__newsletter__send-email-area__send-button {
   width: 3em;
   height: 100%;
-  background-color: #3498db;
+  background-color: var(--main-theme-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-color: #3498db;
+  border-color: var(--main-theme-color);
   border-style: solid;
   border-width: 2px;
   cursor: pointer;
@@ -976,7 +991,7 @@ h4 {
 
 .mgi__footer__column__email__newsletter__send-email-area__text-area {
   width: calc(100% - 3em);
-  border-color: #3498db;
+  border-color: var(--main-theme-color);
   background-color: transparent;
   border-style: solid;
   border-width: 1px;
@@ -1153,7 +1168,7 @@ h4 {
 }
 
 .mgi__shopping-cart__menu__content__price-summary__right__button {
-  background-color: #3498db;
+  background-color: var(--main-theme-color);
   padding-left: 1em;
   padding-right: 1em;
   padding-top: 0.5em;
@@ -1324,6 +1339,155 @@ h4 {
   font-weight: bold;
 }
 /******************* End Dropdown menu *******************/
+
+/******************* Color chooser menu *******************/
+.mgi__option-panel {
+  position: fixed;
+  top: 120px;
+  z-index: 9;
+  left: var(--option-panel-margin);
+}
+
+.mgi__color-chooser-bar {
+  background-color: #222121;
+  color: white;
+  width: 324px;
+  display: flex;
+}
+
+.mgi__color-chooser-bar__left {
+  display: flex;
+  width: 274px;
+  justify-content: center;
+}
+
+.mgi__color-chooser-bar__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  cursor: pointer;
+}
+
+.mgi__color-chooser {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  width: 250px;
+  padding: 10px;
+  box-shadow: 2px 2px #888888;
+}
+
+.mgi__color-chooser__dark-button {
+  background-color: #323232;
+  color: white;
+  border-style: solid;
+  border-color: #323232;
+  font-weight: bold;
+  padding: 1em;
+  width: 100%;
+  cursor: pointer;
+}
+
+.mgi__color-chooser__dark-button:hover {
+  background-color: white;
+  color: #323232;
+}
+
+.mgi__color-chooser__text {
+  color: #323232;
+  margin: 1.5em;
+  background-color: transparent;
+  text-align: center;
+}
+
+.mgi__color-chooser__light-button {
+  color: #323232;
+  margin: 1.5em;
+  background-color: transparent;
+  border-style: solid;
+  border-color: #323232;
+  width: 100%;
+  padding: 1em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.mgi__color-chooser__light-button:hover {
+  color: white;
+  margin: 1.5em;
+  background-color: #323232;
+  border-style: solid;
+}
+
+.mgi__color-chooser__color-list {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-gap: 0.5em;
+}
+
+.mgi__color-chooser__color-list__color-item {
+  width: 30px;
+  height: 30px;
+}
+
+.mgi__color-chooser__separator {
+  background-color: darkgray;
+  height: 1px;
+  width: 100%;
+  margin-top: 1em;
+}
+
+#mgi__color-chooser-color1 {
+  background-color: #1abc9c;
+}
+
+#mgi__color-chooser-color2 {
+  background-color: #006b63;
+}
+
+#mgi__color-chooser-color3 {
+  background-color: #336e7b;
+}
+
+#mgi__color-chooser-color4 {
+  background-color: #e67e22;
+}
+
+#mgi__color-chooser-color5 {
+  background-color: #ff6a30;
+}
+
+#mgi__color-chooser-color6 {
+  background-color: #eaab00;
+}
+
+#mgi__color-chooser-color7 {
+  background-color: #37479d;
+}
+
+#mgi__color-chooser-color8 {
+  background-color: #3498db;
+}
+
+#mgi__color-chooser-color9 {
+  background-color: #32c5d2;
+}
+
+#mgi__color-chooser-color10 {
+  background-color: #5893dd;
+}
+
+#mgi__color-chooser-color11 {
+  background-color: #e7505a;
+}
+
+#mgi__color-chooser-color12 {
+  background-color: #cdb083;
+}
+/******************* End Color chooser menu *******************/
 
 @media only screen and (max-width: 977px) {
   .mgi__introduction {
@@ -1703,6 +1867,34 @@ h4 {
   }
 }
 
+@keyframes slide-to-right-option-panel {
+  from {
+    left: -274px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+@keyframes slide-to-left-option-panel {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -274px;
+  }
+}
+
+.animate-slide-to-right-option-panel {
+  animation-name: slide-to-right-option-panel;
+  animation-duration: 0.5s;
+}
+
+.animate-slide-to-left-option-panel {
+  animation-name: slide-to-left-option-panel;
+  animation-duration: 0.5s;
+}
+
 .animate-slide-latest-news-carousel {
   animation-name: slide-latest-news-carousel;
   animation-duration: 0.2s;
@@ -1768,7 +1960,6 @@ h4 {
 .animate-fade-in {
   animation-name: fade-in;
   animation-duration: 0.5s;
-  animation-fill-mode: forwards;
 }
 
 .animation-services-column-go-up {

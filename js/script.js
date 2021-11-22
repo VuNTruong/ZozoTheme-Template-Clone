@@ -16,6 +16,8 @@ import * as pagesDropdownMenu from "./menus/pagesDropdownMenu.js";
 import * as headersDropdownMenu from "./menus/headersDropdownMenu.js";
 import * as homeDropdownMenu from "./menus/homeDropdownMenu.js";
 
+import * as colorChooser from "./menus/colorChooserMenu.js";
+
 // This is to keep track of if the sticky header menu is being shown or not
 var isShowingStickyHeader = false;
 
@@ -112,6 +114,8 @@ document.getElementById("open-header-search-bar-button").onclick =
 document.getElementById("close-header-search-bar").onclick =
   menu.closeHeaderSearchBar;
 
+document.getElementById("option-panel-toggle").onclick = menu.openOptionPanel;
+
 //******************** Handlers *********************/
 // The function to handle event of when body is scrolled
 function scrollHandler() {
@@ -153,13 +157,13 @@ function scrollHandler() {
 // The function to handle event of when user brings mouse inside the promo area
 function mouseOverPromoAreaHandler() {
   // Show the promo icon
-  r.style.setProperty("--promo-icon-display", "block");
+  r.style.setProperty("--promo-icon-display", "1");
 }
 
 // The function to handle event of when user brings mouse out of the promo area
 function mouseOutPromoAreaHandler() {
   // Show the promo icon
-  r.style.setProperty("--promo-icon-display", "none");
+  r.style.setProperty("--promo-icon-display", "0");
 }
 //******************** End Handlers *********************/
 
@@ -199,6 +203,7 @@ window.onload = () => {
   clientFeedbackSliders.clientFeedbackSliderInitialSetUp();
   latestProjectSliders.latestProjectSliderInitialSetUp();
   promoPageSliders.promoPageInitialSetUp();
+  colorChooser.setUpColorChooser();
 
   // Make sliders run automatically
   setInterval(latestProjectSliders.gotoNextPageLatestProjectCardsUpdated, 2000);

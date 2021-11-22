@@ -369,9 +369,7 @@
 
         <div class="mgi__left-hamburger-menu__options__item">
           <div class="mgi__left-hamburger-menu__options__item__left">
-            <p class="mgi__left-hamburger-menu__options__text">
-              ELEMENTS
-            </p>
+            <p class="mgi__left-hamburger-menu__options__text">ELEMENTS</p>
           </div>
           <div class="mgi__left-hamburger-menu__options__item__right">
             <p class="mgi__left-hamburger-menu__options__text">4</p>
@@ -386,6 +384,99 @@
   </div>
 
   <body>
+    <!-- Color chooser -->
+    <div id="option-panel" class="mgi__option-panel">
+      <div class="mgi__color-chooser-bar">
+        <div class="mgi__color-chooser-bar__left">
+          <p>OPTION PANEL</p>
+        </div>
+        <div id="option-panel-toggle" class="mgi__color-chooser-bar__right">
+          <i class="fas fa-cog"></i>
+        </div>
+      </div>
+      <div class="mgi__color-chooser">
+        <button class="mgi__color-chooser__dark-button">BUY EPOINT</button>
+        <p class="mgi__color-chooser__text">CHANGE COLOR</p>
+        <div class="mgi__color-chooser__color-list">
+          <div
+            class="mgi__color-chooser__color-list__color-item"
+            id="mgi__color-chooser-color1"
+            data-style="mgi__color-chooser-color1"
+          ></div>
+
+          <div
+            class="mgi__color-chooser__color-list__color-item"
+            id="mgi__color-chooser-color2"
+            data-style="mgi__color-chooser-color2"
+          ></div>
+
+          <div
+            class="mgi__color-chooser__color-list__color-item"
+            id="mgi__color-chooser-color3"
+            data-style="mgi__color-chooser-color3"
+          ></div>
+
+          <div
+            class="mgi__color-chooser__color-list__color-item"
+            id="mgi__color-chooser-color4"
+            data-style="mgi__color-chooser-color4"
+          ></div>
+
+          <div
+            class="mgi__color-chooser__color-list__color-item"
+            id="mgi__color-chooser-color5"
+            data-style="mgi__color-chooser-color5"
+          ></div>
+
+          <div
+            class="mgi__color-chooser__color-list__color-item"
+            id="mgi__color-chooser-color6"
+            data-style="mgi__color-chooser-color6"
+          ></div>
+
+          <div
+            class="mgi__color-chooser__color-list__color-item"
+            id="mgi__color-chooser-color7"
+            data-style="mgi__color-chooser-color7"
+          ></div>
+
+          <div
+            class="mgi__color-chooser__color-list__color-item"
+            id="mgi__color-chooser-color8"
+            data-style="mgi__color-chooser-color8"
+          ></div>
+
+          <div
+            class="mgi__color-chooser__color-list__color-item"
+            id="mgi__color-chooser-color9"
+            data-style="mgi__color-chooser-color9"
+          ></div>
+
+          <div
+            class="mgi__color-chooser__color-list__color-item"
+            id="mgi__color-chooser-color10"
+            data-style="mgi__color-chooser-color10"
+          ></div>
+
+          <div
+            class="mgi__color-chooser__color-list__color-item"
+            id="mgi__color-chooser-color11"
+            data-style="mgi__color-chooser-color11"
+          ></div>
+
+          <div
+            class="mgi__color-chooser__color-list__color-item"
+            id="mgi__color-chooser-color12"
+            data-style="mgi__color-chooser-color12"
+          ></div>
+        </div>
+        <div class="mgi__color-chooser__separator"></div>
+        <p class="mgi__color-chooser__text">DEMOS / CREATE CUSTOM COLOR</p>
+        <button class="mgi__color-chooser__light-button">CLICK HERE</button>
+      </div>
+    </div>
+    <!-- End Color chooser -->
+
     <!-- Page content -->
     <div id="page-content" class="mgi__page-content">
       <div class="mgi__promo" id="promo-page-area">
@@ -493,7 +584,10 @@
               class="mgi__header-search__search-area__input"
               placeholder="TYPE AND HIT ENTER"
             />
-            <div id="close-header-search-bar" class="mgi__header-search__search-area__close-button">
+            <div
+              id="close-header-search-bar"
+              class="mgi__header-search__search-area__close-button"
+            >
               <i class="fas fa-times"></i>
             </div>
           </div>
@@ -501,11 +595,12 @@
 
         <div class="mgi__promo__content">
           <div class="mgi__promo__content__side">
-            <img
+            <div
               id="go-previous-page-promo-page-button"
-              src="icons/left-icon.png"
               class="mgi__promo-icon animate-fade-in"
-            />
+            >
+              <i class="fas fa-arrow-left"></i>
+            </div>
           </div>
 
           <div id="promo-scroll-area" class="mgi__promo__scroll-area">
@@ -513,11 +608,12 @@
           </div>
 
           <div class="mgi__promo__content__side">
-            <img
+            <div
               id="go-forward-page-promo-page-button"
-              src="icons/right-icon.png"
               class="mgi__promo-icon animate-fade-in"
-            />
+            >
+              <i class="fas fa-arrow-right"></i>
+            </div>
           </div>
         </div>
 
@@ -608,7 +704,10 @@
 
           <div class="mgi__services__services-column">
             <div class="mgi__services__services-column__column-item">
-              <img src="icons/creative-icon.png" class="mgi__services-icon" />
+              <div class="mgi__services-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+
               <h3>Creative Design</h3>
               <div class="mgi__services__separator"></div>
               <p>
@@ -618,7 +717,10 @@
             </div>
 
             <div class="mgi__services__services-column__column-item">
-              <img src="icons/mobile-app-icon.png" class="mgi__services-icon" />
+              <div class="mgi__services-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+
               <h3>App Design</h3>
               <div class="mgi__services__separator"></div>
               <p>
@@ -628,7 +730,10 @@
             </div>
 
             <div class="mgi__services__services-column__column-item">
-              <img src="icons/email-icon.png" class="mgi__services-icon" />
+              <div class="mgi__services-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+
               <h3>Email Marketing</h3>
               <div class="services__separator"></div>
               <p>
@@ -638,7 +743,10 @@
             </div>
 
             <div class="mgi__services__services-column__column-item">
-              <img src="icons/marketing-icon.png" class="mgi__services-icon" />
+              <div class="mgi__services-icon">
+                <i class="fas fa-network-wired"></i>
+              </div>
+
               <h3>Online Marketing</h3>
               <div class="mgi__services__separator"></div>
               <p>
@@ -648,7 +756,10 @@
             </div>
 
             <div class="mgi__services__services-column__column-item">
-              <img src="icons/ecommerce-icon.png" class="mgi__services-icon" />
+              <div class="mgi__services-icon">
+                <i class="fas fa-cash-register"></i>
+              </div>
+
               <h3>E Commerce</h3>
               <div class="mgi__services__separator"></div>
               <p>
@@ -658,7 +769,10 @@
             </div>
 
             <div class="mgi__services__services-column__column-item">
-              <img src="icons/support-icon.png" class="mgi__services-icon" />
+              <div class="mgi__services-icon">
+                <i class="fas fa-comment-dots"></i>
+              </div>
+
               <h3>Friendly Support</h3>
               <div class="mgi__services__separator"></div>
               <p>
@@ -715,7 +829,7 @@
 
           <div class="mgi__contact__right">
             <div class="mgi__contact-button">
-              <p style="margin-right: 1em;">Contact Now</p>
+              <p style="margin-right: 1em">Contact Now</p>
               <i class="fas fa-arrow-right"></i>
             </div>
           </div>
@@ -849,9 +963,7 @@
                 <img class="mgi__footer__icon" src="icons/phoneIcon.png" />
               </div>
               <div class="mgi__footer__column__office-info__right">
-                <p class="mgi__footer__column__text">
-                  +0 (123) 456-78-90
-                </p>
+                <p class="mgi__footer__column__text">+0 (123) 456-78-90</p>
               </div>
             </div>
 

@@ -4,6 +4,9 @@ var isShowingRightHamburgerMenu = false;
 // This is to keep track of if the sticky header menu is being shown or not
 var isShowingStickyHeader = false;
 
+// This is to keep track of if option panel is being shown or not
+var isShowingOptionPanel = false;
+
 // Get the root CSS element
 var r = document.querySelector(":root");
 
@@ -189,9 +192,52 @@ function openHeaderSearchBar() {
   r.style.setProperty("--header-search-bar-display", "block");
 }
 
+// The function to close header search bar
 function closeHeaderSearchBar() {
   r.style.setProperty("--header-menu-bar-display", "block");
   r.style.setProperty("--header-search-bar-display", "none");
+}
+
+// The function to open option panel
+function openOptionPanel() {
+  // Get the option panel
+  var optionPanel = document.getElementById("option-panel");
+
+  // Get the option panel toggle button
+  var optionPanelToggle = document.getElementById("option-panel-toggle");
+
+  // Add the animation to animate the menu out
+  optionPanel.classList.add("animate-slide-to-right-option-panel");
+
+  optionPanel.addEventListener("animationend", (event) => {
+    if (event.animationName == "slide-to-right-option-panel") {
+      // Remove the animation once the menu is animated out
+      optionPanel.classList.remove("animate-slide-to-right-option-panel");
+      r.style.setProperty("--option-panel-margin", "0px");
+      optionPanelToggle.onclick = closeOptionPanel;
+    }
+  });
+}
+
+// The function to close option panel
+function closeOptionPanel() {
+  // Get the option panel
+  var optionPanel = document.getElementById("option-panel");
+
+  // Get the option panel toggle button
+  var optionPanelToggle = document.getElementById("option-panel-toggle");
+
+  // Add the animation to animate the menu in
+  optionPanel.classList.add("animate-slide-to-left-option-panel");
+
+  optionPanel.addEventListener("animationend", (event) => {
+    if (event.animationName == "slide-to-left-option-panel") {
+      // Remove the animation once the menu is animated in
+      optionPanel.classList.remove("animate-slide-to-left-option-panel");
+      r.style.setProperty("--option-panel-margin", "-274px");
+      optionPanelToggle.onclick = openOptionPanel;
+    }
+  });
 }
 
 export {
@@ -204,5 +250,6 @@ export {
   setStickyHeaderShowStatus,
   openHeaderSearchBar,
   closeHeaderSearchBar,
+  openOptionPanel,
   getRightHamburgerMenuShowStatus,
 };
