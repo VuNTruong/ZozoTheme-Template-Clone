@@ -178,11 +178,18 @@ h4 {
 
 .mgi__right-hamburger-menu__content__icon {
   height: 2em;
+  width: 2em;
+  color: white;
   margin: 0.5em;
 }
 
 .mgi__right-hamburger-menu__content__icon--clickable {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--main-theme-color);
 }
 
 .mgi__right-hamburger-menu__content__title {
