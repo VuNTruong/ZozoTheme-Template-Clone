@@ -116,6 +116,8 @@ document.getElementById("close-header-search-bar").onclick =
 
 document.getElementById("option-panel-toggle").onclick = menu.openOptionPanel;
 
+document.getElementById("scroll-top-button").onclick = scrollToTopFunction;
+
 //******************** Handlers *********************/
 // The function to handle event of when body is scrolled
 function scrollHandler() {
@@ -130,6 +132,9 @@ function scrollHandler() {
   var headerMenuBar = document.getElementById("header-menu-bar");
   var headerSearchBar = document.getElementById("header-search-bar");
 
+  // Get the scroll top button
+  var scrollTopButton = document.getElementById("scroll-top-button");
+
   // Show the sticky menu bar when user scrolls down to more than 80px
   if (document.documentElement.scrollTop > 81 && !isShowingStickyHeader) {
     isShowingStickyHeader = true;
@@ -140,6 +145,8 @@ function scrollHandler() {
     headerSearchBar.classList.add("mgi__header--sticky");
     headerSearchBar.classList.add("animate-down");
 
+    scrollTopButton.style.opacity = 1;
+
     formatHeader();
   } // Hide the sticky menu bar when user scrolls up to less than 80px
   else if (document.documentElement.scrollTop <= 80) {
@@ -149,6 +156,8 @@ function scrollHandler() {
     headerMenuBar.classList.remove("animate-down");
     headerSearchBar.classList.remove("mgi__header--sticky");
     headerSearchBar.classList.remove("animate-down");
+
+    scrollTopButton.style.opacity = 0;
 
     formatHeader();
   }
@@ -167,17 +176,23 @@ function mouseOutPromoAreaHandler() {
 }
 //******************** End Handlers *********************/
 
+// When the user clicks on the button, scroll to the top of the document
+function scrollToTopFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
 // The function to check and see how should header be formatted
 function formatHeader() {
-  if (isShowingMobileHeader && isShowingStickyHeader) {
+  if (
+    (isShowingMobileHeader && isShowingStickyHeader) ||
+    (!isShowingMobileHeader && isShowingStickyHeader)
+  ) {
     r.style.setProperty("--header-background-color", "white");
     r.style.setProperty("--header-text-color", "black");
   } else if (isShowingMobileHeader && !isShowingStickyHeader) {
     r.style.setProperty("--header-background-color", "black");
     r.style.setProperty("--header-text-color", "white");
-  } else if (!isShowingMobileHeader && isShowingStickyHeader) {
-    r.style.setProperty("--header-background-color", "white");
-    r.style.setProperty("--header-text-color", "black");
   } else {
     r.style.setProperty("--header-background-color", "transparent");
     r.style.setProperty("--header-text-color", "white");

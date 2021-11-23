@@ -180,7 +180,7 @@ h4 {
   height: 2em;
   width: 2em;
   color: white;
-  margin: 0.5em;
+  margin: 0.5e m;
 }
 
 .mgi__right-hamburger-menu__content__icon--clickable {
@@ -1243,6 +1243,12 @@ h4 {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  cursor: pointer;
+  color: white;
+}
+
+.mgi__dropdown-menu__menu__regular-menu__item:hover {
+  color: var(--main-theme-color);
 }
 
 .mgi__dropdown-menu__menu__regular-menu__item__content {
@@ -1252,12 +1258,10 @@ h4 {
 }
 
 .mgi__dropdown-menu__menu__regular-menu__item__content__text {
-  color: white;
   font-size: 0.8em;
 }
 
 .mgi__dropdown-menu__menu__regular-menu__item__icon {
-  color: white;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -1273,21 +1277,29 @@ h4 {
 .mgi__dropdown-menu__menu__regular-menu--grid__column {
   display: flex;
   flex-direction: column;
+  color: white;
 }
 
 .mgi__dropdown-menu__menu__regular-menu--grid__column__item {
   display: flex;
-  margin-bottom: -0.5em;
+  cursor: pointer;
+}
+
+.mgi__dropdown-menu__menu__regular-menu--grid__column__item:hover {
+  color: var(--main-theme-color);
 }
 
 .mgi__dropdown-menu__menu__regular-menu--grid__column__title {
   font-size: 1em;
-  color: white;
   font-weight: bolder;
+  cursor: pointer;
+}
+
+.mgi__dropdown-menu__menu__regular-menu--grid__column__title:hover {
+  color: var(--main-theme-color);
 }
 
 .mgi__dropdown-menu__menu__regular-menu--grid__column__item__text {
-  color: white;
   font-weight: bold;
   font-size: 0.8em;
   margin-bottom: 1rem;
@@ -1314,13 +1326,22 @@ h4 {
 
 .mgi__dropdown-menu__menu__wide-menu__column__title {
   font-size: 1.2em;
-  color: white;
   font-weight: bolder;
+  cursor: pointer;
+}
+
+.mgi__dropdown-menu__menu__wide-menu__column__title:hover {
+  color: var(--main-theme-color);
 }
 
 .mgi__dropdown-menu__menu__wide-menu__column__item {
   display: flex;
   margin-bottom: -0.5em;
+  cursor: pointer;
+}
+
+.mgi__dropdown-menu__menu__wide-menu__column__item:hover {
+  color: var(--main-theme-color);
 }
 
 .mgi__dropdown-menu__menu__wide-menu__column__item__left {
@@ -1342,7 +1363,6 @@ h4 {
 }
 
 .mgi__dropdown-menu__menu__wide-menu__column__item__right__text {
-  color: white;
   font-weight: bold;
 }
 /******************* End Dropdown menu *******************/
@@ -1495,6 +1515,24 @@ h4 {
   background-color: #cdb083;
 }
 /******************* End Color chooser menu *******************/
+
+/******************* Scroll top button *******************/
+.mgi__scroll-top-button {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background-color: #323232;
+  color: white;
+  height: 3rem;
+  width: 3rem;
+  cursor: pointer;
+  opacity: 0;
+}
+/******************* End Scroll top button *******************/
 
 @media only screen and (max-width: 977px) {
   .mgi__introduction {
