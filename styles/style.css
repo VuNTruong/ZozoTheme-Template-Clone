@@ -1698,9 +1698,9 @@ h4 {
     display: block;
   }
 
-  /* .mgi__header {
-    background-color: black;
-  } */
+  .mgi__promo-icon {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 490px) {
