@@ -49,6 +49,29 @@ h4 {
   font-weight: 200;
 }
 
+/***** Customize scrollbar *****/
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: darkgrey; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: gray; 
+}
+/***** End Customize scrollbar *****/
+
 .mgi__button {
   display: flex;
   background-color: var(--main-theme-color);
@@ -78,7 +101,7 @@ h4 {
 /******************* Left hamburger menu *******************/
 .mgi__left-hamburger-menu {
   background-color: black;
-  width: 80%;
+  width: 350px;
   height: 100%;
   position: fixed;
   z-index: 11;
@@ -87,7 +110,7 @@ h4 {
 
 .mgi__left-hamburger-menu-area {
   position: fixed;
-  width: 20%;
+  width: calc(100% - 350px);
   right: 0;
   height: 100%;
   z-index: 10;
@@ -123,11 +146,11 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* margin-top: 0.2em; */
+  color: white;
 }
 
-.mgi__left-hamburger-menu__options__text {
-  color: white;
+.mgi__left-hamburger-menu__options__item:hover {
+  color: var(--main-theme-color);
 }
 
 .mgi__left-hamburger-menu__options__icon {
@@ -145,6 +168,10 @@ h4 {
   align-items: center;
   display: flex;
   justify-content: flex-end;
+}
+
+.mgi__left-hamburger-menu__options__item__right__icon {
+  margin-left: 1rem;
 }
 /******************* End Left hamburger menu *******************/
 
@@ -310,6 +337,7 @@ h4 {
   font-size: 1.5em;
   font-weight: lighter;
   width: calc(100% - 1em);
+  outline: none;
 }
 
 .mgi__header-search__search-area__close-button {
@@ -1209,17 +1237,17 @@ h4 {
   top: 0;
   right: 0;
   position: fixed;
-  height: 100vh;
+  height: calc(100vh - 80px);
   width: 100vw;
   display: none;
 }
 
 .mgi__dropdown-menu__areas {
   z-index: 10;
-  top: 0;
+  top: 80px;
   right: 0;
   position: fixed;
-  height: 100vh;
+  height: calc(100vh - 80px);
   width: 100vw;
 }
 
@@ -1722,6 +1750,15 @@ h4 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .mgi__left-hamburger-menu {
+    width: 80%;
+  }
+  .mgi__left-hamburger-menu-area {
+    width: 20%;
+  }
+} 
 /******************* Animation code *******************/
 @keyframes go-down {
   from {

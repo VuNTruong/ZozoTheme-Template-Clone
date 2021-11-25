@@ -141,25 +141,16 @@ function openFeaturesDropdownMenu() {
 </div>
   `);
 
-  // Create the menu area element
-  var menuAreaElement = utils.createElementFromHTML(`
-  <div id="features-dropdown-menu-area" class="mgi__dropdown-menu__areas"></div>
-  `);
-
   // Append menu into the body
   body.appendChild(menuElement);
-  body.appendChild(menuAreaElement);
 
   document.getElementById(
-    "features-dropdown-menu-area"
-  ).onclick = closeFeaturesDropdownMenu;
+    "features-dropdown-menu"
+  ).onmouseleave = closeFeaturesDropdownMenu;
 }
 
 // The function to close features dropdown menu
 function closeFeaturesDropdownMenu() {
-  // Reference and remove the features dropdown menu area
-  document.getElementById("features-dropdown-menu-area").remove();
-
   // Reference and remove the features dropdown menu
   document.getElementById("features-dropdown-menu").remove();
 

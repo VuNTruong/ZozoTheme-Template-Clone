@@ -77,25 +77,16 @@ function openShopDropdownMenu() {
     </div>
     `);
 
-  // Create the menu area element
-  var menuAreaElement = utils.createElementFromHTML(`
-      <div id="shop-dropdown-menu-area" class="mgi__dropdown-menu__areas"></div>
-    `);
-
   // Append menu into the body
   body.appendChild(menuElement);
-  body.appendChild(menuAreaElement);
 
   document.getElementById(
-    "shop-dropdown-menu-area"
-  ).onclick = closeShopDropdownMenu;
+    "shop-dropdown-menu"
+  ).onmouseleave = closeShopDropdownMenu;
 }
 
 // The function to close shop dropdown menu
 function closeShopDropdownMenu() {
-  // Reference and remove the shop dropdown menu area
-  document.getElementById("shop-dropdown-menu-area").remove();
-
   // Reference and remove the shop dropdown menu
   document.getElementById("shop-dropdown-menu").remove();
 

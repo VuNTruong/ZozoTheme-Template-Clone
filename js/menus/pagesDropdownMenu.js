@@ -45,559 +45,551 @@ function openPagesDropdownMenu() {
 
   // Create the menu element
   var menuElement = utils.createElementFromHTML(`
+  <div id="pages-dropdown-menu" class="mgi__dropdown-menu__menu">
   <div
-    id="pages-dropdown-menu"
-    class="mgi__dropdown-menu__menu__wide-menu"
-  >
-    <div class="mgi__dropdown-menu__menu__wide-menu__column">
-      <p class="mgi__dropdown-menu__menu__wide-menu__column__title">
-        PAGE LAYOUT
-      </p>
+  class="mgi__dropdown-menu__menu__wide-menu"
+>
+  <div class="mgi__dropdown-menu__menu__wide-menu__column">
+    <p class="mgi__dropdown-menu__menu__wide-menu__column__title">
+      PAGE LAYOUT
+    </p>
 
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
-        >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            ABOUT US 1
-          </p>
-        </div>
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
       </div>
 
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
         >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            ABOUT US 2
-          </p>
-        </div>
-      </div>
-
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
-        >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            ABOUT US 3
-          </p>
-        </div>
-      </div>
-
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
-        >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            ABOUT ME
-          </p>
-        </div>
-      </div>
-
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
-        >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            SERVICES 1
-          </p>
-        </div>
-      </div>
-
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
-        >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            SERVICES 2
-          </p>
-        </div>
-      </div>
-
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
-        >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            SERVICES 3
-          </p>
-        </div>
+          ABOUT US 1
+        </p>
       </div>
     </div>
 
-    <div class="mgi__dropdown-menu__menu__wide-menu__column">
-      <p class="mgi__dropdown-menu__menu__wide-menu__column__title">
-        PAGE LAYOUT
-      </p>
-
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
-        >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            CONTACT 1
-          </p>
-        </div>
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
       </div>
 
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
         >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            CONTACT 2
-          </p>
-        </div>
-      </div>
-
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
-        >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            CONTACT 3
-          </p>
-        </div>
-      </div>
-
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
-        >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            HOW IT WORKS?
-          </p>
-        </div>
-      </div>
-
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
-        >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            TEAM
-          </p>
-        </div>
-      </div>
-
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
-        >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            TESTIMONIALS
-          </p>
-        </div>
-      </div>
-
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
-        >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            CAREER
-          </p>
-        </div>
+          ABOUT US 2
+        </p>
       </div>
     </div>
 
-    <div class="mgi__dropdown-menu__menu__wide-menu__column">
-      <p class="mgi__dropdown-menu__menu__wide-menu__column__title">
-        PAGE LAYOUT
-      </p>
-
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
-        >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            FAQ
-          </p>
-        </div>
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
       </div>
 
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
         >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            FAQ 2
-          </p>
-        </div>
-      </div>
-
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
-        >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            FULL WIDTH
-          </p>
-        </div>
-      </div>
-
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
-        >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            FULL WIDTH WIDE
-          </p>
-        </div>
-      </div>
-
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
-        >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            LEFT SIDEBAR
-          </p>
-        </div>
-      </div>
-
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
-        >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            RIGHT SIDEBAR
-          </p>
-        </div>
-      </div>
-
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
-        >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            BOTH SIDEBAR
-          </p>
-        </div>
+          ABOUT US 3
+        </p>
       </div>
     </div>
 
-    <div class="mgi__dropdown-menu__menu__wide-menu__column">
-      <p class="mgi__dropdown-menu__menu__wide-menu__column__title">
-        PAGE LAYOUT
-      </p>
-
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
-        >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            BOXED LAYOUT
-          </p>
-        </div>
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
       </div>
 
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
         >
-          <i class="far fa-check-circle"></i>
-        </div>
+          ABOUT ME
+        </p>
+      </div>
+    </div>
 
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            LOGIN
-          </p>
-        </div>
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
       </div>
 
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
         >
-          <i class="far fa-check-circle"></i>
-        </div>
+          SERVICES 1
+        </p>
+      </div>
+    </div>
 
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            REGISTRATION
-          </p>
-        </div>
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
       </div>
 
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
         >
-          <i class="far fa-check-circle"></i>
-        </div>
+          SERVICES 2
+        </p>
+      </div>
+    </div>
 
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            404
-          </p>
-        </div>
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
       </div>
 
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
         >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            SITE MAP
-          </p>
-        </div>
-      </div>
-
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
-        >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            COMING SOON
-          </p>
-        </div>
-      </div>
-
-      <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
-        >
-          <i class="far fa-check-circle"></i>
-        </div>
-
-        <div
-          class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
-        >
-          <p
-            class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
-          >
-            MAINTENANCE
-          </p>
-        </div>
+          SERVICES 3
+        </p>
       </div>
     </div>
   </div>
-  `);
 
-  // Create the menu area element
-  var menuAreaElement = utils.createElementFromHTML(
-    `<div id="pages-dropdown-menu-area" class="mgi__dropdown-menu__areas"></div>`
-  );
+  <div class="mgi__dropdown-menu__menu__wide-menu__column">
+    <p class="mgi__dropdown-menu__menu__wide-menu__column__title">
+      PAGE LAYOUT
+    </p>
+
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
+      </div>
+
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
+        >
+          CONTACT 1
+        </p>
+      </div>
+    </div>
+
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
+      </div>
+
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
+        >
+          CONTACT 2
+        </p>
+      </div>
+    </div>
+
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
+      </div>
+
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
+        >
+          CONTACT 3
+        </p>
+      </div>
+    </div>
+
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
+      </div>
+
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
+        >
+          HOW IT WORKS?
+        </p>
+      </div>
+    </div>
+
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
+      </div>
+
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
+        >
+          TEAM
+        </p>
+      </div>
+    </div>
+
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
+      </div>
+
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
+        >
+          TESTIMONIALS
+        </p>
+      </div>
+    </div>
+
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
+      </div>
+
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
+        >
+          CAREER
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mgi__dropdown-menu__menu__wide-menu__column">
+    <p class="mgi__dropdown-menu__menu__wide-menu__column__title">
+      PAGE LAYOUT
+    </p>
+
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
+      </div>
+
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
+        >
+          FAQ
+        </p>
+      </div>
+    </div>
+
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
+      </div>
+
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
+        >
+          FAQ 2
+        </p>
+      </div>
+    </div>
+
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
+      </div>
+
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
+        >
+          FULL WIDTH
+        </p>
+      </div>
+    </div>
+
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
+      </div>
+
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
+        >
+          FULL WIDTH WIDE
+        </p>
+      </div>
+    </div>
+
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
+      </div>
+
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
+        >
+          LEFT SIDEBAR
+        </p>
+      </div>
+    </div>
+
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
+      </div>
+
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
+        >
+          RIGHT SIDEBAR
+        </p>
+      </div>
+    </div>
+
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
+      </div>
+
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
+        >
+          BOTH SIDEBAR
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mgi__dropdown-menu__menu__wide-menu__column">
+    <p class="mgi__dropdown-menu__menu__wide-menu__column__title">
+      PAGE LAYOUT
+    </p>
+
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
+      </div>
+
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
+        >
+          BOXED LAYOUT
+        </p>
+      </div>
+    </div>
+
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
+      </div>
+
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
+        >
+          LOGIN
+        </p>
+      </div>
+    </div>
+
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
+      </div>
+
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
+        >
+          REGISTRATION
+        </p>
+      </div>
+    </div>
+
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
+      </div>
+
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
+        >
+          404
+        </p>
+      </div>
+    </div>
+
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
+      </div>
+
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
+        >
+          SITE MAP
+        </p>
+      </div>
+    </div>
+
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
+      </div>
+
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
+        >
+          COMING SOON
+        </p>
+      </div>
+    </div>
+
+    <div class="mgi__dropdown-menu__menu__wide-menu__column__item">
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__left"
+      >
+        <i class="far fa-check-circle"></i>
+      </div>
+
+      <div
+        class="mgi__dropdown-menu__menu__wide-menu__column__item__right"
+      >
+        <p
+          class="mgi__dropdown-menu__menu__wide-menu__column__item__right__text"
+        >
+          MAINTENANCE
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+  `);
 
   // Append menu to the body
   body.appendChild(menuElement);
-  body.appendChild(menuAreaElement);
 
   document.getElementById(
-    "pages-dropdown-menu-area"
-  ).onclick = closePagesDropdownMenu;
+    "pages-dropdown-menu"
+  ).onmouseleave = closePagesDropdownMenu;
 }
 
 // The function to close pages dropdown menu
 function closePagesDropdownMenu() {
-  // Reference and remove the pages dropdown menu area
-  document.getElementById("pages-dropdown-menu-area").remove();
-
   // Reference and remove the pages dropdown menu
   document.getElementById("pages-dropdown-menu").remove();
 

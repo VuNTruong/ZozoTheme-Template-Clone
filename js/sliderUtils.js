@@ -41,7 +41,7 @@ function gotoNextPage(
 
     // Reupdate list of cards
     reupdateListOfCards(cardsElement, showingCardsArray);
-  }, 200);
+  }, 150);
 }
 
 // The function to bring user to previous page
@@ -81,7 +81,7 @@ function gotoPreviousPage(
     queueCardsArray.unshift(poppedLastElementFromCardsShowingArray);
     // Reupdate list of cards
     // reupdateListOfCards();
-  }, 200);
+  }, 150);
 }
 
 // The function to reupdate card layout
@@ -117,6 +117,31 @@ function adjustShowingAndQueueArray(
   };
 }
 
+// The function to close all opening dropdown menu before opening a new one
+function closeAllOpeningDropdownMenu() {
+  // Array of dropdown menus
+  var arrayOfDropdownMenus = Array.from(
+    document.getElementsByClassName("mgi__dropdown-menu__menu")
+  );
+
+  // Array of dropdown menu open buttons
+  var arrayOfDropdownMenuOpenButtons = Array.from(
+    document.getElementsByClassName("mgi__header-options__option")
+  );
+
+  // Clear all opening dropdown menus
+  arrayOfDropdownMenus.forEach((dropdownMenu) => {
+    dropdownMenu.remove();
+  });
+
+  // Bring all colored dropdown menu open button back to normal
+  arrayOfDropdownMenuOpenButtons.forEach((dropdownMenuOpenButton) => {
+    dropdownMenuOpenButton.classList.remove(
+      "mgi__header-options__option--blue"
+    );
+  });
+}
+
 // The function to create HTML element from HTML string
 function createElementFromHTML(htmlString) {
   var div = document.createElement("div");
@@ -129,6 +154,7 @@ function createElementFromHTML(htmlString) {
 export {
   gotoNextPage,
   gotoPreviousPage,
+  closeAllOpeningDropdownMenu,
   adjustShowingAndQueueArray,
   createElementFromHTML,
 };

@@ -242,27 +242,18 @@ function openHeadersDropdownMenu() {
   </div>
     `);
 
-  // Create the menu area element
-  var menuAreaElement = utils.createElementFromHTML(
-    `<div id="headers-dropdown-menu-area" class="mgi__dropdown-menu__areas"></div>`
-  );
-
   // Append menu to the body
   body.appendChild(menuElement);
-  body.appendChild(menuAreaElement);
 
   document.getElementById(
-    "headers-dropdown-menu-area"
-  ).onclick = closeHeadersDropdownMenu;
+    "headers-dropdown-menu"
+  ).onmouseleave = closeHeadersDropdownMenu;
 }
 
 // The function to close headers dropdown menu
 function closeHeadersDropdownMenu() {
   // Reference and remove the headers dropdown menu
   document.getElementById("headers-dropdown-menu").remove();
-
-  // Reference and remove the headers dropdown menu area
-  document.getElementById("headers-dropdown-menu-area").remove();
 
   // Make the headers button back to white
   document

@@ -19,8 +19,8 @@ function openElementsDropdownMenu() {
 
   // Create the menu element
   var menuElement = utils.createElementFromHTML(`
-    <div id="element-dropdown-menu" class="mgi__dropdown-menu__menu">
-    <div id="elements-dropdown-menu" class="mgi__dropdown-menu__menu__wide-menu">
+    <div id="elements-dropdown-menu" class="mgi__dropdown-menu__menu">
+    <div class="mgi__dropdown-menu__menu__wide-menu">
       <div class="mgi__dropdown-menu__menu__wide-menu__column">
         <p class="mgi__dropdown-menu__menu__wide-menu__column__title">
           ELEMENT 1
@@ -440,25 +440,16 @@ function openElementsDropdownMenu() {
   </div>
     `);
 
-  // Create the menu area element
-  var menuAreaElement = utils.createElementFromHTML(
-    `<div id="elements-dropdown-menu-area" class="mgi__dropdown-menu__areas"></div>`
-  );
-
   // Append menu to the body
   body.appendChild(menuElement);
-  body.appendChild(menuAreaElement);
 
   document.getElementById(
-    "elements-dropdown-menu-area"
-  ).onclick = closeElementsDropdownMenu;
+    "elements-dropdown-menu"
+  ).onmouseleave = closeElementsDropdownMenu;
 }
 
 // The function to close elements dropdown menu
 function closeElementsDropdownMenu() {
-  // Reference and remove the elements dropdown menu area
-  document.getElementById("elements-dropdown-menu-area").remove();
-
   // Reference and remove the elements dropdown menu
   document.getElementById("elements-dropdown-menu").remove();
 

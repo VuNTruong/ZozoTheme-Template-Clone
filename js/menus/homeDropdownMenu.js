@@ -225,28 +225,19 @@ function openHomeDropdownMenu() {
 </div>
   `);
 
-  // Create the menu area element
-  var menuAreaElement = utils.createElementFromHTML(
-    `<div id="home-dropdown-menu-area" class="mgi__dropdown-menu__areas"></div>`
-  );
-
   // Append menu to the body
   body.appendChild(menuElement);
-  body.appendChild(menuAreaElement);
 
   document.getElementById(
-    "home-dropdown-menu-area"
-  ).onclick = closeHomeDropdownMenu;
+    "home-dropdown-menu"
+  ).onmouseleave = closeHomeDropdownMenu;
 }
 
 // THe function to close home dropdown menu
 function closeHomeDropdownMenu() {
   // Reference and remove the home dropdown menu
   document.getElementById("home-dropdown-menu").remove();
-
-  // Reference and remove the home dropdown menu area
-  document.getElementById("home-dropdown-menu-area").remove();
-
+  
   // Make the home button back to white
   document
     .getElementById("open-home-menu-button-static-header")

@@ -114,25 +114,16 @@ function openPortfolioDropdownMenu() {
 </div>
   `);
 
-  // Create the menu area element
-  var menuAreaElement = utils.createElementFromHTML(`
-  <div id="portfolio-dropdown-menu-area" class="mgi__dropdown-menu__areas"></div>
-  `);
-
   // Append menu into the body
   body.appendChild(menuElement);
-  body.appendChild(menuAreaElement);
 
   document.getElementById(
-    "portfolio-dropdown-menu-area"
-  ).onclick = closePortfolioDropdownMenu;
+    "portfolio-dropdown-menu"
+  ).onmouseleave = closePortfolioDropdownMenu;
 }
 
 // The function to close portfolio dropdown menu
 function closePortfolioDropdownMenu() {
-  // Reference and remove the portfolio dropdown menu area
-  document.getElementById("portfolio-dropdown-menu-area").remove();
-
   // Reference and remove the portfolio dropdown menu
   document.getElementById("portfolio-dropdown-menu").remove();
 

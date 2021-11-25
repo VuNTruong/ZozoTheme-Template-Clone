@@ -17,6 +17,7 @@ import * as headersDropdownMenu from "./menus/headersDropdownMenu.js";
 import * as homeDropdownMenu from "./menus/homeDropdownMenu.js";
 
 import * as colorChooser from "./menus/colorChooserMenu.js";
+import * as utils from "./sliderUtils.js";
 
 // This is to keep track of if the sticky header menu is being shown or not
 var isShowingStickyHeader = false;
@@ -84,29 +85,67 @@ document.getElementById("open-shopping-cart-static-header").onclick =
 document.getElementById("shopping-cart-area").onclick =
   menu.closeShoppingCartMenu;
 
-document.getElementById("open-elements-menu-button-static-header").onclick =
-  elementsDropdownMenu.openElementsDropdownMenu;
+document.getElementById(
+  "open-elements-menu-button-static-header"
+).onmouseover = () => {
+  utils.closeAllOpeningDropdownMenu();
+  elementsDropdownMenu.openElementsDropdownMenu();
+};
 
-document.getElementById("open-shop-menu-button-static-header").onclick =
-  shopDropdownMenu.openShopDropdownMenu;
+document.getElementById(
+  "open-shop-menu-button-static-header"
+).onmouseover = () => {
+  utils.closeAllOpeningDropdownMenu();
+  shopDropdownMenu.openShopDropdownMenu();
+};
 
-document.getElementById("open-blog-menu-button-static-header").onclick =
-  blogDropdownMenu.openBlogDropdownMenu;
+document.getElementById(
+  "open-blog-menu-button-static-header"
+).onmouseover = () => {
+  utils.closeAllOpeningDropdownMenu();
+  blogDropdownMenu.openBlogDropdownMenu();
+};
 
-document.getElementById("open-portfolio-menu-button-static-header").onclick =
-  portfolioDropdownMenu.openPortfolioDropdownMenu;
+document.getElementById(
+  "open-portfolio-menu-button-static-header"
+).onmouseover = () => {
+  utils.closeAllOpeningDropdownMenu();
+  portfolioDropdownMenu.openPortfolioDropdownMenu();
+};
 
-document.getElementById("open-features-menu-button-static-header").onclick =
-  featuresDropdownMenu.openFeaturesDropdownMenu;
+document.getElementById(
+  "open-features-menu-button-static-header"
+).onmouseover = () => {
+  utils.closeAllOpeningDropdownMenu();
+  featuresDropdownMenu.openFeaturesDropdownMenu();
+};
 
-document.getElementById("open-pages-menu-button-static-header").onclick =
-  pagesDropdownMenu.openPagesDropdownMenu;
+document.getElementById(
+  "open-pages-menu-button-static-header"
+).onmouseover = () => {
+  utils.closeAllOpeningDropdownMenu();
+  pagesDropdownMenu.openPagesDropdownMenu();
+};
 
-document.getElementById("open-headers-menu-button-static-header").onclick =
-  headersDropdownMenu.openHeadersDropdownMenu;
+document.getElementById(
+  "open-headers-menu-button-static-header"
+).onmouseover = () => {
+  utils.closeAllOpeningDropdownMenu();
+  headersDropdownMenu.openHeadersDropdownMenu();
+};
 
-document.getElementById("open-home-menu-button-static-header").onclick =
-  homeDropdownMenu.openHomeDropdownMenu;
+document.getElementById(
+  "open-home-menu-button-static-header"
+).onmouseover = () => {
+  utils.closeAllOpeningDropdownMenu();
+  homeDropdownMenu.openHomeDropdownMenu();
+};
+
+// Array.from(
+//   document.getElementsByClassName("mgi__header-options")
+// )[0].onmouseleave = () => {
+//   utils.closeAllOpeningDropdownMenu();
+// };
 
 document.getElementById("open-header-search-bar-button").onclick =
   menu.openHeaderSearchBar;

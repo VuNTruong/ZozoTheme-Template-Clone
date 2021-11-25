@@ -124,25 +124,16 @@ function openBlogDropdownMenu() {
     `
   );
 
-  // Create the menu area element
-  var menuAreaElement = utils.createElementFromHTML(
-    `<div id="blog-dropdown-menu-area" class="mgi__dropdown-menu__areas"></div>`
-  );
-
   // Append menu into the body
   body.appendChild(menuElement);
-  body.appendChild(menuAreaElement);
 
   document.getElementById(
-    "blog-dropdown-menu-area"
-  ).onclick = closeBlogDropdownMenu;
+    "blog-dropdown-menu"
+  ).onmouseleave = closeBlogDropdownMenu;
 }
 
 // The function to close blog dropdown menu
 function closeBlogDropdownMenu() {
-  // Reference and remove the blog dropdown menu area
-  document.getElementById("blog-dropdown-menu-area").remove();
-
   // Reference and remove the blog dropdown menu
   document.getElementById("blog-dropdown-menu").remove();
 
